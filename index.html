@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>WebcamJS Test Page</title>
+	<title>CamShopify Comserve</title>
 	<style type="text/css">
 		body { font-family: Helvetica, sans-serif; }
 		h2, h3 { margin-top:0; }
@@ -11,17 +11,30 @@
 		form > input { margin-right: 15px; }
 		#results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
 	</style>
+
+
+
+
+
+	<link rel="stylesheet" href="style.css" media="screen" type="text/css" />
 </head>
 <body>
+	<img src="comserve-logo-ret.png" alt="Comserve Logo" style="width:250px;height:60px;">
+
 	<div id="results">Your captured image will appear here...</div>
 	
-	<h1>WebcamJS Test Page</h1>
+	<h3>CamShopify Comserve</h3>
 	<h3>Demonstrates simple 320x240 capture &amp; display</h3>
 	
 	<div id="my_camera"></div>
 	
+
+
+
+
+
 	<!-- First, include the Webcam.js JavaScript Library -->
-	<script type="text/javascript" src="../webcam.min.js"></script>
+	<script type="text/javascript" src="webcam.min.js"></script>
 	
 	<!-- Configure a few settings and attach camera -->
 	<script language="JavaScript">
@@ -36,21 +49,23 @@
 	
 	<!-- A button for taking snaps -->
 	<form>
-		<input type=button value="Take Snapshot" onClick="take_snapshot()">
+		<input class="button" type=button value="Take Snapshot" onClick="take_snapshot()">
 	</form>
 	
 	<!-- Code to handle taking the snapshot and displaying it locally -->
-	<script language="JavaScript">
-		function take_snapshot() {
-			// take snapshot and get image data
-			Webcam.snap( function(data_uri) {
-				// display results in page
-				document.getElementById('results').innerHTML = 
-					'<h2>Here is your image:</h2>' + 
-					'<img src="'+data_uri+'"/>';
-			} );
-		}
-	</script>
+
+
+	<p id="demo">Click the button to get your position.</p>
+
+	<button class="button" onclick="getLocation()">Get Location</button>
+
+
+
+
+
+
+	<!-- App Logic -->
+	<script src="app.js"></script>
 	
 </body>
 </html>
