@@ -16,6 +16,13 @@
   margin: 15px;
 }
 
+.floating-box2 {
+  display: inline-block;
+
+  height: 280px;
+  margin: 20px;
+}
+
 h3 {
   color: rgb(39, 30, 168);
   font-family: "Times New Roman", Times, serif;
@@ -24,6 +31,8 @@ h3 {
 #results {
   background-color: #7ec481;
   border: white;
+  margin: 20px;
+  padding: 20px;
 }
 
 .container {
@@ -35,7 +44,6 @@ h3 {
 }
 
 #formflex {
-  float: right;
   margin: 20px;
   padding: 20px;
   border: 1px solid green;
@@ -44,6 +52,7 @@ h3 {
   background-repeat: no-repeat;
   padding: 15px;
   background-size: contain;
+  width: 250px;
 }
 
 #comserve {

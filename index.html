@@ -18,13 +18,7 @@
       form > input {
         margin-right: 15px;
       }
-      #results {
-        float: right;
-        margin: 20px;
-        padding: 20px;
-        border: 1px solid;
-        background: #ccc;
-      }
+    
     </style>
 
     <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
@@ -37,108 +31,25 @@
     />
 
     <div class="container">
-      <div id="results">Your captured image will appear here...</div>
-
-      <div id="formflex">
-        <form id="foodForm">
-          <div class="m-3">
-            <input
-              type="text"
-              id="productName"
-              name="site_name"
-              class="no-round-input"
-              placeholder="Site Name"
-              required
-            />
-          </div>
-          <div class="m-3">
-            <div class="m-3">Facility Type</div>
-            <select
-              class="round-input m-3"
-              id="productType"
-              type="text"
-              name="product_type"
-              style="width: 190px"
-            >
-              <option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
-              <option value="CS" id="CS" name="No">
-                CS (Compressor Station)
-              </option>
-              <option value="VL" id="VL" name="No">VL (Valve)</option>
-              <option value="PS" id="PS" name="No">PS (Pump Station)</option>
-              <option value="TM" id="TM" name="No">TM (Terminal)</option>
-              <option value="OF" id="OF" name="No">OF (office)</option>
-              <option value="RH" id="RH" name="No">RH (Radio Hub)</option>
-              <option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
-            </select>
-          </div>
-          <div class="m-3">
-            <div class="m-3">Activity</div>
-            <select
-              class="round-input m-3"
-              id="categoryType"
-              type="text"
-              name="category_type"
-              style="width: 190px"
-            >
-              <option value="S" id="S" name="Yes">S (Survey)</option>
-              <option value="PI" id="PI" name="No">PI (Pre-install)</option>
-              <option value="AB" id="AB" name="No">AB (As Built)</option>
-              <option value="I" id="I" name="No">I (Investigation)</option>
-            </select>
-          </div>
-
-          <div class="m-3">
-            <input
-              type="text"
-              id="Description"
-              name="Description"
-              class="no-round-input"
-              placeholder="Description"
-              required
-            />
-          </div>
-
-          <div class="m-3">
-            <input
-              type="text"
-              id="Building"
-              name="Building"
-              class="no-round-input"
-              placeholder="Building"
-              required
-            />
-          </div>
-
-          <div class="m-3">
-            <input
-              type="text"
-              id="FIA"
-              name="FIA"
-              class="no-round-input"
-              placeholder="FIA"
-              required
-            />
-          </div>
-
-          <div class="m-5 mx-auto" style="width: 200px">
-            <input
-              type="submit"
-              id="js_send"
-              class="button"
-              value="SET META-DATA"
-            />
-          </div>
-        </form>
-      </div>
-
+      
+      
 	<div id="comserve">
       <h3>CamShopify Comserve</h3>
       <h3>Photo &amp; Video</h3>
 
 	  </div>
 
-      <div id="my_camera"></div>
+    	<div class="floating-box2" id="my_camera"></div>
+
+		<br>
+
+		<div class="floating-box2" id="results">Your captured image will appear here...</div>
+
+	<p id="demo">Click the button to get your position.</p>
+
+	<button class="button" onclick="getLocation()">
+		Get Location & Save Media
+	</button>
 
       <!-- First, include the Webcam.js JavaScript Library -->
       <script type="text/javascript" src="webcam.min.js"></script>
@@ -189,11 +100,101 @@
 
       <!-- Code to handle taking the snapshot and displaying it locally -->
 
-      <p id="demo">Click the button to get your position.</p>
+    
 
-      <button class="button" onclick="getLocation()">
-        Get Location & Save Media
-      </button>
+	<div id="formflex">
+		<form id="foodForm">
+		<div class="m-3">
+			<input
+			type="text"
+			id="productName"
+			name="site_name"
+			class="no-round-input"
+			placeholder="Site Name"
+			required
+			/>
+		</div>
+		<div class="m-3">
+			<div class="m-3">Facility Type</div>
+			<select
+			class="round-input m-3"
+			id="productType"
+			type="text"
+			name="product_type"
+			style="width: 190px"
+			>
+			<option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
+			<option value="CS" id="CS" name="No">
+				CS (Compressor Station)
+			</option>
+			<option value="VL" id="VL" name="No">VL (Valve)</option>
+			<option value="PS" id="PS" name="No">PS (Pump Station)</option>
+			<option value="TM" id="TM" name="No">TM (Terminal)</option>
+			<option value="OF" id="OF" name="No">OF (office)</option>
+			<option value="RH" id="RH" name="No">RH (Radio Hub)</option>
+			<option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
+			</select>
+		</div>
+		<div class="m-3">
+			<div class="m-3">Activity</div>
+			<select
+			class="round-input m-3"
+			id="categoryType"
+			type="text"
+			name="category_type"
+			style="width: 190px"
+			>
+			<option value="S" id="S" name="Yes">S (Survey)</option>
+			<option value="PI" id="PI" name="No">PI (Pre-install)</option>
+			<option value="AB" id="AB" name="No">AB (As Built)</option>
+			<option value="I" id="I" name="No">I (Investigation)</option>
+			</select>
+		</div>
+
+		<div class="m-3">
+			<input
+			type="text"
+			id="Description"
+			name="Description"
+			class="no-round-input"
+			placeholder="Description"
+			required
+			/>
+		</div>
+
+		<div class="m-3">
+			<input
+			type="text"
+			id="Building"
+			name="Building"
+			class="no-round-input"
+			placeholder="Building"
+			required
+			/>
+		</div>
+
+		<div class="m-3">
+			<input
+			type="text"
+			id="FIA"
+			name="FIA"
+			class="no-round-input"
+			placeholder="FIA"
+			required
+			/>
+		</div>
+
+		<div class="m-5 mx-auto" style="width: 200px">
+			<input
+			type="submit"
+			id="js_send"
+			class="button"
+			value="SET META-DATA"
+			/>
+		</div>
+		</form>
+	</div>
+
 
       <!-- App Logic -->
       <script src="app.js"></script>
