@@ -17,7 +17,7 @@
 }
 
 h3 {
-  color: green;
+  color: rgb(39, 30, 168);
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -40,4 +40,15 @@ h3 {
   padding: 20px;
   border: 1px solid green;
   background: rgba(253, 244, 244, 0.584);
+  background: url(background.png);
+  background-repeat: no-repeat;
+  padding: 15px;
+  background-size: contain;
+}
+
+#comserve {
+  background: url(networking-project.jpg);
+  background-repeat: no-repeat;
+  padding: 15px;
+  background-size: cover;
 }
