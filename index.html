@@ -87,16 +87,7 @@
         </form>
       </div>
 
-      <div class="floating-box">
-        <form>
-          <input
-            class="button"
-            type="button"
-            value="Video"
-            onClick="take_snapshot()"
-          />
-        </form>
-      </div>
+     
 
       <!-- Code to handle taking the snapshot and displaying it locally -->
 
@@ -118,7 +109,7 @@
 			<div class="m-3">Facility Type</div>
 			<select
 			class="round-input m-3"
-			id="productType"
+			id="FacilityType"
 			type="text"
 			name="product_type"
 			style="width: 190px"
@@ -150,6 +141,7 @@
 			<option value="I" id="I" name="No">I (Investigation)</option>
 			</select>
 		</div>
+		
 
 		<div class="m-3">
 			<input
@@ -196,8 +188,88 @@
 	</div>
 
 
+
+
+
+	<style>
+		html, body {
+			margin: 0!important;
+			padding: 0!important;
+		}
+	</style>
+
+
+	<h1>Video Recoding</h1>
+
+	<br>
+
+	<button  class="button" id="btn-start-recording">Start Recording</button>
+	<button class="button" id="btn-stop-recording" disabled>Stop Recording</button>
+
+	<hr>
+
+	<video class="button" controls autoplay playsinline></video>
+
+	
+	<script>
+	var video = document.querySelector('video');
+
+	function captureCamera(callback) {
+		navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(function(camera) {
+			callback(camera);
+		}).catch(function(error) {
+			alert('Unable to capture your camera. Please check console logs.');
+			console.error(error);
+		});
+	}
+
+	function stopRecordingCallback() {
+		video.src = video.srcObject = null;
+		video.muted = false;
+		video.volume = 1;
+		video.src = URL.createObjectURL(recorder.getBlob());
+    
+		recorder.camera.stop();
+		recorder.destroy();
+		recorder = null;
+	}
+
+	var recorder; // globally accessible
+
+	document.getElementById('btn-start-recording').onclick = function() {
+		this.disabled = true;
+		captureCamera(function(camera) {
+			video.muted = true;
+			video.volume = 0;
+			video.srcObject = camera;
+
+			recorder = RecordRTC(camera, {
+				type: 'video'
+			});
+
+			recorder.startRecording();
+
+			// release camera on stopRecording
+			recorder.camera = camera;
+
+			document.getElementById('btn-stop-recording').disabled = false;
+		});
+	};
+
+	document.getElementById('btn-stop-recording').onclick = function() {
+		this.disabled = true;
+		recorder.stopRecording(stopRecordingCallback);
+	};
+	</script>
+
+	<footer style="margin-top: 20px;"><small id="send-message"></small></footer>
+
+
+
       <!-- App Logic -->
       <script src="app.js"></script>
+	  <script src="https://www.webrtc-experiment.com/common.js"></script>
+	  <script src="/RecordRTC.js"></script>
     </div>
   </body>
 </html>

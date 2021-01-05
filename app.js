@@ -1,3 +1,31 @@
+var FoodForm = document.getElementById("foodForm");
+FoodForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  var siteName = document.getElementById("siteName").value;
+
+  var selectorActivity = document.getElementById("Activity");
+
+  var Activity = selectorActivity[selectorActivity.selectedIndex].value;
+
+  var selectorFacility = document.getElementById("FacilityType");
+
+  var FacilityType = selectorFacility[selectorFacility.selectedIndex].value;
+
+  var Description = document.getElementById("Description").value;
+
+  var Building = document.getElementById("Building").value;
+
+  var FIA = document.getElementById("FIA").value;
+
+  console.log(siteName);
+  console.log(Activity);
+  console.log(FacilityType);
+  console.log(Description);
+  console.log(Building);
+  console.log(FIA);
+});
+
 var x = document.getElementById("demo");
 
 function showPosition(position) {
@@ -19,7 +47,8 @@ function showPosition(position) {
     "<br>Longitude: " +
     position.coords.longitude +
     "<br>Date Taken: " +
-    today;
+    today +
+    "<br>File Name: ";
 }
 
 function getLocation() {
