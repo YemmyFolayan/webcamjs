@@ -14,6 +14,11 @@ video {
   height: 200px;
 }
 
+a {
+  color: black !important;
+  font-weight: 800 !important;
+}
+
 .sitedetails {
   background-color: #4caf50;
   border: none;
@@ -26,8 +31,32 @@ video {
   font-weight: 600;
   font-family: sans-serif;
 
-  width: 230px;
-  height: 150px;
+  width: 250px;
+  height: 200px;
+}
+
+@media (min-width: 1344px) and (max-width: 3000px) {
+  .sitedetails {
+    margin-bottom: 260px !important;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1344px) {
+  .sitedetails {
+    margin-bottom: 260px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .sitedetails {
+    margin-bottom: 260px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .sitedetails {
+    margin-bottom: 260px !important;
+  }
 }
 
 .dropdown-submenu {
@@ -59,9 +88,21 @@ video {
   margin: 20px;
 }
 
+.floating-box3 {
+  display: inline-block;
+
+  height: 280px;
+  margin: 20px;
+}
+
 h3 {
   color: rgb(39, 30, 168);
   font-family: "Times New Roman", Times, serif;
+}
+h1 {
+  color: black;
+  font-family: Verdana;
+  font-weight: 600;
 }
 
 #results {
@@ -88,7 +129,7 @@ h3 {
   background-repeat: no-repeat;
   padding: 15px;
   background-size: contain;
-  width: 250px;
+  width: 270px;
 }
 
 #comserve {
