@@ -3,6 +3,10 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>CamShopify Comserve</title>
     <style type="text/css">
       body {
@@ -86,6 +90,114 @@
           />
         </form>
       </div>
+	
+
+
+
+
+
+
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle sitedetails" type="button" data-toggle="dropdown">SITE DETAILS
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+				<li class="dropdown-submenu">
+			<a class="test" tabindex="-1" href="#">OUTDOOR PHOTOS <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a tabindex="-1" href="#">Yard Sign</a></li>
+			<li><a tabindex="-1" href="#">Yard Overview</a></li>
+			<li><a tabindex="-1" href="#">Fencing</a></li>
+
+				<li><a tabindex="-1" href="#">Yard</a></li>
+				<li><a tabindex="-1" href="#">Target_wall_Mast</a></li>
+				<li><a tabindex="-1" href="#">Target_wall_Mast_roof</a></li>
+				<li><a tabindex="-1" href="#">Location for Service</a></li>
+				<li><a tabindex="-1" href="#">Building & Tower</a></li>
+				<li><a tabindex="-1" href="#">All Outdoor Communication</a></li>
+				<li><a tabindex="-1" href="#">Exisiting Mast</a></li>
+				<li><a tabindex="-1" href="#">Existing interbuilding</a></li>
+				<li><a tabindex="-1" href="#">Outdoor Communication</a></li>
+				<li><a tabindex="-1" href="#">Exisiting Trenching</a></li>
+				<li><a tabindex="-1" href="#">All Outdoor Facilities</a></li>
+				<li><a tabindex="-1" href="#">Proposed Trench Location</a></li>
+				<li><a tabindex="-1" href="#">Proposed Slurry Pit</a></li>
+				<li><a tabindex="-1" href="#">overhead wiring in yard</a></li>
+				<li><a tabindex="-1" href="#">Anything Unusual</a></li>
+				<li><a tabindex="-1" href="#">Safety, Danger or concerns</a></li>
+				<li><a tabindex="-1" href="#">Others Not Listed</a></li>
+			</ul>
+		</li>
+
+			<li class="dropdown-submenu">
+				<a class="test" tabindex="-1" href="#"> Indoor Photos <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				<li><a class="test" tabindex="-1" href="#">From doorway</a></li>
+				<li><a class="test" tabindex="-1" href="#"> Cable entry Point </a></li>
+				<li><a class="test" tabindex="-1" href="#">Equipment interconnections</a></li>
+				<li><a class="test" tabindex="-1" href="#"> Possible solution rack install location </a></li>
+				<li><a class="test" tabindex="-1" href="#"> Switches, routers, modems (cabinet wide view) </a></li>
+				<li><a class="test" tabindex="-1" href="#"> Identify active and spare ports on network gear. </a></li>
+				<li><a class="test" tabindex="-1" href="#"> Existing radio equipment </a></li>
+				<li><a class="test" tabindex="-1" href="#"> Existing Barton </a></li>
+				<li><a class="test" tabindex="-1" href="#"> Existing Bristol </a></li>
+				<li><a class="test" tabindex="-1" href="#"> Existing PBX </a></li>
+				<li class="dropdown-submenu">
+					<a class="test" href="#">(S,W,E,N) All 4 walls or indoor<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					<li><a href="#"> South  </a></li>
+					<li><a href="#">East</a></li>
+						<li><a href="#">West</a></li>
+						<li><a href="#">North</a></li>
+					</ul>
+				</li>
+				</ul>
+
+
+			</li>
+
+
+			<li class="dropdown-submenu">
+				<a class="test" tabindex="-1" href="#">Video with Descriptive Audio <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				<li><a tabindex="-1" href="#">Yard overview, yard and all buildings, facilities, access</a></li>
+				<li><a tabindex="-1" href="#">Outside each building/enclosure walk around</a></li>
+				<li><a tabindex="-1" href="#">Outsidend</a></li>
+					<li><a tabindex="-1" href="#">Inside each building and walk around</a></li>
+					<li><a tabindex="-1" href="#">Inside all buildings</a></li>
+					<li><a tabindex="-1" href="#">Existing network cabinets or wall mount racks</a></li>
+					<li><a tabindex="-1" href="#">Proposed solution inside and outside, direction to services</a></li>
+					<li><a tabindex="-1" href="#">safety issues, dangers, or concerns.</a></li>
+					<li><a tabindex="-1" href="#">Others</a></li>
+					<li><a tabindex="-1" href="#">Outsidend</a></li>
+					<li><a tabindex="-1" href="#">Outsidend</a></li>
+					
+				</ul>
+			</li>
+
+			<li class="dropdown-submenu">
+				<a class="test" tabindex="-1" href="#">Screen Shots <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				<li><a tabindex="-1" href="#">Speed Tests</a></li>
+				<li><a tabindex="-1" href="#">Cellular signal tests</a></li>
+
+				<li><a tabindex="-1" href="#">Satellite signal tests</a></li>
+
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+	<script>
+	$(document).ready(function(){
+	$('.dropdown-submenu a.test').on("click", function(e){
+		$(this).next('ul').toggle();
+		e.stopPropagation();
+		e.preventDefault();
+	});
+	});
+	</script>
+
 
      
 
@@ -94,16 +206,26 @@
     
 
 	<div id="formflex">
+
+
+	<h3>SITE DETAILS</h3>
 		<form id="foodForm">
 		<div class="m-3">
 			<input
 			type="text"
-			id="productName"
+			id="siteName"
 			name="site_name"
 			class="no-round-input"
 			placeholder="Site Name"
 			required
 			/>
+
+		
+
+
+
+
+
 		</div>
 		<div class="m-3">
 			<div class="m-3">Facility Type</div>
@@ -130,7 +252,7 @@
 			<div class="m-3">Activity</div>
 			<select
 			class="round-input m-3"
-			id="categoryType"
+			id="Activity"
 			type="text"
 			name="category_type"
 			style="width: 190px"
@@ -141,7 +263,7 @@
 			<option value="I" id="I" name="No">I (Investigation)</option>
 			</select>
 		</div>
-		
+
 
 		<div class="m-3">
 			<input
@@ -165,27 +287,22 @@
 			/>
 		</div>
 
-		<div class="m-3">
-			<input
-			type="text"
-			id="FIA"
-			name="FIA"
-			class="no-round-input"
-			placeholder="FIA"
-			required
-			/>
-		</div>
+		
 
-		<div class="m-5 mx-auto" style="width: 200px">
+		<div class="m-5" id="FIAA"
+			name="FIAA"
+			class="no-round-input"
+			placeholder="Fauto" style="width: 200px">
 			<input
 			type="submit"
 			id="js_send"
 			class="button"
-			value="SET META-DATA"
+			value="COMPLETE"
 			/>
 		</div>
 		</form>
 	</div>
+	
 
 
 
@@ -209,6 +326,9 @@
 	<hr>
 
 	<video class="button" controls autoplay playsinline></video>
+
+
+	</div>
 
 	
 	<script>

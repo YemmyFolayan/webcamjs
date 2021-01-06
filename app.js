@@ -1,30 +1,39 @@
 var FoodForm = document.getElementById("foodForm");
+
+let siteName;
+let Activity;
+let FacilityType;
+
 FoodForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  var siteName = document.getElementById("siteName").value;
+  siteName = document.getElementById("siteName").value;
 
   var selectorActivity = document.getElementById("Activity");
 
-  var Activity = selectorActivity[selectorActivity.selectedIndex].value;
+  Activity = selectorActivity[selectorActivity.selectedIndex].value;
 
   var selectorFacility = document.getElementById("FacilityType");
 
-  var FacilityType = selectorFacility[selectorFacility.selectedIndex].value;
+  FacilityType = selectorFacility[selectorFacility.selectedIndex].value;
 
   var Description = document.getElementById("Description").value;
 
   var Building = document.getElementById("Building").value;
-
-  var FIA = document.getElementById("FIA").value;
 
   console.log(siteName);
   console.log(Activity);
   console.log(FacilityType);
   console.log(Description);
   console.log(Building);
-  console.log(FIA);
 });
+
+let ImageNumber;
+var x = 1;
+x++;
+ImageNumber = "IMG_00" + (48 + x);
+
+console.log(ImageNumber);
 
 var x = document.getElementById("demo");
 
@@ -48,7 +57,8 @@ function showPosition(position) {
     position.coords.longitude +
     "<br>Date Taken: " +
     today +
-    "<br>File Name: ";
+    "<br>File Name: " +
+    siteName;
 }
 
 function getLocation() {

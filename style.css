@@ -9,6 +9,42 @@
   font-size: 16px;
 }
 
+video {
+  width: 250px;
+  height: 200px;
+}
+
+.sitedetails {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: wavy;
+
+  font-size: 24px;
+  font-weight: 600;
+  font-family: sans-serif;
+
+  width: 230px;
+  height: 150px;
+}
+
+.dropdown-submenu {
+  position: relative;
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-submenu .dropdown-menu {
+  margin-top: -1px;
+  color: white;
+}
+
 .floating-box {
   display: inline-block;
   width: 150px;
