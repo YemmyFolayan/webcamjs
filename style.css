@@ -9,11 +9,6 @@
   font-size: 16px;
 }
 
-video {
-  width: 250px;
-  height: 200px;
-}
-
 a {
   color: black !important;
   font-weight: 800 !important;
@@ -39,23 +34,109 @@ a {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+
+  video {
+    width: 550px !important;
+    height: 300px !important;
+  }
+
+  .savedImage {
+    width: 600px;
+    height: 300px !important;
+  }
+
+  #results {
+    width: 600px !important;
+  }
+
+  #my_camera {
+    width: 600px !important;
+  }
 }
 
 @media (min-width: 1000px) and (max-width: 1344px) {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+
+  video {
+    width: 550px !important;
+    height: 300px !important;
+  }
+
+  .savedImage {
+    width: 600px !important;
+    height: 300px !important;
+  }
+
+  #results {
+    width: 600px !important;
+  }
+
+  #my_camera {
+    width: 600px !important;
+  }
+}
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: lightgrey;
+}
+
+.flex-item {
+  width: 320px;
+  height: 280px;
+  margin: 20px;
 }
 
 @media (max-width: 576px) {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+  video {
+    width: 100% !important;
+    height: 500px !important;
+  }
+
+  .savedImage {
+    width: 100% !important;
+    height: 500px !important;
+  }
+
+  #results {
+    width: 100% !important;
+  }
+
+  #my_camera {
+    width: 100% !important;
+    height: 500px !important;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .sitedetails {
     margin-bottom: 260px !important;
+  }
+
+  video {
+    width: 100% !important;
+    height: 300px !important;
+  }
+
+  .savedImage {
+    width: 100% !important;
+    height: 300px !important;
+  }
+
+  #results {
+    width: 100% !important;
+  }
+
+  #my_camera {
+    width: 100% !important;
   }
 }
 
@@ -81,13 +162,6 @@ a {
   margin: 15px;
 }
 
-.floating-box2 {
-  display: inline-block;
-
-  height: 280px;
-  margin: 20px;
-}
-
 .floating-box3 {
   display: inline-block;
 
@@ -95,10 +169,21 @@ a {
   margin: 20px;
 }
 
-h3 {
-  color: rgb(39, 30, 168);
-  font-family: "Times New Roman", Times, serif;
+h3,
+h2 {
+  color: rgb(12, 1, 160);
+  font-family: sans-serif;
+  font-weight: 800;
 }
+
+.btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+  background-color: rgb(1, 49, 160) !important;
+  color: white !important;
+  font-weight: 800 !important;
+}
+
 h1 {
   color: black;
   font-family: Verdana;
@@ -106,10 +191,39 @@ h1 {
 }
 
 #results {
-  background-color: #7ec481;
+  background: url(./images/location3.jpeg);
+  font-weight: 800;
   border: white;
-  margin: 20px;
+
   padding: 20px;
+  width: 500px;
+  height: 380px !important;
+  margin: 20px;
+}
+
+#my_camera {
+  background-color: #7ec481;
+  background: url(./images/camera.jpeg);
+  font-weight: 800;
+  margin: 20px !important;
+  width: 500px;
+  height: 380px !important;
+
+  padding: 20px;
+  border-radius: 20px;
+  border-width: 20px;
+
+  border-color: rgb(39, 30, 168) !important;
+}
+
+video {
+  width: 450px;
+  height: 300px;
+}
+
+.savedImage {
+  width: 450px;
+  height: 300px !important;
 }
 
 .container {
@@ -125,7 +239,7 @@ h1 {
   padding: 20px;
   border: 1px solid green;
   background: rgba(253, 244, 244, 0.584);
-  background: url(background.png);
+  background: url(./images/background.png);
   background-repeat: no-repeat;
   padding: 15px;
   background-size: contain;
@@ -133,8 +247,6 @@ h1 {
 }
 
 #comserve {
-  background: url(networking-project.jpg);
-  background-repeat: no-repeat;
-  padding: 15px;
-  background-size: cover;
+  background: url(./images/location1.jpeg);
+  height: 220px;
 }

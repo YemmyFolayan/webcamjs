@@ -75,7 +75,10 @@ function take_snapshot() {
     // display results in page
 
     document.getElementById("results").innerHTML =
-      "<h2>Here is your image:</h2>" + '<img src="' + data_uri + '"/>';
+      "<h2>Here is your image:</h2>" +
+      '<img class="savedImage" src="' +
+      data_uri +
+      '"/>';
 
     console.log(data_uri);
   });
