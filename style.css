@@ -136,9 +136,11 @@ a {
     width: 100% !important;
     height: 500px !important;
   }
+  .hidden-mobile {
+    display: none;
+  }
 }
-
-@media (min-width: 576px) and (max-width: 991px) {
+@media (min-width: 767px) and (max-width: 991px) {
   .sitedetails {
     margin-bottom: 260px !important;
   }
