@@ -28,20 +28,29 @@
     <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
   </head>
   <body>
-    <img
-      src="images/comserve-logo-ret.png"
-      alt="Comserve Logo"
-      style="width: 250px; height: 60px"
-    />
+	<!-- The video -->
+	<video autoplay muted loop id="myVideo">
+	<source src="./images/BlackVideo.mp4" type="video/mp4">
+	</video>
+
+
+
+	<div class="content">
+
+
+   
+	<div class="container">
+		<img class="imagebanner"
+		src="images/comserve-logo-ret.png"
+		alt="Comserve Logo"
+		style="width: 200px; height: 60px"
+		/>
+	
 
   
       
-      
-	<div id="comserve">
+     
 
-	</div>
-
-	<div class="container">
 
 		<h3>Photo &amp; Video</h3>
 
@@ -62,11 +71,9 @@
 
 <br>
 
-	<p id="demo">Click the button to get your position.</p>
+	<p id="demo">Tap The Camera Icon Below to Take Site Photo, <br> The Supply Site Information Below and Save Media</p>
 
-	<button class="button" onclick="getLocation()">
-		Get Location & Save Media
-	</button>
+
 
       <!-- First, include the Webcam.js JavaScript Library -->
       <script type="text/javascript" src="webcam.min.js"></script>
@@ -96,9 +103,9 @@
       <div class="floating-box">
         <form>
           <input
-            class="button"
+            class="circle"
             type="button"
-            value="Take Snapshot"
+            value=""
             onClick="take_snapshot()"
           />
         </form>
@@ -117,9 +124,36 @@
 				<li class="dropdown-submenu">
 			<a class="test" tabindex="-1" href="#">OUTDOOR PHOTOS <span class="caret"></span></a>
 			<ul class="dropdown-menu">
+			<select
+			class="round-input m-3"
+			id="FacilityType"
+			type="text"
+			name="product_type"
+			style="width: 190px"
+			>
 			<li><a tabindex="-1" href="#">Yard Sign</a></li>
 			<li><a tabindex="-1" href="#">Yard Overview</a></li>
-			<li><a tabindex="-1" href="#">Fencing</a></li>
+			<option id="fencing" value="fencing"><a tabindex="-1" href="#">Fencing</a>
+			</select>
+				<select
+				class="round-input m-3"
+				id="FacilityType"
+				type="text"
+				name="product_type"
+				style="width: 190px"
+				>
+				<option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
+				<option value="CS" id="CS" name="No">
+					CS (Compressor Station)
+				</option>
+				<option value="VL" id="VL" name="No">VL (Valve)</option>
+				<option value="PS" id="PS" name="No">PS (Pump Station)</option>
+				<option value="TM" id="TM" name="No">TM (Terminal)</option>
+				<option value="OF" id="OF" name="No">OF (office)</option>
+				<option value="RH" id="RH" name="No">RH (Radio Hub)</option>
+				<option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
+				</select>
+			</option>
 
 				<li><a tabindex="-1" href="#">Yard</a></li>
 				<li><a tabindex="-1" href="#">Target_wall_Mast</a></li>
@@ -310,7 +344,7 @@
 			type="submit"
 			id="js_send"
 			class="button"
-			value="COMPLETE"
+			value="Complete & Save Media"
 			/>
 		</div>
 		</form>
@@ -405,5 +439,11 @@
 	  <script src="https://www.webrtc-experiment.com/common.js"></script>
 	  <script src="/RecordRTC.js"></script>
     </div>
+	</div>
+
+	<footer> 
+	<div id="comserve">
+
+	</div> </footer>
   </body>
 </html>

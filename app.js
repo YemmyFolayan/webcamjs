@@ -28,7 +28,12 @@ FoodForm.addEventListener("submit", function (e) {
   console.log(FacilityType);
   console.log(Description);
   console.log(Building);
+  getLocation();
 });
+
+let fencing = document.getElementById("fencing").value;
+
+console.log(fencing);
 
 let ImageNumber;
 var x = 1;
