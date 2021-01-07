@@ -3,6 +3,8 @@ var FoodForm = document.getElementById("foodForm");
 let siteName;
 let Activity;
 let FacilityType;
+let Description;
+let Building;
 
 FoodForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -17,9 +19,9 @@ FoodForm.addEventListener("submit", function (e) {
 
   FacilityType = selectorFacility[selectorFacility.selectedIndex].value;
 
-  var Description = document.getElementById("Description").value;
+  Description = document.getElementById("Description").value;
 
-  var Building = document.getElementById("Building").value;
+  Building = document.getElementById("Building").value;
 
   console.log(siteName);
   console.log(Activity);
@@ -32,6 +34,8 @@ let ImageNumber;
 var x = 1;
 x++;
 ImageNumber = "IMG_00" + (48 + x);
+
+let FIA = "944";
 
 console.log(ImageNumber);
 
@@ -58,8 +62,18 @@ function showPosition(position) {
     "<br>Date Taken: " +
     today +
     "<br>File Name: " +
-    siteName;
+    FIA +
+    siteName +
+    FacilityType +
+    Activity +
+    Building +
+    Description +
+    today +
+    ImageNumber;
 }
+
+// FIA, SiteName, FacilityType, Activity, Building, Description,
+// Date take_snapshot, Image Number
 
 function getLocation() {
   if (navigator.geolocation) {
