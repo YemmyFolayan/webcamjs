@@ -119,7 +119,7 @@ a {
     margin-bottom: 260px !important;
   }
   video {
-    width: 100% !important;
+    width: 400px !important;
     height: 500px !important;
   }
 
@@ -202,6 +202,7 @@ a {
   background-size: cover;
   font-weight: 800;
   color: antiquewhite;
+  margin-left: 50px !important;
 }
 
 .floating-box3 {
@@ -212,10 +213,13 @@ a {
 }
 
 h3,
-h2 {
+h2,
+p,
+center {
   color: rgb(12, 1, 160);
   font-family: sans-serif;
   font-weight: 800;
+  justify-content: center;
 }
 
 .btn-default.active,
@@ -245,10 +249,10 @@ h1 {
 
 #my_camera {
   background-color: #7ec481;
-  background: url(./images/camera.jpeg);
-  font-weight: 800;
+  background: url(./images/cameraGif.gif);
   margin: 20px !important;
-  width: 500px;
+  background-size: contain;
+  width: 100%;
   height: 380px !important;
 
   padding: 20px;
