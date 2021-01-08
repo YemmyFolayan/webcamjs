@@ -74,7 +74,8 @@ function showPosition(position) {
     Building +
     Description +
     today +
-    ImageNumber;
+    ImageNumber +
+    ".jpg";
 }
 
 // FIA, SiteName, FacilityType, Activity, Building, Description,
