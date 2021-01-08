@@ -5,7 +5,8 @@ let Activity;
 let FacilityType;
 let Description;
 let Building;
-
+let FileName;
+let today;
 FoodForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -28,6 +29,17 @@ FoodForm.addEventListener("submit", function (e) {
   console.log(FacilityType);
   console.log(Description);
   console.log(Building);
+
+  FileName =
+    FIA +
+    siteName +
+    FacilityType +
+    Activity +
+    Building +
+    Description +
+    today +
+    ImageNumber +
+    ".jpg";
   getLocation();
 });
 
@@ -47,7 +59,7 @@ console.log(ImageNumber);
 var x = document.getElementById("demo");
 
 function showPosition(position) {
-  var today = new Date();
+  today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth() + 1;
   var yyyy = today.getFullYear();
@@ -95,11 +107,17 @@ function take_snapshot() {
     // display results in page
 
     document.getElementById("results").innerHTML =
-      "<h2>Here is your image:</h2>" +
-      '<img class="savedImage" src="' +
+      "<h5>Note : Supply Site Information in the form Below and <br> Click on the Image to Download</h5>" +
+      '<a download="' +
+      FileName +
+      '" href="' +
       data_uri +
-      '"/>';
+      '" title="ImageName"> <img class="savedImage" src="' +
+      data_uri +
+      '"/> </a>';
 
     console.log(data_uri);
   });
 }
+
+//make the camera fullscreen on pop up

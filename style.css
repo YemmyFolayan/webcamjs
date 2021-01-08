@@ -215,13 +215,21 @@ a {
   margin: 20px;
 }
 
-h3,
 h2,
 p,
+h5,
 center {
   color: rgb(12, 1, 160);
   font-family: sans-serif;
   font-weight: 800;
+  justify-content: center;
+}
+
+h3 {
+  color: green;
+  font-family: -apple-system, Roboto, Oxygen, Ubuntu;
+  font-weight: 900;
+  font-size: medium;
   justify-content: center;
 }
 
