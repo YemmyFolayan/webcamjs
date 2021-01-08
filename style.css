@@ -272,6 +272,12 @@ video {
   height: 300px !important;
 }
 
+.no-round-input,
+.m-3 {
+  color: black;
+  font-weight: bold;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
