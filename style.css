@@ -117,6 +117,9 @@ a {
   #results {
     width: 600px !important;
   }
+  .hidden-mobile {
+    display: none;
+  }
 
   #my_camera {
     width: 600px !important;
@@ -163,6 +166,10 @@ a {
     display: none;
   }
 }
+
+.hidden-mobile {
+  display: none;
+}
 @media (min-width: 767px) and (max-width: 1000px) {
   .sitedetails {
     margin-bottom: 260px !important;
@@ -183,6 +190,9 @@ a {
   .savedImage {
     width: 100% !important;
     height: 300px !important;
+  }
+  .hidden-mobile {
+    display: none;
   }
 
   #results {
@@ -330,7 +340,7 @@ video {
 
 #comserve {
   background: url(./images/location1.jpeg);
-  height: 220px;
+  height: 100px;
   width: 100%;
 }
 
