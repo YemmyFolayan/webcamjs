@@ -54,6 +54,10 @@ a {
     height: 300px !important;
   }
 
+  .hidden-mobile {
+    display: none;
+  }
+
   .savedImage {
     width: 600px;
     height: 300px !important;
@@ -140,7 +144,7 @@ a {
     display: none;
   }
 }
-@media (min-width: 767px) and (max-width: 991px) {
+@media (min-width: 767px) and (max-width: 1000px) {
   .sitedetails {
     margin-bottom: 260px !important;
   }
@@ -149,7 +153,6 @@ a {
     width: 90%;
     padding-right: 15px;
     padding-left: 15px;
-    margin-left: 340px !important;
     justify-content: center !important;
   }
 
@@ -324,9 +327,8 @@ video {
   position: relative;
   bottom: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.5);
+
   color: #f1f1f1;
   width: 70%;
   justify-content: center;
-  background: url(./images/BlackVideo.mp4) !important;
 }
