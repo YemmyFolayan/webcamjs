@@ -81,14 +81,6 @@ a {
     width: 600px;
     height: 300px !important;
   }
-
-  #results {
-    width: 600px !important;
-  }
-
-  #my_camera {
-    width: 600px !important;
-  }
 }
 
 @media (min-width: 1000px) and (max-width: 1344px) {
@@ -114,15 +106,8 @@ a {
     height: 300px !important;
   }
 
-  #results {
-    width: 600px !important;
-  }
   .hidden-mobile {
     display: none;
-  }
-
-  #my_camera {
-    width: 600px !important;
   }
 }
 
@@ -144,24 +129,12 @@ a {
   .sitedetails {
     margin-bottom: 260px !important;
   }
-  video {
-    width: 400px !important;
-    height: 500px !important;
-  }
 
   .savedImage {
     width: 100% !important;
     height: 500px !important;
   }
 
-  #results {
-    width: 100% !important;
-  }
-
-  #my_camera {
-    width: 100% !important;
-    height: 500px !important;
-  }
   .hidden-mobile {
     display: none;
   }
@@ -193,14 +166,6 @@ a {
   }
   .hidden-mobile {
     display: none;
-  }
-
-  #results {
-    width: 100% !important;
-  }
-
-  #my_camera {
-    width: 100% !important;
   }
 }
 
@@ -270,7 +235,8 @@ h3 {
   font-weight: 800 !important;
 }
 
-h1 {
+h1,
+h5 {
   color: black;
   font-family: Verdana;
   font-weight: 600;
@@ -281,21 +247,22 @@ h1 {
   font-weight: 800;
   border: white;
 
-  padding: 20px;
-  width: 500px;
+  width: 400px;
   height: 380px !important;
-  margin: 20px;
+}
+
+.imagebanner {
+  border-radius: 12px;
 }
 
 #my_camera {
   background-color: #7ec481;
   background: url(./images/cameraGif.gif);
-  margin: 20px !important;
-  background-size: contain;
-  width: 100%;
-  height: 380px !important;
 
-  padding: 20px;
+  background-size: cover;
+  width: 400px;
+  height: 280px !important;
+
   border-radius: 20px;
   border-width: 20px;
 
@@ -307,13 +274,38 @@ video {
   height: 300px;
 }
 
-.savedImage {
-  width: 450px;
+#demo {
+  background-color: white;
+}
+
+.camvid {
+  width: 450px !important;
   height: 300px !important;
+  margin: 50px !important;
+}
+input[type="text"],
+select,
+input[type="submit"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  background-color: lightblue;
+}
+
+.savedImage {
+  width: 300px !important;
+  height: 200px !important;
 }
 
 .no-round-input,
-.m-3 {
+.m-3,
+u {
   color: black;
   font-weight: bold;
 }

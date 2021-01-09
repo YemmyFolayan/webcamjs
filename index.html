@@ -1,459 +1,545 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>CamShopify Comserve</title>
-    <style type="text/css">
-      body {
-        font-family: Helvetica, sans-serif;
-      }
-      h2,
-      h3 {
-        margin-top: 0;
-      }
-      form {
-        margin-top: 15px;
-      }
-      form > input {
-        margin-right: 15px;
-      }
-    
-    </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./src/css/main.css">
 
-    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
-  </head>
-  <body>
-	<!-- The video -->
-	<video autoplay muted loop id="myVideo" class="hidden-mobile">
-	<source src="./images/BlackVideo.mp4" type="video/mp4">
-	</video>
+  <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 
 
+  <title>CamShopify Comserve</title>
+</head>
 
-	<div class="content">
+<body>
 
+  <!-- Header Area  -->
+  <header>
+    <div class="header__inner wrap padded">
+      <img class="imagebanner"
+      src="images/comserve-logo-ret.png"
+      alt="Comserve Logo"
+      style="width: 200px; height: 60px"
+      />
+      <h1 class="branding">Comserve </h1>
+      <h3 class="tags">Photo & Video</h3>
+    </div>
+  </header>
+
+  <!-- About Section  -->
+
+  <section class="about">
+
+    <div class="about__inner wrap padded">
+
+      <div class="about__avatar">
+
+
+        <div class="" id="my_camera">
+
+
+        </div>
+
+      </div>
+
+      <div class="about__avatar">
+        <div class="" id="results"><h5> Your captured image will appear here... </h5>
+
+
+          
+
+          <p><center>Tap The Camera Icon Below to Take Site Photo, <br> The Supply Site Information Below and Save Media </center></p>
+
+
+              <!-- First, include the Webcam.js JavaScript Library -->
+              <script type="text/javascript" src="webcam.min.js"></script>
+
+              <!-- Configure a few settings and attach camera -->
+              <script language="JavaScript">
+                Webcam.set({
+                  width: 320,
+                  height: 280,
+                  image_format: "jpeg",
+                  jpeg_quality: 90,
+                  constraints: {
+                    width: { exact: 320 },
+                    height: { exact: 280 },
+                  },
+                });
+                Webcam.set("constraints", {
+                  facingMode: "environment",
+                });
+                Webcam.attach("#my_camera");
+
+                //front camera.. switch to back camera
+                //facingMode : user rep => front camera    environment rep Back camera
+              </script>
+		
+        </div>
+        
+      </div>
+      <div class="about__wrap">
+        <h4 class="section__heading" margin="800px">
+          <form>
+            <input
+              class="circle zoom"
+              type="button"
+              value=""
+              onClick="take_snapshot()"
+            />
+          </form>
+        </h4>
+        <p class="about__intro">
+          <span class="howdy"> Howdy! 👋</span>
+         Tap To take Snapshot
+        </p>
+
+        <!-- Social List  -->
+
+     
+          <div class="dropdown floating-box3">
+            <button class="btn btn-default dropdown-toggle sitedetails" type="button" data-toggle="dropdown">SITE DETAILS
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+              <a class="test" tabindex="-1" href="#">OUTDOOR PHOTOS <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              <select
+              class="round-input m-3"
+              id="FacilityType"
+              type="text"
+              name="product_type"
+              style="width: 190px"
+              >
+              <li><a tabindex="-1" href="#">Yard Sign</a></li>
+              <li><a tabindex="-1" href="#">Yard Overview</a></li>
+              <option id="fencing" value="fencing"><a tabindex="-1" href="#">Fencing</a>
+              </select>
+                <select
+                class="round-input m-3"
+                id="FacilityType"
+                type="text"
+                name="product_type"
+                style="width: 190px"
+                >
+                <option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
+                <option value="CS" id="CS" name="No">
+                  CS (Compressor Station)
+                </option>
+                <option value="VL" id="VL" name="No">VL (Valve)</option>
+                <option value="PS" id="PS" name="No">PS (Pump Station)</option>
+                <option value="TM" id="TM" name="No">TM (Terminal)</option>
+                <option value="OF" id="OF" name="No">OF (office)</option>
+                <option value="RH" id="RH" name="No">RH (Radio Hub)</option>
+                <option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
+                </select>
+              </option>
+
+                <li><a tabindex="-1" href="#">Yard</a></li>
+                <li><a tabindex="-1" href="#">Target_wall_Mast</a></li>
+                <li><a tabindex="-1" href="#">Target_wall_Mast_roof</a></li>
+                <li><a tabindex="-1" href="#">Location for Service</a></li>
+                <li><a tabindex="-1" href="#">Building & Tower</a></li>
+                <li><a tabindex="-1" href="#">All Outdoor Communication</a></li>
+                <li><a tabindex="-1" href="#">Exisiting Mast</a></li>
+                <li><a tabindex="-1" href="#">Existing interbuilding</a></li>
+                <li><a tabindex="-1" href="#">Outdoor Communication</a></li>
+                <li><a tabindex="-1" href="#">Exisiting Trenching</a></li>
+                <li><a tabindex="-1" href="#">All Outdoor Facilities</a></li>
+                <li><a tabindex="-1" href="#">Proposed Trench Location</a></li>
+                <li><a tabindex="-1" href="#">Proposed Slurry Pit</a></li>
+                <li><a tabindex="-1" href="#">overhead wiring in yard</a></li>
+                <li><a tabindex="-1" href="#">Anything Unusual</a></li>
+                <li><a tabindex="-1" href="#">Safety, Danger or concerns</a></li>
+                <li><a tabindex="-1" href="#">Others Not Listed</a></li>
+              </ul>
+            </li>
+
+              <li class="dropdown-submenu">
+                <a class="test" tabindex="-1" href="#"> Indoor Photos <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a class="test" tabindex="-1" href="#">From doorway</a></li>
+                <li><a class="test" tabindex="-1" href="#"> Cable entry Point </a></li>
+                <li><a class="test" tabindex="-1" href="#">Equipment interconnections</a></li>
+                <li><a class="test" tabindex="-1" href="#"> Possible solution rack install location </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Switches, routers, modems (cabinet wide view) </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Identify active and spare ports on network gear. </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing radio equipment </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing Barton </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing Bristol </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing PBX </a></li>
+                <li class="dropdown-submenu">
+                  <a class="test" href="#">(S,W,E,N) All 4 walls or indoor<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="#"> South  </a></li>
+                  <li><a href="#">East</a></li>
+                    <li><a href="#">West</a></li>
+                    <li><a href="#">North</a></li>
+                  </ul>
+                </li>
+                </ul>
+
+
+              </li>
+
+
+              <li class="dropdown-submenu">
+                <a class="test" tabindex="-1" href="#">Video with Descriptive Audio <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#">Yard overview, yard and all buildings, facilities, access</a></li>
+                <li><a tabindex="-1" href="#">Outside each building/enclosure walk around</a></li>
+                <li><a tabindex="-1" href="#">Outsidend</a></li>
+                  <li><a tabindex="-1" href="#">Inside each building and walk around</a></li>
+                  <li><a tabindex="-1" href="#">Inside all buildings</a></li>
+                  <li><a tabindex="-1" href="#">Existing network cabinets or wall mount racks</a></li>
+                  <li><a tabindex="-1" href="#">Proposed solution inside and outside, direction to services</a></li>
+                  <li><a tabindex="-1" href="#">safety issues, dangers, or concerns.</a></li>
+                  <li><a tabindex="-1" href="#">Others</a></li>
+                  <li><a tabindex="-1" href="#">Outsidend</a></li>
+                  <li><a tabindex="-1" href="#">Outsidend</a></li>
+					
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+                <a class="test" tabindex="-1" href="#">Screen Shots <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#">Speed Tests</a></li>
+                <li><a tabindex="-1" href="#">Cellular signal tests</a></li>
+
+                <li><a tabindex="-1" href="#">Satellite signal tests</a></li>
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+        
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section  -->
+
+  <section class="contact">
+    <div class="contact__inner wrap padded">
+      <h4 class="section__heading">
+        <span>Let's Work on Your Idea!</span>
+      </h4>
+
+      <p id="demo"></p>
+
+
+     
+
+      <div class="contact__wrap">
+  
+        <div class="contact__form">
+          <h3><u>SITE DETAILS</u></h3>
+          <form id="foodForm">
+          <div class="m-3">
+            <input
+            type="text"
+            id="siteName"
+            name="site_name"
+            class="no-round-input"
+            placeholder="Site Name"
+            required
+            />
+
+		
+
+
+
+
+
+          </div>
+          <div class="m-3">
+            <div class="m-3">Facility Type</div>
+            <select
+            class="round-input"
+            id="FacilityType"
+            type="text"
+            name="product_type"
+           
+            >
+            <option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
+            <option value="CS" id="CS" name="No">
+              CS (Compressor Station)
+            </option>
+            <option value="VL" id="VL" name="No">VL (Valve)</option>
+            <option value="PS" id="PS" name="No">PS (Pump Station)</option>
+            <option value="TM" id="TM" name="No">TM (Terminal)</option>
+            <option value="OF" id="OF" name="No">OF (office)</option>
+            <option value="RH" id="RH" name="No">RH (Radio Hub)</option>
+            <option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
+            </select>
+          </div>
+          <div class="m-3">
+            <div class="m-3">Activity</div>
+            <select
+            class="round-input"
+            id="Activity"
+            type="text"
+            name="category_type"
+            
+            >
+            <option value="S" id="S" name="Yes">S (Survey)</option>
+            <option value="PI" id="PI" name="No">PI (Pre-install)</option>
+            <option value="AB" id="AB" name="No">AB (As Built)</option>
+            <option value="I" id="I" name="No">I (Investigation)</option>
+            </select>
+          </div>
+
+
+          <div class="m-3">
+            <input
+            type="text"
+            id="Description"
+            name="Description222"
+            class="no-round-input"
+            placeholder="Description"
+            required
+            />
+          </div>
+
+          <div class="m-3">
+            <input
+            type="text"
+            id="Building"
+            name="Building2222"
+            class="no-round-input"
+            placeholder="Building"
+            required
+            />
+          </div>
+
+		
+
+          <div class="m-5" id="FIAA"
+            name="FIAA"
+            class="no-round-input"
+            placeholder="Fauto">
+            <input
+            type="submit"
+            id="js_send"
+            class="button"
+            value="Complete & Save Media"
+            />
+          </div>
+          </form>
+
+        </div>
 
    
-	<div class="container">
-		<img class="imagebanner"
-		src="images/comserve-logo-ret.png"
-		alt="Comserve Logo"
-		style="width: 200px; height: 60px"
-		/>
-	
-
-  
-      
-     
+        <video class="camvid" controls autoplay playsinline></video>
 
 
-		<h3>Photo &amp; Video</h3>
-
-
-
-
-
-    	<div class="" id="my_camera">
-
-
-		</div>
-
-
-		<div class="" id="results"><h3> Your captured image will appear here... </h3>
-		
-		
-		</div>
-
-<br>
-
-	<p id="demo"><center> </center></p>
-
-	<hr>
-	<p><center>Tap The Camera Icon Below to Take Site Photo, <br> The Supply Site Information Below and Save Media </center></p>
-
-
-      <!-- First, include the Webcam.js JavaScript Library -->
-      <script type="text/javascript" src="webcam.min.js"></script>
-
-      <!-- Configure a few settings and attach camera -->
-      <script language="JavaScript">
-        Webcam.set({
-          width: 320,
-          height: 280,
-          image_format: "jpeg",
-          jpeg_quality: 90,
-          constraints: {
-            width: { exact: 320 },
-            height: { exact: 280 },
-          },
-        });
-        Webcam.set("constraints", {
-          facingMode: "environment",
-        });
-        Webcam.attach("#my_camera");
-
-        //front camera.. switch to back camera
-        //facingMode : user rep => front camera    environment rep Back camera
-      </script>
-
-      <!-- A button for taking snaps -->
-      <div class="floating-box">
-
-        <form>
-          <input
-            class="circle zoom"
-            type="button"
-            value=""
-            onClick="take_snapshot()"
-          />
-        </form>
-	
       </div>
-	
-
-
-
-<br>
-
-
-	<div class="dropdown floating-box3">
-		<button class="btn btn-default dropdown-toggle sitedetails" type="button" data-toggle="dropdown">SITE DETAILS
-		<span class="caret"></span></button>
-		<ul class="dropdown-menu">
-				<li class="dropdown-submenu">
-			<a class="test" tabindex="-1" href="#">OUTDOOR PHOTOS <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-			<select
-			class="round-input m-3"
-			id="FacilityType"
-			type="text"
-			name="product_type"
-			style="width: 190px"
-			>
-			<li><a tabindex="-1" href="#">Yard Sign</a></li>
-			<li><a tabindex="-1" href="#">Yard Overview</a></li>
-			<option id="fencing" value="fencing"><a tabindex="-1" href="#">Fencing</a>
-			</select>
-				<select
-				class="round-input m-3"
-				id="FacilityType"
-				type="text"
-				name="product_type"
-				style="width: 190px"
-				>
-				<option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
-				<option value="CS" id="CS" name="No">
-					CS (Compressor Station)
-				</option>
-				<option value="VL" id="VL" name="No">VL (Valve)</option>
-				<option value="PS" id="PS" name="No">PS (Pump Station)</option>
-				<option value="TM" id="TM" name="No">TM (Terminal)</option>
-				<option value="OF" id="OF" name="No">OF (office)</option>
-				<option value="RH" id="RH" name="No">RH (Radio Hub)</option>
-				<option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
-				</select>
-			</option>
-
-				<li><a tabindex="-1" href="#">Yard</a></li>
-				<li><a tabindex="-1" href="#">Target_wall_Mast</a></li>
-				<li><a tabindex="-1" href="#">Target_wall_Mast_roof</a></li>
-				<li><a tabindex="-1" href="#">Location for Service</a></li>
-				<li><a tabindex="-1" href="#">Building & Tower</a></li>
-				<li><a tabindex="-1" href="#">All Outdoor Communication</a></li>
-				<li><a tabindex="-1" href="#">Exisiting Mast</a></li>
-				<li><a tabindex="-1" href="#">Existing interbuilding</a></li>
-				<li><a tabindex="-1" href="#">Outdoor Communication</a></li>
-				<li><a tabindex="-1" href="#">Exisiting Trenching</a></li>
-				<li><a tabindex="-1" href="#">All Outdoor Facilities</a></li>
-				<li><a tabindex="-1" href="#">Proposed Trench Location</a></li>
-				<li><a tabindex="-1" href="#">Proposed Slurry Pit</a></li>
-				<li><a tabindex="-1" href="#">overhead wiring in yard</a></li>
-				<li><a tabindex="-1" href="#">Anything Unusual</a></li>
-				<li><a tabindex="-1" href="#">Safety, Danger or concerns</a></li>
-				<li><a tabindex="-1" href="#">Others Not Listed</a></li>
-			</ul>
-		</li>
-
-			<li class="dropdown-submenu">
-				<a class="test" tabindex="-1" href="#"> Indoor Photos <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-				<li><a class="test" tabindex="-1" href="#">From doorway</a></li>
-				<li><a class="test" tabindex="-1" href="#"> Cable entry Point </a></li>
-				<li><a class="test" tabindex="-1" href="#">Equipment interconnections</a></li>
-				<li><a class="test" tabindex="-1" href="#"> Possible solution rack install location </a></li>
-				<li><a class="test" tabindex="-1" href="#"> Switches, routers, modems (cabinet wide view) </a></li>
-				<li><a class="test" tabindex="-1" href="#"> Identify active and spare ports on network gear. </a></li>
-				<li><a class="test" tabindex="-1" href="#"> Existing radio equipment </a></li>
-				<li><a class="test" tabindex="-1" href="#"> Existing Barton </a></li>
-				<li><a class="test" tabindex="-1" href="#"> Existing Bristol </a></li>
-				<li><a class="test" tabindex="-1" href="#"> Existing PBX </a></li>
-				<li class="dropdown-submenu">
-					<a class="test" href="#">(S,W,E,N) All 4 walls or indoor<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-					<li><a href="#"> South  </a></li>
-					<li><a href="#">East</a></li>
-						<li><a href="#">West</a></li>
-						<li><a href="#">North</a></li>
-					</ul>
-				</li>
-				</ul>
-
-
-			</li>
-
-
-			<li class="dropdown-submenu">
-				<a class="test" tabindex="-1" href="#">Video with Descriptive Audio <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-				<li><a tabindex="-1" href="#">Yard overview, yard and all buildings, facilities, access</a></li>
-				<li><a tabindex="-1" href="#">Outside each building/enclosure walk around</a></li>
-				<li><a tabindex="-1" href="#">Outsidend</a></li>
-					<li><a tabindex="-1" href="#">Inside each building and walk around</a></li>
-					<li><a tabindex="-1" href="#">Inside all buildings</a></li>
-					<li><a tabindex="-1" href="#">Existing network cabinets or wall mount racks</a></li>
-					<li><a tabindex="-1" href="#">Proposed solution inside and outside, direction to services</a></li>
-					<li><a tabindex="-1" href="#">safety issues, dangers, or concerns.</a></li>
-					<li><a tabindex="-1" href="#">Others</a></li>
-					<li><a tabindex="-1" href="#">Outsidend</a></li>
-					<li><a tabindex="-1" href="#">Outsidend</a></li>
-					
-				</ul>
-			</li>
-
-			<li class="dropdown-submenu">
-				<a class="test" tabindex="-1" href="#">Screen Shots <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-				<li><a tabindex="-1" href="#">Speed Tests</a></li>
-				<li><a tabindex="-1" href="#">Cellular signal tests</a></li>
-
-				<li><a tabindex="-1" href="#">Satellite signal tests</a></li>
-
-				</ul>
-			</li>
-		</ul>
-	</div>
-
-
-	<script>
-	$(document).ready(function(){
-	$('.dropdown-submenu a.test').on("click", function(e){
-		$(this).next('ul').toggle();
-		e.stopPropagation();
-		e.preventDefault();
-	});
-	});
-	</script>
-
-
-     
-
-      <!-- Code to handle taking the snapshot and displaying it locally -->
-
-    <div class="floating-box3">
-
-	<div id="formflex">
-
-
-	<h3>SITE DETAILS</h3>
-		<form id="foodForm">
-		<div class="m-3">
-			<input
-			type="text"
-			id="siteName"
-			name="site_name"
-			class="no-round-input"
-			placeholder="Site Name"
-			required
-			/>
-
-		
-
-
-
-
-
-		</div>
-		<div class="m-3">
-			<div class="m-3">Facility Type</div>
-			<select
-			class="round-input m-3"
-			id="FacilityType"
-			type="text"
-			name="product_type"
-			style="width: 190px"
-			>
-			<option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
-			<option value="CS" id="CS" name="No">
-				CS (Compressor Station)
-			</option>
-			<option value="VL" id="VL" name="No">VL (Valve)</option>
-			<option value="PS" id="PS" name="No">PS (Pump Station)</option>
-			<option value="TM" id="TM" name="No">TM (Terminal)</option>
-			<option value="OF" id="OF" name="No">OF (office)</option>
-			<option value="RH" id="RH" name="No">RH (Radio Hub)</option>
-			<option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
-			</select>
-		</div>
-		<div class="m-3">
-			<div class="m-3">Activity</div>
-			<select
-			class="round-input m-3"
-			id="Activity"
-			type="text"
-			name="category_type"
-			style="width: 190px"
-			>
-			<option value="S" id="S" name="Yes">S (Survey)</option>
-			<option value="PI" id="PI" name="No">PI (Pre-install)</option>
-			<option value="AB" id="AB" name="No">AB (As Built)</option>
-			<option value="I" id="I" name="No">I (Investigation)</option>
-			</select>
-		</div>
-
-
-		<div class="m-3">
-			<input
-			type="text"
-			id="Description"
-			name="Description222"
-			class="no-round-input"
-			placeholder="Description"
-			required
-			/>
-		</div>
-
-		<div class="m-3">
-			<input
-			type="text"
-			id="Building"
-			name="Building2222"
-			class="no-round-input"
-			placeholder="Building"
-			required
-			/>
-		</div>
-
-		
-
-		<div class="m-5" id="FIAA"
-			name="FIAA"
-			class="no-round-input"
-			placeholder="Fauto" style="width: 200px">
-			<input
-			type="submit"
-			id="js_send"
-			class="button"
-			value="Complete & Save Media"
-			/>
-		</div>
-		</form>
-	</div>
-	
-	</div>
-
-
-
-
-
-	<style>
-		html, body {
-			margin: 0!important;
-			padding: 0!important;
-		}
-	</style>
-
-	<br>
-
-	<br>
-	<br>
-
-
-	<h3>Video Recoding</h3>
-
-	<br>
-
-	<button  class="button" id="btn-start-recording">Start Recording</button>
-	<br> <br>
-	<button class="button" id="btn-stop-recording" disabled>Stop Recording</button>
-
-	<hr>
-
-	<video class="button" controls autoplay playsinline></video>
-
-
-	</div>
-
-	
-	<script>
-	var video = document.querySelector('video');
-
-	function captureCamera(callback) {
-		navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(function(camera) {
-			callback(camera);
-		}).catch(function(error) {
-			alert('Unable to capture your camera. Please check console logs.');
-			console.error(error);
-		});
-	}
-
-	function stopRecordingCallback() {
-		video.src = video.srcObject = null;
-		video.muted = false;
-		video.volume = 1;
-		video.src = URL.createObjectURL(recorder.getBlob());
-    
-		recorder.camera.stop();
-		recorder.destroy();
-		recorder = null;
-	}
-
-	var recorder; // globally accessible
-
-	document.getElementById('btn-start-recording').onclick = function() {
-		this.disabled = true;
-		captureCamera(function(camera) {
-			video.muted = true;
-			video.volume = 0;
-			video.srcObject = camera;
-
-			recorder = RecordRTC(camera, {
-				type: 'video'
-			});
-
-			recorder.startRecording();
-
-			// release camera on stopRecording
-			recorder.camera = camera;
-
-			document.getElementById('btn-stop-recording').disabled = false;
-		});
-	};
-
-	document.getElementById('btn-stop-recording').onclick = function() {
-		this.disabled = true;
-		recorder.stopRecording(stopRecordingCallback);
-	};
-	</script>
-
-	<footer style="margin-top: 20px;"><small id="send-message"></small></footer>
-
-
-
-      <!-- App Logic -->
-      <script src="app.js"></script>
-	  <script src="https://www.webrtc-experiment.com/common.js"></script>
-	  <script src="/RecordRTC.js"></script>
     </div>
-	</div>
+  </section>
 
-	<footer> 
-	<div id="comserve">
+  <!-- Skills Section  -->
 
-	</div> </footer>
-  </body>
+  <section class="skills">
+    <div class="skills__inner wrap padded">
+      <h4 class="section__heading">
+        <span>Things I Can Do For You!</span>
+      </h4>
+
+      <div class="skills__grid">
+        <div class="skill__item">
+          <div class="skill__icon">
+            <img src="./assets/icons/website.svg" alt="">
+          </div>
+          <div class="skill__details">
+            <h4 class="skill__name">Website Design</h4>
+            <p class="skill__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              debitis non ipsam!
+            </p>
+          </div>
+        </div>
+        <div class="skill__item">
+          <div class="skill__icon">
+            <img src="./assets/icons/cart.svg" alt="">
+          </div>
+          <div class="skill__details">
+            <h4 class="skill__name">E-Commerce</h4>
+            <p class="skill__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              debitis non ipsam!
+            </p>
+          </div>
+        </div>
+        <div class="skill__item">
+          <div class="skill__icon">
+            <img src="./assets/icons/mobile.svg" alt="">
+          </div>
+          <div class="skill__details">
+            <h4 class="skill__name">App Development</h4>
+            <p class="skill__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              debitis non ipsam!
+            </p>
+          </div>
+        </div>
+        <div class="skill__item">
+          <div class="skill__icon">
+            <img src="./assets/icons/graph-pie.svg" alt="">
+          </div>
+          <div class="skill__details">
+            <h4 class="skill__name">SEO</h4>
+            <p class="skill__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              debitis non ipsam!
+            </p>
+          </div>
+        </div>
+        <div class="skill__item">
+          <div class="skill__icon">
+            <img src="./assets/icons/share.svg" alt="">
+          </div>
+          <div class="skill__details">
+            <h4 class="skill__name">Social Media</h4>
+            <p class="skill__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              debitis non ipsam!
+            </p>
+          </div>
+        </div>
+        <div class="skill__item">
+          <div class="skill__icon">
+            <img src="./assets/icons/video-recording.svg" alt="">
+          </div>
+          <div class="skill__details">
+            <h4 class="skill__name">Videos</h4>
+            <p class="skill__intro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              debitis non ipsam!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section  -->
+
+  <section class="projects">
+    <div class="projects__inner wrap padded">
+      <h4 class="section__heading">
+        <span>Some Wonderrfull Works</span>
+      </h4>
+
+      <div class="projects__grid">
+        <div class="project">
+          <div class="project__art">
+            <img src="images/map3.jpg" alt="" class="project__image" />
+          </div>
+          <h4>DictoQ - Dictionary App</h4>
+          <p class="project__intro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+            optio libero suscipit excepturi consectetur.
+          </p>
+          <div class="project__links">
+            <a href="#">Case Study</a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project__art">
+            <img src="images/map2.jpg" alt="" class="project__image" />
+          </div>
+          <h4>Admit Dashboard UI</h4>
+          <p class="project__intro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+            optio libero suscipit excepturi consectetur.
+          </p>
+          <div class="project__links">
+            <a href="#">Live Preview</a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project__art">
+            <img src="images/map3.jpg" alt="" class="project__image" />
+          </div>
+          <h4>VQuotes App for iOS</h4>
+          <p class="project__intro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+            optio libero suscipit excepturi consectetur.
+          </p>
+          <div class="project__links">
+            <a href="#">Download</a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="view__projects">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M10.296 7.71L14.621 12 10.296 16.29 11.704 17.71 17.461 12 11.704 6.29z" />
+          <path d="M6.704 6.29L5.296 7.71 9.621 12 5.296 16.29 6.704 17.71 12.461 12z" /></svg>
+        View All</a>
+    </div>
+  </section>
+
+  <!-- Reviews Section  -->
+
+  <section class="reviews">
+    <div class="reviews__inner wrap padded">
+      <h4 class="section__heading">
+        <span>Awesome reviews</span>
+      </h4>
+
+      <div class="review__card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+          <path
+            d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" />
+        </svg>
+        <div class="review__text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi porro sunt repellendus, quis recusandae
+          exercitationem? Velit ipsa suscipit deleniti facilis ad nulla.
+        </div>
+        <h3 class="name">Gloria Snyder</h3>
+        <h4 class="who">CEO - ABCD Inc.</h4>
+      </div>
+
+      <div class="people">
+        <img src="./assets/images/image-1.png" data-who="CEO - ABCD Inc." data-name='Gloria Snyder' data-review=' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi porro sunt repellendus, quis recusandae
+        exercitationem? Velit ipsa suscipit deleniti facilis ad nulla.' alt="" class="active">
+        <img src="./assets/images/image-2.png" data-who="Product Manager at EFGH Inc." data-name='Bobby Stephens'
+          data-review=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi porro sunt repellendus, quis recusandae
+        exercitationem? Velit ipsa suscipit deleniti facilis ad nulla." alt="">
+        <img src="./assets/images/image-3.png" data-who="Co-Host @HIJK FM." data-name='James Collins' data-review=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi porro sunt repellendus, quis recusandae
+        exercitationem? Velit ipsa suscipit deleniti facilis ad nulla." alt="">
+        <img src="./assets/images/image-4.png" data-who="CEO - LMNOP Inc." data-name='Kathleen Bennett' data-review=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi porro sunt repellendus, quis recusandae
+        exercitationem? Velit ipsa suscipit deleniti facilis ad nulla." alt="">
+        <img src="./assets/images/image-5.png" data-who="CEO - WXYZ Inc." data-name='Shirley Franklin' data-review=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi porro sunt repellendus, quis recusandae
+        exercitationem? Velit ipsa suscipit deleniti facilis ad nulla." alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer  -->
+
+  <footer>
+    Designed by <a href="https://thevipinmishra.github.io/">Michael Folayan</a>.
+  </footer>
+
+  <script src="./src/js/app.js"></script>
+
+  <!-- App Logic -->
+  <script src="app.js"></script>
+  <script src="https://www.webrtc-experiment.com/common.js"></script>
+  <script src="/CamShopify/webcam.js"></script>
+ 
+</body>
+
 </html>
