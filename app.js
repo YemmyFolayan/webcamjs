@@ -141,7 +141,7 @@ function take_snapshot() {
       cw = tempCanvas.width = canvas.width;
       ch = tempCanvas.height = canvas.height;
       tempCtx.drawImage(canvas, 0, 0);
-      tempCtx.font = "20px verdana";
+      tempCtx.font = "18px verdana";
       var textWidth = tempCtx.measureText(text).width;
       tempCtx.globalAlpha = 0.5;
       tempCtx.fillStyle = "white";
