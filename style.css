@@ -73,10 +73,6 @@ a {
     height: 300px !important;
   }
 
-  .hidden-mobile {
-    display: none;
-  }
-
   .savedImage {
     width: 600px;
     height: 300px !important;
@@ -360,4 +356,12 @@ u {
   color: #f1f1f1;
   width: 70%;
   justify-content: center;
+}
+
+canvas {
+  border: 1px solid red;
+}
+
+.hidden-mobile {
+  display: none;
 }

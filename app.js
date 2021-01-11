@@ -107,16 +107,51 @@ function take_snapshot() {
     // display results in page
 
     document.getElementById("results").innerHTML =
-      "<h5>Note : Supply Site Information in the form Below and <br> Click on the Image to Download</h5>" +
-      '<a download="' +
+      "<h5>Note : Supply Site Information in the form Below and <br> Click Download</h5>" +
+      '<a  download="' +
       FileName +
       '" href="' +
       data_uri +
-      '" title="ImageName"> <img class="savedImage" src="' +
-      data_uri +
-      '"/> </a>';
+      '" title="ImageName"><button class="button">Download 👋</button></a>';
 
     console.log(data_uri);
+
+    //Water mark image
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var cw = canvas.width;
+    var ch = canvas.height;
+
+    var img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = start;
+    img.src = data_uri;
+    function start() {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      var dataURL = watermarkedDataURL(canvas, "Comserve Inc,Calgary, Canada");
+    }
+
+    function watermarkedDataURL(canvas, text) {
+      var tempCanvas2 = document.getElementById("results");
+      var tempCanvas = document.createElement("canvas");
+      var tempCtx = tempCanvas.getContext("2d");
+      var cw, ch;
+      cw = tempCanvas.width = canvas.width;
+      ch = tempCanvas.height = canvas.height;
+      tempCtx.drawImage(canvas, 0, 0);
+      tempCtx.font = "24px verdana";
+      var textWidth = tempCtx.measureText(text).width;
+      tempCtx.globalAlpha = 0.5;
+      tempCtx.fillStyle = "white";
+      tempCtx.fillText(text, cw - textWidth - 10, ch - 20);
+      tempCtx.fillStyle = "black";
+      tempCtx.fillText(text, cw - textWidth - 10 + 2, ch - 20 + 2);
+      // just testing by adding tempCanvas to document
+      tempCanvas2.appendChild(tempCanvas);
+      return tempCanvas.toDataURL();
+    }
   });
 }
 
