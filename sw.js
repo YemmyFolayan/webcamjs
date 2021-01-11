@@ -1,59 +1,35 @@
-var cacheName = 'Activity-Sheet';
-var filesToCache = ['/',
-'/index.html',
-'/js/app.js',
-'/css/app.css',
-'/css/bootstrap.min.css',
-'/fonts/fontawesome-webfont.eot'];
+var cacheName = "Activity-Sheet";
+var filesToCache = [
+  "/",
+  "/index.html",
+  "/src/css/main.css",
+  "style.css",
+  "/jquery.min.js",
+  "/src/js/app.js",
+  "app.js",
+  "/CamShopify/webcam.js",
+  "images/comserve-logo-ret.png",
+];
 
-self.addEventListener('install', function(e) {
-  console.log('[ServiceWorker] Install');
+self.addEventListener("install", function (e) {
+  console.log("[ServiceWorker] Install");
   e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      console.log('[ServiceWorker] Caching app shell');
+    caches.open(cacheName).then(function (cache) {
+      console.log("[ServiceWorker] Caching app shell");
       return cache.addAll(filesToCache);
     })
   );
-});self.addEventListener('activate',  event => {
+});
+self.addEventListener("activate", (event) => {
   event.waitUntil(self.clients.claim());
-});self.addEventListener('fetch', event => {
+});
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request, {ignoreSearch:true}).then(response => {
+    caches.match(event.request, { ignoreSearch: true }).then((response) => {
       return response || fetch(event.request);
     })
   );
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const cacheName = 'toDoContents';
 // const cacheList = ['/','/index.html','/js/app.js','/css/app.css','/css/bootstrap.min.css', '/fonts/fontawesome-webfont.eot'];
@@ -76,4 +52,3 @@ self.addEventListener('install', function(e) {
 //     }));
 //     console.log("Fetched service worker");
 // });
-
