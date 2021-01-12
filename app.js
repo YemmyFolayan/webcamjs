@@ -58,11 +58,17 @@ console.log(ImageNumber);
 
 var x = document.getElementById("demo");
 
+let latitude;
+let longitude;
+
 function showPosition(position) {
   today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth() + 1;
   var yyyy = today.getFullYear();
+
+  latitude = position.coords.latitude;
+  longitude = position.coords.longitude;
   if (dd < 10) {
     dd = "0" + dd;
   }
@@ -73,9 +79,9 @@ function showPosition(position) {
   console.log(today);
   x.innerHTML =
     "Latitude: " +
-    position.coords.latitude +
+    latitude +
     "<br>Longitude: " +
-    position.coords.longitude +
+    longitude +
     "<br>Date Taken: " +
     today +
     "<br>File Name: " +
@@ -112,7 +118,7 @@ function take_snapshot() {
       FileName +
       '" href="' +
       data_uri +
-      '" title="ImageName"><button class="button">Download 👋</button></a>';
+      '" title="ImageName"><button class="button">Download  ⬇</button></a>';
 
     console.log(data_uri);
 
@@ -130,7 +136,9 @@ function take_snapshot() {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      var dataURL = watermarkedDataURL(canvas, "Comserve Inc,Calgary, Canada");
+      var dataURL = watermarkedDataURL(canvas, longitude);
+
+      //Comserve Inc,Calgary,Canada
     }
 
     function watermarkedDataURL(canvas, text) {
@@ -156,3 +164,28 @@ function take_snapshot() {
 }
 
 //make the camera fullscreen on pop up
+var activeOffset = $("nav ul .active").position().left;
+var activeItemWidth = $("nav ul .active").width();
+
+$("document").ready(function () {
+  $(".dot").css("left", activeOffset + activeItemWidth / 2);
+  var bgColor = $(".active a").css("background-color");
+  $(".dot").css("background-color", bgColor);
+});
+
+$("nav").mouseout(function () {
+  $(".dot").css("left", activeOffset + activeItemWidth / 2);
+  var bgColor = $(".active a").css("background-color");
+  $(".dot").css("background-color", bgColor);
+});
+
+$("nav ul li").hover(function () {
+  var navOffset = $(this).position().left;
+  var navItemWidth = $(this).width();
+
+  $(".dot").css("left", navOffset + navItemWidth / 2);
+
+  var bgColor = $("a", this).css("background-color");
+
+  $(".dot").css("background-color", bgColor);
+});
