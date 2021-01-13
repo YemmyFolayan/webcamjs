@@ -32,7 +32,7 @@ FoodForm.addEventListener("submit", function (e) {
 
   FileName =
     FIA +
-    siteName +
+    exactLocation +
     FacilityType +
     Activity +
     Building +
@@ -78,15 +78,11 @@ function showPosition(position) {
   today = yyyy + mm + dd;
   console.log(today);
   x.innerHTML =
-    "Latitude: " +
-    latitude +
-    "<br>Longitude: " +
-    longitude +
-    "<br>Date Taken: " +
-    today +
+    "Location: " +
+    exactLocation +
     "<br>File Name: " +
     FIA +
-    siteName +
+    exactLocation +
     FacilityType +
     Activity +
     Building +
@@ -136,12 +132,12 @@ function take_snapshot() {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      var dataURL = watermarkedDataURL(canvas, exactLocation);
+      var dataURL = watermarkedDataURL(canvas, today, exactLocation);
 
       //Comserve Inc,Calgary,Canada
     }
 
-    function watermarkedDataURL(canvas, text) {
+    function watermarkedDataURL(canvas, today, text) {
       var tempCanvas2 = document.getElementById("results");
       var tempCanvas = document.createElement("canvas");
       var tempCtx = tempCanvas.getContext("2d");
