@@ -164,28 +164,37 @@ function take_snapshot() {
 }
 
 //make the camera fullscreen on pop up
-var activeOffset = $("nav ul .active").position().left;
-var activeItemWidth = $("nav ul .active").width();
 
-$("document").ready(function () {
-  $(".dot").css("left", activeOffset + activeItemWidth / 2);
-  var bgColor = $(".active a").css("background-color");
-  $(".dot").css("background-color", bgColor);
-});
+var textWrapper = document.querySelector(".ml1 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+  /\S/g,
+  "<span class='letter'>$&</span>"
+);
 
-$("nav").mouseout(function () {
-  $(".dot").css("left", activeOffset + activeItemWidth / 2);
-  var bgColor = $(".active a").css("background-color");
-  $(".dot").css("background-color", bgColor);
-});
-
-$("nav ul li").hover(function () {
-  var navOffset = $(this).position().left;
-  var navItemWidth = $(this).width();
-
-  $(".dot").css("left", navOffset + navItemWidth / 2);
-
-  var bgColor = $("a", this).css("background-color");
-
-  $(".dot").css("background-color", bgColor);
-});
+anime
+  .timeline({ loop: true })
+  .add({
+    targets: ".ml1 .letter",
+    scale: [0.3, 1],
+    opacity: [0, 1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i + 1),
+  })
+  .add({
+    targets: ".ml1 .line",
+    scaleX: [0, 1],
+    opacity: [0.5, 1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: "-=875",
+    delay: (el, i, l) => 80 * (l - i),
+  })
+  .add({
+    targets: ".ml1",
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000,
+  });
