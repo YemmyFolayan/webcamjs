@@ -136,7 +136,7 @@ function take_snapshot() {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      var dataURL = watermarkedDataURL(canvas, longitude);
+      var dataURL = watermarkedDataURL(canvas, exactLocation);
 
       //Comserve Inc,Calgary,Canada
     }
@@ -198,3 +198,31 @@ anime
     easing: "easeOutExpo",
     delay: 1000,
   });
+
+/* Initialise Reverse Geocode API Client */
+
+let city;
+let country;
+let exactLocation;
+
+var reverseGeocoder = new BDCReverseGeocode();
+
+/* Get the current user's location information, based on the coordinates provided by their browser */
+/* Fetching coordinates requires the user to be accessing your page over HTTPS and to allow the location prompt. */
+reverseGeocoder.getClientLocation(function (result) {
+  console.log(result);
+  console.log(result.locality);
+  city = result.locality;
+  country = result.countryName;
+  exactLocation = city + "," + country;
+
+  console.log(exactLocation);
+});
+
+/* You can also set the locality language as needed */
+reverseGeocoder.localityLanguage = "es";
+
+/* Request the current user's coordinates (requires HTTPS and acceptance of prompt) */
+reverseGeocoder.getClientCoordinates(function (result) {
+  console.log(result.locality);
+});
