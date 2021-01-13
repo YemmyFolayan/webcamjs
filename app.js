@@ -132,12 +132,14 @@ function take_snapshot() {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      var dataURL = watermarkedDataURL(canvas, today, exactLocation);
+
+      var dateLocation = today + "  " + exactLocation;
+      var dataURL = watermarkedDataURL(canvas, dateLocation);
 
       //Comserve Inc,Calgary,Canada
     }
 
-    function watermarkedDataURL(canvas, today, text) {
+    function watermarkedDataURL(canvas, text) {
       var tempCanvas2 = document.getElementById("results");
       var tempCanvas = document.createElement("canvas");
       var tempCtx = tempCanvas.getContext("2d");
