@@ -410,8 +410,9 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+a:hover:not(.active) {
   background-color: blue;
+  color: white !important;
 }
 
 .active {
@@ -451,4 +452,8 @@ li a:hover:not(.active) {
 }
 .ml1 .line2 {
   bottom: 0;
+}
+
+footer {
+  background: linear-gradient(45deg, #4bbfef 0%, white 100%);
 }

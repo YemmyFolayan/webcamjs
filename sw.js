@@ -1,4 +1,4 @@
-var cacheName = "Activity-Sheet";
+var cacheName = "Comserve-GeoCam";
 var filesToCache = [
   "/",
   "/index.html",
