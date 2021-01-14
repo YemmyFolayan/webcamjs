@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="stylesheet" href="./src/css/main.css">
+
+<link rel="manifest" href='./manifest.json'/>
+
+<link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/gh/bigdatacloudapi/js-reverse-geocode-client@latest/bigdatacloud_reverse_geocode.min.js" type="text/javascript"></script>
+
+<!-- load css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-record/4.1.1/css/videojs.record.min.css">
+
+
+
+<title>CamShopify Comserve</title>
+</head>
+
+<body>
+
+<!-- Header Area  -->
+<header>
+
+   
+    <nav>
+
+    <ul>
+
+
+        
+        <li><a href="/index.html"> 
+        <img class="imagebanner"
+        src="images/comserve-logo-ret.png"
+        alt="Comserve Logo"
+        style="width: 350px; height: 80px"
+        />
+        </a></li>
+        <li><a class="active" href="/index.html"> Home </a> </li>
+        <li><a href="http://www.comserves.com/projects/">Projects</a></li>
+        <li><a href="http://www.comserves.com/contact-2/">Contact</a></li>
+        <li><a href="http://www.comserves.com/solutions/"> Solutions</a></li>
+     
+        <li><a href="http://www.comserves.com/about-us/">About</a></li>
+    </ul>
+
+    </nav>
+
+    <div class="projects__grid">
+
+
+    <div class="projects textWhite">
+
+
+    <h1 class="ml1">
+    <span class="text-wrapper">
+        <span class="line line1"></span>
+        <span class="letters">VIDEO</span>
+        <span class="line line2"></span>
+    </span>
+    🏗
+    </h1>
+
+    </div>
+
+    <div class="projects controlText">
+        <button id="btnStart">START RECORDING ☯</button>
+
+    </div>
+    
+
+    <div class="projects controlText">
+
+
+        <button id="btnStop">STOP RECORDING ❌</button>
+    </div>  
+    </div>
+
+    <div class="header__inner wrap padded">
+
+
+    <div class="projects__grid">
+
+    <video class="projects" controls></video>
+        
+    <video class="projects" id="vid2" controls></video>
+
+  </div>
+     
+
+    </div>
+</header>
+
+<div id="downloadVid"> </div>
+
+<!-- About Section  -->
+
+
+          
+        </div>
+        
+    </div>
+    <div class="about__wrap">
+       
+
+        <!-- Social List  -->
+
+     
+        <div class="dropdown floating-box3 hidden-mobile">
+            <button class="btn btn-default dropdown-toggle sitedetails" type="button" data-toggle="dropdown">SITE DETAILS ⤵
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-submenu">
+            <a class="test" tabindex="-1" href="/webcam.html">OUTDOOR PHOTOS ▼ <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+
+            <select
+            class="round-input m-3"
+            id="FacilityType"
+            type="text"
+            name="product_type"
+            style="width: 190px"
+            >
+            <li><a tabindex="-1" href="#">Yard Sign</a></li>
+            <li><a tabindex="-1" href="#">Yard Overview</a></li>
+            <option id="fencing" value="fencing"><a tabindex="-1" href="#">Fencing</a>
+            </select>
+                <select
+                class="round-input m-3"
+                id="FacilityType"
+                type="text"
+                name="product_type"
+                style="width: 190px"
+                >
+                <option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
+                <option value="CS" id="CS" name="No">
+                CS (Compressor Station)
+                </option>
+                <option value="VL" id="VL" name="No">VL (Valve)</option>
+                <option value="PS" id="PS" name="No">PS (Pump Station)</option>
+                <option value="TM" id="TM" name="No">TM (Terminal)</option>
+                <option value="OF" id="OF" name="No">OF (office)</option>
+                <option value="RH" id="RH" name="No">RH (Radio Hub)</option>
+                <option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
+                </select>
+            </option>
+
+                <li><a tabindex="-1" href="#">Yard</a></li>
+                <li><a tabindex="-1" href="#">Target_wall_Mast</a></li>
+                <li><a tabindex="-1" href="#">Target_wall_Mast_roof</a></li>
+                <li><a tabindex="-1" href="#">Location for Service</a></li>
+                <li><a tabindex="-1" href="#">Building & Tower</a></li>
+                <li><a tabindex="-1" href="#">All Outdoor Communication</a></li>
+                <li><a tabindex="-1" href="#">Exisiting Mast</a></li>
+                <li><a tabindex="-1" href="#">Existing interbuilding</a></li>
+                <li><a tabindex="-1" href="#">Outdoor Communication</a></li>
+                <li><a tabindex="-1" href="#">Exisiting Trenching</a></li>
+                <li><a tabindex="-1" href="#">All Outdoor Facilities</a></li>
+                <li><a tabindex="-1" href="#">Proposed Trench Location</a></li>
+                <li><a tabindex="-1" href="#">Proposed Slurry Pit</a></li>
+                <li><a tabindex="-1" href="#">overhead wiring in yard</a></li>
+                <li><a tabindex="-1" href="#">Anything Unusual</a></li>
+                <li><a tabindex="-1" href="#">Safety, Danger or concerns</a></li>
+                <li><a tabindex="-1" href="#">Others Not Listed</a></li>
+            </ul>
+            </li>
+
+            <li class="dropdown-submenu">
+                <a class="test" tabindex="-1" href="/webcam.html"> Indoor Photos ▼ <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a class="test" tabindex="-1" href="#">From doorway</a></li>
+                <li><a class="test" tabindex="-1" href="#"> Cable entry Point </a></li>
+                <li><a class="test" tabindex="-1" href="#">Equipment interconnections</a></li>
+                <li><a class="test" tabindex="-1" href="#"> Possible solution rack install location </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Switches, routers, modems (cabinet wide view) </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Identify active and spare ports on network gear. </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing radio equipment </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing Barton </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing Bristol </a></li>
+                <li><a class="test" tabindex="-1" href="#"> Existing PBX </a></li>
+                <li class="dropdown-submenu">
+                <a class="test" href="#">(S,W,E,N) All 4 walls or indoor<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#"> South  </a></li>
+                <li><a href="#">East</a></li>
+                    <li><a href="#">West</a></li>
+                    <li><a href="#">North</a></li>
+                </ul>
+                </li>
+                </ul>
+
+
+            </li>
+
+
+            <li class="dropdown-submenu">
+                <a class="test" tabindex="-1" href="/webcam.html">Video with Descriptive Audio <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#">Yard overview, yard and all buildings, facilities, access</a></li>
+                <li><a tabindex="-1" href="#">Outside each building/enclosure walk around</a></li>
+                <li><a tabindex="-1" href="#">Outsidend</a></li>
+                <li><a tabindex="-1" href="#">Inside each building and walk around</a></li>
+                <li><a tabindex="-1" href="#">Inside all buildings</a></li>
+                <li><a tabindex="-1" href="#">Existing network cabinets or wall mount racks</a></li>
+                <li><a tabindex="-1" href="#">Proposed solution inside and outside, direction to services</a></li>
+                <li><a tabindex="-1" href="#">safety issues, dangers, or concerns.</a></li>
+                <li><a tabindex="-1" href="#">Others</a></li>
+                <li><a tabindex="-1" href="#">Outsidend</a></li>
+                <li><a tabindex="-1" href="#">Outsidend</a></li>
+					
+                </ul>
+            </li>
+
+            <li class="dropdown-submenu">
+                <a class="test" tabindex="-1" href="/webcam.html">Screen Shots <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#">Speed Tests</a></li>
+                <li><a tabindex="-1" href="#">Cellular signal tests</a></li>
+
+                <li><a tabindex="-1" href="#">Satellite signal tests</a></li>
+
+                </ul>
+            </li>
+            </ul>
+        </div>
+
+
+        
+    </div>
+    </div>
+</section>
+
+
+<!-- Contact Section  -->
+
+<section class="contact">
+    <div class="contact__inner wrap padded">
+    <h4 class="section__heading">
+        <span>Let's Work on Your Idea!</span>
+    </h4>
+
+    <p id="demo"></p>
+
+
+     
+
+    <div class="contact__wrap">
+  
+        <div class="contact__form">
+        <h3><u>SITE DETAILS ✔</u></h3>
+        <form id="foodForm">
+        <div class="m-3">
+            <input
+            type="text"
+            id="siteName"
+            name="site_name"
+            class="no-round-input"
+            placeholder="Site Name"
+            required
+            />
+
+		
+
+
+
+
+
+        </div>
+        <div class="m-3">
+            <div class="m-3">Facility Type</div>
+            <select
+            class="round-input"
+            id="FacilityType"
+            type="text"
+            name="product_type"
+           
+            >
+            <option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
+            <option value="CS" id="CS" name="No">
+            CS (Compressor Station)
+            </option>
+            <option value="VL" id="VL" name="No">VL (Valve)</option>
+            <option value="PS" id="PS" name="No">PS (Pump Station)</option>
+            <option value="TM" id="TM" name="No">TM (Terminal)</option>
+            <option value="OF" id="OF" name="No">OF (office)</option>
+            <option value="RH" id="RH" name="No">RH (Radio Hub)</option>
+            <option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
+            </select>
+        </div>
+        <div class="m-3">
+            <div class="m-3">Activity</div>
+            <select
+            class="round-input"
+            id="Activity"
+            type="text"
+            name="category_type"
+            
+            >
+            <option value="S" id="S" name="Yes">S (Survey)</option>
+            <option value="PI" id="PI" name="No">PI (Pre-install)</option>
+            <option value="AB" id="AB" name="No">AB (As Built)</option>
+            <option value="I" id="I" name="No">I (Investigation)</option>
+            </select>
+        </div>
+
+
+        <div class="m-3">
+            <input
+            type="text"
+            id="Description"
+            name="Description222"
+            class="no-round-input"
+            placeholder="Description"
+            required
+            />
+        </div>
+
+        <div class="m-3">
+            <input
+            type="text"
+            id="Building"
+            name="Building2222"
+            class="no-round-input"
+            placeholder="Building"
+            required
+            />
+        </div>
+
+		
+
+        <div class="m-5" id="FIAA"
+            name="FIAA"
+            class="no-round-input"
+            placeholder="Fauto">
+            <input
+            type="submit"
+            id="js_send"
+            class="button"
+            value="Complete & Save Media"
+            />
+        </div>
+        </form>
+
+        </div>
+
+    </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Footer  -->
+
+<footer>
+    Designed by <a href="https://github.com/YemmyFolayan">Michael Yemi Folayan ✍</a>.
+</footer>
+
+<canvas class="hidden-mobile" id="canvas" width=300 height=300></canvas>
+
+
+
+
+<script>
+    if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function() {
+                    console.log('Service Worker Registered');
+                });
+            }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
+
+<!-- App Logic -->
+<script src="app.js"></script>
+<script src="https://www.webrtc-experiment.com/common.js"></script>
+<script src="/CamShopify/webcam.js"></script>
+
+<!-- load script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-record/4.1.1/videojs.record.min.js"></script>
+
+ 
+</body>
+
+</html>

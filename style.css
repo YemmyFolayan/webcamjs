@@ -55,6 +55,10 @@ a {
   height: 200px;
 }
 
+.controlText {
+  color: black !important;
+  font-weight: 800;
+}
 @media (min-width: 1344px) and (max-width: 3000px) {
   .sitedetails {
     margin-bottom: 260px !important;
