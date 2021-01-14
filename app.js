@@ -315,7 +315,7 @@ navigator.mediaDevices
         FileName +
         '" href="' +
         videoURL +
-        '" title="video"><button class="button">Download  ⬇</button></a>';
+        '" title="video"><button class="button">Download Video ⬇</button></a>';
     };
   })
   .catch(function (err) {
