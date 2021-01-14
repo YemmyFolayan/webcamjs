@@ -43,10 +43,10 @@
         style="width: 350px; height: 80px"
         />
         </a></li>
-        <li><a class="active" href="/index.html"> Home </a> </li>
-        <li><a href="http://www.comserves.com/projects/">Projects</a></li>
-        <li><a href="http://www.comserves.com/contact-2/">Contact</a></li>
-        <li><a href="/webcam.html"> Video</a></li>
+        <li><a class="active hover" href="/index.html"> Home </a> </li>
+        <li><a class="hover" href="http://www.comserves.com/projects/">Projects</a></li>
+        <li><a class="hover" href="http://www.comserves.com/contact-2/">Contact</a></li>
+        <li><a class="hover" href="/webcam.html"> Video</a></li>
      
         <li><a href="http://www.comserves.com/about-us/">About</a></li>
       </ul>
@@ -151,6 +151,11 @@
         </p>
 
         <!-- Social List  -->
+
+
+
+
+
 
      
           <div class="dropdown floating-box3">
@@ -586,6 +591,16 @@
 
   <canvas class="hidden-mobile" id="canvas" width=300 height=300></canvas>
 
+
+  <script>
+  $(document).ready(function(){
+    $('.dropdown-submenu a.test').on("click", function(e){
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });
+  </script>
 
 
 
