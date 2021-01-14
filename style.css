@@ -183,6 +183,9 @@ a {
   margin-top: -1px;
   color: white;
 }
+.dropdown-menu {
+  position: sticky !important;
+}
 
 .floating-box {
   display: inline-block;
