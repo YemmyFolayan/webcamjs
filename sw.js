@@ -1,15 +1,5 @@
 var cacheName = "Comserve-GeoCam";
-var filesToCache = [
-  "/",
-  "/index.html",
-  "/src/css/main.css",
-  "style.css",
-  "/jquery.min.js",
-  "/src/js/app.js",
-  "app.js",
-  "/CamShopify/webcam.js",
-  "images/comserve-logo-ret.png",
-];
+var filesToCache = ["/", "/index.html"];
 
 self.addEventListener("install", function (e) {
   console.log("[ServiceWorker] Install");
