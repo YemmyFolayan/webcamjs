@@ -224,3 +224,5 @@ reverseGeocoder.localityLanguage = "es";
 reverseGeocoder.getClientCoordinates(function (result) {
   console.log(result.locality);
 });
+
+console.log("still Loading wrong one");
