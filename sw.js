@@ -1,5 +1,5 @@
 var cacheName = "Comserve-GeoCam";
-var filesToCache = ["/"];
+var filesToCache = ["/", "/index.html", "/webcam.html"];
 
 //, "/index.html", "/webcam.html"
 
