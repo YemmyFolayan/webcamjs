@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+/*
+.GifBack {
+  background-image: url(“images/blackGif.gif”) !important;
+  background-repeat: no-repeat !important;
+  background-color: black !important;
+}
+**/
+
 .zoom {
   padding: 50px;
   background-color: green;
