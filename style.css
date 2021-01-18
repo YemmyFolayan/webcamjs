@@ -127,6 +127,29 @@ a {
   background-color: lightgrey;
 }
 
+/*NEXT PREV */
+.content {
+  display: none;
+}
+button .back:hover .next:hover {
+  margin-top: 30px;
+  background-color: #ddd;
+  color: black;
+}
+.back {
+  background-color: #f1f1f1;
+  color: black;
+  display: none;
+}
+.next {
+  background-color: #4caf50;
+  color: white;
+  margin-left: 50px;
+}
+.end {
+  display: none;
+}
+
 .flex-item {
   width: 320px;
   height: 280px;
@@ -267,6 +290,14 @@ h5 {
 
   font-size: 18px;
   color: #d3e9f7;
+  text-transform: uppercase;
+}
+
+.dynamicText {
+  font-weight: 700 !important;
+  margin-top: 40px;
+  font-size: 18px;
+  color: black;
   text-transform: uppercase;
 }
 

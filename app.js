@@ -43,10 +43,6 @@ FoodForm.addEventListener("submit", function (e) {
   getLocation();
 });
 
-let fencing = document.getElementById("fencing").value;
-
-console.log(fencing);
-
 let ImageNumber;
 var x = 1;
 x++;
@@ -226,3 +222,36 @@ reverseGeocoder.getClientCoordinates(function (result) {
 });
 
 console.log("still Loading wrong one");
+
+////PREV NEXT
+
+var counter = 1;
+$("body").on("click", ".next", function () {
+  $(".content").hide();
+
+  counter++;
+  $("#content-" + counter + "").show();
+
+  if (counter > 1) {
+    $(".back").show();
+  }
+  if (counter > 6) {
+    $(".content-holder").hide();
+    $(".end").show();
+  }
+});
+
+$("body").on("click", ".back", function () {
+  //alert(counter);
+  counter--;
+  $(".content").hide();
+  var id = counter;
+  $("#content-" + id).show();
+  if (counter < 2) {
+    $(".back").hide();
+  }
+});
+
+$("body").on("click", ".edit-previous", function () {});
+
+// and FIA as zipcode, site name from gps/ facility type and Activity
