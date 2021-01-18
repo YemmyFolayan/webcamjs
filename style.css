@@ -63,6 +63,10 @@ a {
   height: 200px;
 }
 
+.prevGrid {
+  grid-template-columns: 1fr 1fr 1fr !important;
+}
+
 .controlText {
   color: black !important;
   font-weight: 800;
@@ -70,6 +74,10 @@ a {
 @media (min-width: 1344px) and (max-width: 3000px) {
   .sitedetails {
     margin-bottom: 260px !important;
+  }
+
+  .prevGrid {
+    grid-template-columns: 1fr 1fr 1fr !important;
   }
 
   .container {
@@ -94,6 +102,9 @@ a {
 @media (min-width: 1000px) and (max-width: 1344px) {
   .sitedetails {
     margin-bottom: 260px !important;
+  }
+  .prevGrid {
+    grid-template-columns: 1fr 1fr 1fr !important;
   }
 
   .container {
@@ -161,6 +172,10 @@ button .back:hover .next:hover {
     margin-bottom: 260px !important;
   }
 
+  .prevGrid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+
   .savedImage {
     width: 100% !important;
     height: 500px !important;
@@ -177,6 +192,9 @@ button .back:hover .next:hover {
 @media (min-width: 767px) and (max-width: 1000px) {
   .sitedetails {
     margin-bottom: 260px !important;
+  }
+  .prevGrid {
+    grid-template-columns: 1fr 1fr 1fr !important;
   }
 
   .container {
