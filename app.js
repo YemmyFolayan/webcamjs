@@ -1,16 +1,17 @@
 var FoodForm = document.getElementById("foodForm");
 
-let siteName;
 let Activity;
 let FacilityType;
 let Description;
 let Building;
 let FileName;
 let today;
+
+let city;
+let country;
+let exactLocation;
 FoodForm.addEventListener("submit", function (e) {
   e.preventDefault();
-
-  siteName = document.getElementById("siteName").value;
 
   var selectorActivity = document.getElementById("Activity");
 
@@ -24,7 +25,6 @@ FoodForm.addEventListener("submit", function (e) {
 
   Building = document.getElementById("Building").value;
 
-  console.log(siteName);
   console.log(Activity);
   console.log(FacilityType);
   console.log(Description);
@@ -54,6 +54,8 @@ console.log(ImageNumber);
 
 var x = document.getElementById("demo");
 
+var xy = document.getElementById("siteNamexy");
+
 let latitude;
 let longitude;
 
@@ -73,6 +75,7 @@ function showPosition(position) {
   }
   today = yyyy + mm + dd;
   console.log(today);
+  xy.innerHTML = exactLocation;
   x.innerHTML =
     "Location: " +
     exactLocation +
@@ -194,10 +197,6 @@ anime
   });
 
 /* Initialise Reverse Geocode API Client */
-
-let city;
-let country;
-let exactLocation;
 
 var reverseGeocoder = new BDCReverseGeocode();
 
