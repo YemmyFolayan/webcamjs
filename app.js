@@ -254,3 +254,17 @@ $("body").on("click", ".back", function () {
 $("body").on("click", ".edit-previous", function () {});
 
 // and FIA as zipcode, site name from gps/ facility type and Activity
+var Meter = document.getElementById("Meter").value;
+console.log(Meter);
+
+var Compressor = document.getElementById("Compressor").value;
+console.log(Meter);
+
+var Pump = document.getElementById("Pump").value;
+console.log(Meter);
+
+var Terminal = document.getElementById("Terminal").value;
+console.log(Meter);
+
+var Terminal = document.getElementById("Terminal").value;
+console.log(Terminal);
