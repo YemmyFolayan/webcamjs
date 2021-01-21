@@ -1,7 +1,7 @@
 var FoodForm = document.getElementById("foodForm");
 
 let Activity;
-let FacilityType;
+let facilityType;
 let Description;
 let Building;
 let FileName;
@@ -10,6 +10,63 @@ let today;
 let city;
 let country;
 let exactLocation;
+
+var counter = 1;
+$("body").on("click", ".next", function () {
+  $(".content").hide();
+
+  counter++;
+  $("#content-" + counter + "").show();
+
+  ////////////////////////////////
+
+  console.log("before if");
+  if (counter > 1) {
+    $(".back").show();
+    var id = counter;
+    if ("content-" + id === document.getElementById("content-2").id) {
+      facilityType = "Compressor Station";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-3").id) {
+      facilityType = "Pump Station";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-4").id) {
+      facilityType = "Terminal";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-5").id) {
+      facilityType = "Office";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-6").id) {
+      facilityType = "Radio Hub";
+      console.log(facilityType);
+    } else {
+      console.log("not working");
+    }
+  }
+  if (counter > 6) {
+    $(".content-holder").hide();
+    $(".end").show();
+  }
+});
+
+$("body").on("click", ".back", function () {
+  //alert(counter);
+  counter--;
+  $(".content").hide();
+  var id = counter;
+  $("#content-" + id).show();
+  if (counter < 6) {
+    $(".back").hide();
+  }
+});
+
+// if content-1 =  ("#content-" + id)
+//then  let facilityType = "Meter";
+
+$("body").on("click", ".edit-previous", function () {});
+
+// and FIA as zipcode, site name from gps/ facility type and Activity
+
 FoodForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -17,23 +74,24 @@ FoodForm.addEventListener("submit", function (e) {
 
   Activity = selectorActivity[selectorActivity.selectedIndex].value;
 
-  var selectorFacility = document.getElementById("FacilityType");
+  /*var selectorFacility = document.getElementById("facilityType");
 
-  FacilityType = selectorFacility[selectorFacility.selectedIndex].value;
-
+  facilityType = selectorFacility[selectorFacility.selectedIndex].value;
+*/
+  /*
   Description = document.getElementById("Description").value;
 
   Building = document.getElementById("Building").value;
-
+*/
   console.log(Activity);
-  console.log(FacilityType);
+  console.log(facilityType);
   console.log(Description);
   console.log(Building);
 
   FileName =
     FIA +
     exactLocation +
-    FacilityType +
+    facilityType +
     Activity +
     Building +
     Description +
@@ -44,11 +102,10 @@ FoodForm.addEventListener("submit", function (e) {
 });
 
 let ImageNumber;
-var x = 1;
-x++;
-ImageNumber = "IMG_00" + (48 + x);
 
-let FIA = "944";
+ImageNumber = "IMG_00" + (Math.floor(Math.random() * 100) + 1);
+
+let FIA = Math.floor(Math.random() * 92782) + 944;
 
 console.log(ImageNumber);
 
@@ -82,7 +139,7 @@ function showPosition(position) {
     "<br>File Name: " +
     FIA +
     exactLocation +
-    FacilityType +
+    facilityType +
     Activity +
     Building +
     Description +
@@ -91,7 +148,7 @@ function showPosition(position) {
     ".jpg";
 }
 
-// FIA, SiteName, FacilityType, Activity, Building, Description,
+// FIA, SiteName, facilityType, Activity, Building, Description,
 // Date take_snapshot, Image Number
 
 function getLocation() {
@@ -99,6 +156,23 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
+
+    ///////GOOGLE MAP API CODE
+    /*if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude;
+            var point = new google.maps.LatLng(lat, long);
+            new google.maps.Geocoder().geocode(
+                {'latLng': point},
+                function (res, status) {
+                    var zip = res[0].formatted_address.match(/,\s\w{2}\s(\d{5})/);
+                    $("#location").val(zip);          
+                }
+            );
+        });
+    }
+    */
   }
 }
 
@@ -207,6 +281,9 @@ reverseGeocoder.getClientLocation(function (result) {
   console.log(result.locality);
   city = result.locality;
   country = result.countryName;
+  Building = result.principalSubdivision;
+  Description = result.countryName;
+
   exactLocation = city + "," + country;
 
   console.log(exactLocation);
@@ -223,59 +300,3 @@ reverseGeocoder.getClientCoordinates(function (result) {
 console.log("still Loading wrong one");
 
 ////PREV NEXT
-
-var counter = 1;
-$("body").on("click", ".next", function () {
-  $(".content").hide();
-
-  counter++;
-  $("#content-" + counter + "").show();
-
-  ////////////////////////////////
-
-  console.log("before if");
-  if (counter > 1) {
-    $(".back").show();
-    var id = counter;
-    if ("content-" + id === document.getElementById("content-2").id) {
-      facilityType = "Compressor Station";
-      console.log(facilityType);
-    } else if ("content-" + id === document.getElementById("content-3").id) {
-      facilityType = "Pump Station";
-      console.log(facilityType);
-    } else if ("content-" + id === document.getElementById("content-4").id) {
-      facilityType = "Terminal";
-      console.log(facilityType);
-    } else if ("content-" + id === document.getElementById("content-5").id) {
-      facilityType = "Office";
-      console.log(facilityType);
-    } else if ("content-" + id === document.getElementById("content-6").id) {
-      facilityType = "Radio Hub";
-      console.log(facilityType);
-    } else {
-      console.log("not working");
-    }
-  }
-  if (counter > 6) {
-    $(".content-holder").hide();
-    $(".end").show();
-  }
-});
-
-$("body").on("click", ".back", function () {
-  //alert(counter);
-  counter--;
-  $(".content").hide();
-  var id = counter;
-  $("#content-" + id).show();
-  if (counter < 6) {
-    $(".back").hide();
-  }
-});
-
-// if content-1 =  ("#content-" + id)
-//then  let facilityType = "Meter";
-
-$("body").on("click", ".edit-previous", function () {});
-
-// and FIA as zipcode, site name from gps/ facility type and Activity
