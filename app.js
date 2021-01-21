@@ -41,6 +41,8 @@ $("body").on("click", ".next", function () {
       console.log(facilityType);
     } else {
       console.log("not working");
+      alert("Done !, Re-Take Site Pictures");
+      window.location.assign("index.html");
     }
   }
   if (counter > 6) {
