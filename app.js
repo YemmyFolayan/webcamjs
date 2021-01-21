@@ -179,6 +179,7 @@ function getLocation() {
   }
 }
 
+let tempCanvas;
 function take_snapshot() {
   // take snapshot and get image data
   Webcam.snap(function (data_uri) {
@@ -189,10 +190,10 @@ function take_snapshot() {
       '<a  download="' +
       FileName +
       '" href="' +
-      data_uri +
+      tempCanvas +
       '" title="ImageName"><button class="button">Download  ⬇</button></a>';
 
-    console.log(data_uri);
+    console.log(tempCanvas);
 
     //Water mark image
     var canvas = document.getElementById("canvas");
@@ -210,7 +211,7 @@ function take_snapshot() {
       ctx.drawImage(img, 0, 0);
 
       var dateLocation = today + "  " + exactLocation;
-      var dataURL = watermarkedDataURL(canvas, dateLocation);
+      dataURL = watermarkedDataURL(canvas, dateLocation);
 
       //Comserve Inc,Calgary,Canada
     }
