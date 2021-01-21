@@ -8,6 +8,8 @@ let FileName;
 let today;
 let FIA;
 
+let locationType;
+
 let city;
 let country;
 let exactLocation;
@@ -26,20 +28,14 @@ $("body").on("click", ".next", function () {
     $(".back").show();
     var id = counter;
     if ("content-" + id === document.getElementById("content-2").id) {
-      facilityType = "Compressor Station";
-      console.log(facilityType);
+      locationType = "Indoor Photos";
+      console.log(locationType);
     } else if ("content-" + id === document.getElementById("content-3").id) {
-      facilityType = "Pump Station";
-      console.log(facilityType);
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
     } else if ("content-" + id === document.getElementById("content-4").id) {
-      facilityType = "Terminal";
-      console.log(facilityType);
-    } else if ("content-" + id === document.getElementById("content-5").id) {
-      facilityType = "Office";
-      console.log(facilityType);
-    } else if ("content-" + id === document.getElementById("content-6").id) {
-      facilityType = "Radio Hub";
-      console.log(facilityType);
+      locationType = "Screen Shots";
+      console.log(locationType);
     } else {
       console.log("not working");
 
@@ -49,7 +45,7 @@ $("body").on("click", ".next", function () {
       //window.location.assign("index.html");
     }
   }
-  if (counter > 6) {
+  if (counter > 4) {
     $(".content-holder").hide();
     $(".end").show();
   }
@@ -61,7 +57,7 @@ $("body").on("click", ".back", function () {
   $(".content").hide();
   var id = counter;
   $("#content-" + id).show();
-  if (counter < 6) {
+  if (counter < 4) {
     $(".back").hide();
   }
 });
@@ -80,15 +76,16 @@ FoodForm.addEventListener("submit", function (e) {
 
   Activity = selectorActivity[selectorActivity.selectedIndex].value;
 
-  /*var selectorFacility = document.getElementById("facilityType");
+  var selectorFacility = document.getElementById("FacilityType");
 
   facilityType = selectorFacility[selectorFacility.selectedIndex].value;
-*/
-  /*
+
+  var selectorBuilding = document.getElementById("Building");
+
+  Building = selectorBuilding[selectorBuilding.selectedIndex].value;
+
   Description = document.getElementById("Description").value;
 
-  Building = document.getElementById("Building").value;
-*/
   console.log(Activity);
   console.log(facilityType);
   console.log(Description);
@@ -287,8 +284,8 @@ reverseGeocoder.getClientLocation(function (result) {
   console.log(result.locality);
   city = result.locality;
   country = result.countryName;
-  Building = result.principalSubdivision;
-  Description = result.countryName;
+  //Building = result.principalSubdivision;
+  //Description = result.countryName;
   FIA = result.postcode;
 
   exactLocation = city + "," + country;
@@ -313,30 +310,73 @@ const DownloadZip = () => {
 
   var zip = new JSZip();
 
-  var img = zip.folder("Meter Station");
+  var img = zip.folder("Outdoor Photos");
 
   //format name, data url
-  img.file("Meter_Station.jpg", imgData, { base64: false });
 
+  img.file("Yard_sign.jpg", imgData, { base64: false });
+  img.file("Yard_overview/south.jpg", imgData, { base64: false });
+  img.file("Yard_overview/west.jpg", imgData, { base64: false });
+  img.file("Yard_overview/North.jpg", imgData, { base64: false });
+  img.file("Yard_overview/East.jpg", imgData, { base64: false });
+
+  img.file("Fencing.jpg", imgData, { base64: false });
+  img.file("Building_enclosure.jpg", imgData, { base64: false });
+  img.file("Target_wall_for_mast.jpg", imgData, { base64: false });
+  img.file("Target_wall_for_mast_Roof.jpg", imgData, { base64: false });
+  img.file("Bruce_box.jpg", imgData, { base64: false });
+  img.file("Building_and_tower_grounds.jpg", imgData, { base64: false });
+  img.file("All_outdoor_communications.jpg", imgData, { base64: false });
+  img.file("Existing_masts_towers_VSAT.jpg", imgData, { base64: false });
+  img.file("towers_VSAT_cableRouting.jpg", imgData, { base64: false });
+  img.file("tower_conduit.jpg", imgData, { base64: false });
+  img.file("trenching_(Tremwa).jpg", imgData, { base64: false });
+  img.file("Existing_cable_trays.jpg", imgData, { base64: false });
+  img.file("outdoor_facilities.jpg", imgData, { base64: false });
+  img.file("Proposed_slurry_pit.jpg", imgData, { base64: false });
+  img.file("overhead_wiring.jpg", imgData, { base64: false });
   //base64 : true
 
-  var img2 = zip.folder("Compressor Station");
-  img2.file("Compressor_Station.jpg", imgData, { base64: false });
+  var img2 = zip.folder("Indoor Photos");
+  img2.file("From_the_doorway.jpg", imgData, { base64: false });
+  img2.file("indoor_communications_rooms.jpg", imgData, { base64: false });
+  img2.file("Cable_entry_point.jpg", imgData, { base64: false });
+  img2.file("Existing_cable_runs.jpg", imgData, { base64: false });
+  img2.file("Telco_WAN_termination.jpg", imgData, { base64: false });
+  img2.file("cable_termination_equipment.jpg", imgData, { base64: false });
+  img2.file("Wall_boards.jpg", imgData, { base64: false });
+  img2.file("Patch_panels.jpg", imgData, { base64: false });
+  img2.file("equipment_install_location.jpg", imgData, { base64: false });
+  img2.file("rack_install_location.jpg", imgData, { base64: false });
+  img2.file("antenna_mounting_location.jpg", imgData, { base64: false });
+  img2.file("Equipment_interconnections.jpg", imgData, { base64: false });
+  img2.file("data_networking_gear.jpg", imgData, { base64: false });
+  img2.file("Switches_routers_modems.jpg", imgData, { base64: false });
+  img2.file("Identify_active_and_spare_ports.jpg", imgData, { base64: false });
+  img2.file("Telephones_and_telephone_numbers.jpg", imgData, { base64: false });
+  img2.file("Cable_jacks_and_proposed.jpg", imgData, { base64: false });
+  img2.file("radio_equipment.jpg", imgData, { base64: false });
+  img2.file("Barton.jpg", imgData, { base64: false });
+  img2.file("Bristol.jpg", imgData, { base64: false });
+  img2.file("PBX.jpg", imgData, { base64: false });
+  img2.file("unusual.jpg", imgData, { base64: false });
+  img2.file("safety_issues_dangers_concerns.jpg", imgData, { base64: false });
 
-  var img3 = zip.folder("Pump Station");
-  img3.file("Pump_Station.jpg", imgData, { base64: false });
+  var img3 = zip.folder("Video with Descriptive Audio");
+  img3.file("Video_Yard_overview.mp4", imgData, { base64: false });
+  img3.file("Video_Outside_each_building.mp4", imgData, { base64: false });
+  img3.file("Video_Inside_each_building.mp4", imgData, { base64: false });
+  img3.file("Video_Existing_network_cabinets.mp4", imgData, { base64: false });
+  img3.file("Video_Proposed_solution_inside.mp4", imgData, { base64: false });
+  img3.file("Video_direction_to_services.mp4", imgData, { base64: false });
+  img3.file("Video_safety_issues_dangers_concerns.mp4", imgData, {
+    base64: false,
+  });
 
-  var img4 = zip.folder("Terminal");
-  img4.file("Terminal.jpg", imgData, { base64: false });
-
-  var img5 = zip.folder("Office");
-  img5.file("Office.jpg", imgData, { base64: false });
-
-  var img6 = zip.folder("Radio Hub");
-  img6.file("Radio_Hub.jpg", imgData, { base64: false });
-
-  var img7 = zip.folder("Miscellaneous");
-  img7.file("Miscellaneous.jpg", imgData, { base64: false });
+  var img4 = zip.folder("Screen Shots");
+  img4.file("Speed_tests.jpg", imgData, { base64: false });
+  img4.file("Cellular_signal_tests.jpg", imgData, { base64: false });
+  img4.file("Satellite_signal_tests.jpg", imgData, { base64: false });
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
     // see FileSaver.js
