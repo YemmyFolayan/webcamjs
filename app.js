@@ -6,6 +6,7 @@ let Description;
 let Building;
 let FileName;
 let today;
+let FIA;
 
 let city;
 let country;
@@ -107,7 +108,7 @@ let ImageNumber;
 
 ImageNumber = "IMG_00" + (Math.floor(Math.random() * 100) + 1);
 
-let FIA = Math.floor(Math.random() * 92782) + 944;
+//let FIA = Math.floor(Math.random() * 92782) + 944;
 
 console.log(ImageNumber);
 
@@ -285,6 +286,7 @@ reverseGeocoder.getClientLocation(function (result) {
   country = result.countryName;
   Building = result.principalSubdivision;
   Description = result.countryName;
+  FIA = result.postcode;
 
   exactLocation = city + "," + country;
 
@@ -302,3 +304,5 @@ reverseGeocoder.getClientCoordinates(function (result) {
 console.log("still Loading wrong one");
 
 ////PREV NEXT
+
+///////////////////////////////// SAVE IMAGE DIRECTORY IN FOLDER
