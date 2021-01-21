@@ -42,8 +42,11 @@ $("body").on("click", ".next", function () {
       console.log(facilityType);
     } else {
       console.log("not working");
+
+      document.getElementById("circleHide2").style.visibility = "hidden";
+
       alert("Done !, Re-Take Site Pictures");
-      window.location.assign("index.html");
+      //window.location.assign("index.html");
     }
   }
   if (counter > 6) {
@@ -235,42 +238,6 @@ function take_snapshot() {
       return tempCanvas.toDataURL();
     }
   });
-
-  //var imgData = data_uri;
-
-  var zip = new JSZip();
-
-  var img = zip.folder("Meter Station");
-
-  //format name, data url
-  img.file("Meter_Station.jpg", imgData, { base64: false });
-
-  //base64 : true
-
-  var img2 = zip.folder("Compressor Station");
-  img2.file("Compressor_Station.jpg", imgData, { base64: false });
-
-  var img3 = zip.folder("Pump Station");
-  img3.file("Pump_Station.jpg", imgData, { base64: false });
-
-  var img4 = zip.folder("Terminal");
-  img4.file("Terminal.jpg", imgData, { base64: false });
-
-  var img5 = zip.folder("Office");
-  img5.file("Office.jpg", imgData, { base64: false });
-
-  var img6 = zip.folder("Radio Hub");
-  img6.file("Radio_Hub.jpg", imgData, { base64: false });
-
-  var img7 = zip.folder("Miscellaneous");
-  img7.file("Miscellaneous.jpg", imgData, { base64: false });
-
-  zip.generateAsync({ type: "blob" }).then(function (content) {
-    // see FileSaver.js
-    saveAs(content, "Comserve Geocam.zip");
-
-    console.log("zip");
-  });
 }
 
 //make the camera fullscreen on pop up
@@ -341,9 +308,40 @@ console.log("still Loading wrong one");
 
 ////PREV NEXT
 
-/*
-Results in a zip containing
-Hello.txt
-images/
-    smile.gif
-*/
+const DownloadZip = () => {
+  //var imgData = data_uri;
+
+  var zip = new JSZip();
+
+  var img = zip.folder("Meter Station");
+
+  //format name, data url
+  img.file("Meter_Station.jpg", imgData, { base64: false });
+
+  //base64 : true
+
+  var img2 = zip.folder("Compressor Station");
+  img2.file("Compressor_Station.jpg", imgData, { base64: false });
+
+  var img3 = zip.folder("Pump Station");
+  img3.file("Pump_Station.jpg", imgData, { base64: false });
+
+  var img4 = zip.folder("Terminal");
+  img4.file("Terminal.jpg", imgData, { base64: false });
+
+  var img5 = zip.folder("Office");
+  img5.file("Office.jpg", imgData, { base64: false });
+
+  var img6 = zip.folder("Radio Hub");
+  img6.file("Radio_Hub.jpg", imgData, { base64: false });
+
+  var img7 = zip.folder("Miscellaneous");
+  img7.file("Miscellaneous.jpg", imgData, { base64: false });
+
+  zip.generateAsync({ type: "blob" }).then(function (content) {
+    // see FileSaver.js
+    saveAs(content, "Comserve Geocam.zip");
+
+    console.log("zip");
+  });
+};
