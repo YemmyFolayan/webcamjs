@@ -231,8 +231,30 @@ $("body").on("click", ".next", function () {
   counter++;
   $("#content-" + counter + "").show();
 
+  ////////////////////////////////
+
+  console.log("before if");
   if (counter > 1) {
     $(".back").show();
+    var id = counter;
+    if ("content-" + id === document.getElementById("content-2").id) {
+      facilityType = "Compressor Station";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-3").id) {
+      facilityType = "Pump Station";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-4").id) {
+      facilityType = "Terminal";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-5").id) {
+      facilityType = "Office";
+      console.log(facilityType);
+    } else if ("content-" + id === document.getElementById("content-6").id) {
+      facilityType = "Radio Hub";
+      console.log(facilityType);
+    } else {
+      console.log("not working");
+    }
   }
   if (counter > 6) {
     $(".content-holder").hide();
@@ -246,25 +268,14 @@ $("body").on("click", ".back", function () {
   $(".content").hide();
   var id = counter;
   $("#content-" + id).show();
-  if (counter < 2) {
+  if (counter < 6) {
     $(".back").hide();
   }
 });
 
+// if content-1 =  ("#content-" + id)
+//then  let facilityType = "Meter";
+
 $("body").on("click", ".edit-previous", function () {});
 
 // and FIA as zipcode, site name from gps/ facility type and Activity
-var Meter = document.getElementById("Meter").value;
-console.log(Meter);
-
-var Compressor = document.getElementById("Compressor").value;
-console.log(Meter);
-
-var Pump = document.getElementById("Pump").value;
-console.log(Meter);
-
-var Terminal = document.getElementById("Terminal").value;
-console.log(Meter);
-
-var Terminal = document.getElementById("Terminal").value;
-console.log(Terminal);
