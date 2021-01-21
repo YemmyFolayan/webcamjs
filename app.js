@@ -179,21 +179,20 @@ function getLocation() {
   }
 }
 
-let tempCanvas;
+let imgData;
 function take_snapshot() {
   // take snapshot and get image data
   Webcam.snap(function (data_uri) {
     // display results in page
+    imgData = data_uri;
 
     document.getElementById("results").innerHTML =
       "<h5>Note : Supply Site Information in the form Below and <br> Click Download</h5>" +
       '<a  download="' +
       FileName +
       '" href="' +
-      tempCanvas +
+      data_uri +
       '" title="ImageName"><button class="button">Download  ⬇</button></a>';
-
-    console.log(tempCanvas);
 
     //Water mark image
     var canvas = document.getElementById("canvas");
@@ -236,6 +235,42 @@ function take_snapshot() {
       return tempCanvas.toDataURL();
     }
   });
+
+  //var imgData = data_uri;
+
+  var zip = new JSZip();
+
+  var img = zip.folder("Meter Station");
+
+  //format name, data url
+  img.file("Meter_Station.jpg", imgData, { base64: false });
+
+  //base64 : true
+
+  var img2 = zip.folder("Compressor Station");
+  img2.file("Compressor_Station.jpg", imgData, { base64: false });
+
+  var img3 = zip.folder("Pump Station");
+  img3.file("Pump_Station.jpg", imgData, { base64: false });
+
+  var img4 = zip.folder("Terminal");
+  img4.file("Terminal.jpg", imgData, { base64: false });
+
+  var img5 = zip.folder("Office");
+  img5.file("Office.jpg", imgData, { base64: false });
+
+  var img6 = zip.folder("Radio Hub");
+  img6.file("Radio_Hub.jpg", imgData, { base64: false });
+
+  var img7 = zip.folder("Miscellaneous");
+  img7.file("Miscellaneous.jpg", imgData, { base64: false });
+
+  zip.generateAsync({ type: "blob" }).then(function (content) {
+    // see FileSaver.js
+    saveAs(content, "Comserve Geocam.zip");
+
+    console.log("zip");
+  });
 }
 
 //make the camera fullscreen on pop up
@@ -247,7 +282,7 @@ textWrapper.innerHTML = textWrapper.textContent.replace(
 );
 
 anime
-  .timeline({ loop: true })
+  .timeline({ loop: false })
   .add({
     targets: ".ml1 .letter",
     scale: [0.3, 1],
@@ -306,4 +341,9 @@ console.log("still Loading wrong one");
 
 ////PREV NEXT
 
-///////////////////////////////// SAVE IMAGE DIRECTORY IN FOLDER
+/*
+Results in a zip containing
+Hello.txt
+images/
+    smile.gif
+*/
