@@ -14,10 +14,13 @@ let city;
 let country;
 let exactLocation;
 
+let imgData;
+
 document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
 document.getElementById("DescriptionOutdoor1").style.visibility = "visible";
 document.getElementById("DescriptionVideo1").style.visibility = "hidden";
 document.getElementById("Descriptionshots1").style.visibility = "hidden";
+document.getElementById("downloadZip").style.visibility = "hidden";
 
 var counter = 1;
 $("body").on("click", ".next", function () {
@@ -74,14 +77,8 @@ $("body").on("click", ".next", function () {
     } else {
       console.log("not working");
 
-      document.getElementById("circleHide2").style.visibility = "hidden";
-
-      document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
-      document.getElementById("DescriptionOutdoor1").style.visibility =
-        "hidden";
-      document.getElementById("DescriptionVideo1").style.visibility = "hidden";
-
-      document.getElementById("Descriptionshots1").style.visibility = "hidden";
+      document.getElementById("hideSection").style.visibility = "hidden";
+      document.getElementById("downloadZip").style.visibility = "visible";
 
       alert("Done !, Re-Take Site Pictures");
       //window.location.assign("index.html");
@@ -127,9 +124,7 @@ FoodForm.addEventListener("submit", function (e) {
   Building = selectorBuilding[selectorBuilding.selectedIndex].value;
 
   var selectorDescription = document.getElementById("DescriptionOutdoor");
-  Description =
-    selectorDescription[selectorDescription.selectorDescription.selectedIndex]
-      .value;
+  Description = selectorDescription[selectorDescription.selectedIndex].value;
   console.log(Activity);
   console.log(facilityType);
   console.log(Description);
@@ -223,12 +218,13 @@ function getLocation() {
   }
 }
 
-let imgData;
 function take_snapshot() {
   // take snapshot and get image data
   Webcam.snap(function (data_uri) {
     // display results in page
     imgData = data_uri;
+
+    console.log(imgData);
 
     document.getElementById("results").innerHTML =
       "<h5>Note : Supply Site Information in the form Below and <br> Click Download</h5>" +
@@ -345,26 +341,35 @@ reverseGeocoder.getClientCoordinates(function (result) {
   console.log(result.locality);
 });
 
-console.log("still Loading wrong one");
+console.log("IMAGE DATA");
 
 ////PREV NEXT
+0;
+
+var video = document.createElement("video");
+video.src = "./assets/Black.mp4";
+video.type = "video/mp4";
 
 const DownloadZip = () => {
-  //var imgData = data_uri;
-
   var zip = new JSZip();
 
   var img = zip.folder("Outdoor Photos");
 
-  //format name, data url
+  var imgData2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
 
-  img.file("Yard_sign.jpg", imgData, { base64: false });
+  //SO CONVERT THE DATA URL TO BASE64
+  //SOLUTION
+  //The image data is either a base64 string (as above) or a binary array.
+  //These can both be obtained from the canvas element with toDataURL or getImageData respectively.
+  //format name, data url, format
+  console.log(imgData);
+  img.file("Yard_sign.jpeg", imgData);
   img.file("Yard_overview/south.jpg", imgData, { base64: false });
   img.file("Yard_overview/west.jpg", imgData, { base64: false });
   img.file("Yard_overview/North.jpg", imgData, { base64: false });
   img.file("Yard_overview/East.jpg", imgData, { base64: false });
 
-  img.file("Fencing.jpg", imgData, { base64: false });
+  img.file("Fencing.gif", imgData2, { base64: true });
   img.file("Building_enclosure.jpg", imgData, { base64: false });
   img.file("Target_wall_for_mast.jpg", imgData, { base64: false });
   img.file("Target_wall_for_mast_Roof.jpg", imgData, { base64: false });
@@ -379,7 +384,7 @@ const DownloadZip = () => {
   img.file("outdoor_facilities.jpg", imgData, { base64: false });
   img.file("Proposed_slurry_pit.jpg", imgData, { base64: false });
   img.file("overhead_wiring.jpg", imgData, { base64: false });
-  //base64 : true
+  //base64 : false
 
   var img2 = zip.folder("Indoor Photos");
   img2.file("From_the_doorway.jpg", imgData, { base64: false });
@@ -406,14 +411,18 @@ const DownloadZip = () => {
   img2.file("unusual.jpg", imgData, { base64: false });
   img2.file("safety_issues_dangers_concerns.jpg", imgData, { base64: false });
 
-  var img3 = zip.folder("Video with Descriptive Audio");
-  img3.file("Video_Yard_overview.mp4", imgData, { base64: false });
-  img3.file("Video_Outside_each_building.mp4", imgData, { base64: false });
-  img3.file("Video_Inside_each_building.mp4", imgData, { base64: false });
-  img3.file("Video_Existing_network_cabinets.mp4", imgData, { base64: false });
-  img3.file("Video_Proposed_solution_inside.mp4", imgData, { base64: false });
-  img3.file("Video_direction_to_services.mp4", imgData, { base64: false });
-  img3.file("Video_safety_issues_dangers_concerns.mp4", imgData, {
+  var video = zip.folder("Video with Descriptive Audio");
+  video.file("Video_Yard_overview.mp4", video.src);
+  video.file("Video_Outside_each_building.mp4", video.src);
+  video.file("Video_Inside_each_building.mp4", video.src);
+  video.file("Video_Existing_network_cabinets.mp4", video.src, {
+    base64: false,
+  });
+  video.file("Video_Proposed_solution_inside.mp4", video.src, {
+    base64: false,
+  });
+  video.file("Video_direction_to_services.mp4", video.src, { base64: false });
+  video.file("Video_safety_issues_dangers_concerns.mp4", video.src, {
     base64: false,
   });
 
