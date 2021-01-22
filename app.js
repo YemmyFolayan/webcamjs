@@ -14,6 +14,11 @@ let city;
 let country;
 let exactLocation;
 
+document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
+document.getElementById("DescriptionOutdoor1").style.visibility = "visible";
+document.getElementById("DescriptionVideo1").style.visibility = "hidden";
+document.getElementById("Descriptionshots1").style.visibility = "hidden";
+
 var counter = 1;
 $("body").on("click", ".next", function () {
   $(".content").hide();
@@ -27,19 +32,56 @@ $("body").on("click", ".next", function () {
   if (counter > 1) {
     $(".back").show();
     var id = counter;
-    if ("content-" + id === document.getElementById("content-2").id) {
+    if ("content-" + id === document.getElementById("content-1").id) {
+      locationType = "Outdoor Photos";
+      document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
+      document.getElementById("DescriptionOutdoor1").style.visibility =
+        "visible";
+      document.getElementById("DescriptionVideo1").style.visibility = "hidden";
+      document.getElementById("Descriptionshots1").style.visibility = "hidden";
+
+      console.log(locationType);
+    } else if ("content-" + id === document.getElementById("content-2").id) {
       locationType = "Indoor Photos";
+      document.getElementById("DescriptionIndoor1").style.visibility =
+        "visible";
+      document.getElementById("DescriptionOutdoor1").style.visibility =
+        "hidden";
+      document.getElementById("DescriptionVideo1").style.visibility = "hidden";
+      document.getElementById("Descriptionshots1").style.visibility = "hidden";
+
       console.log(locationType);
     } else if ("content-" + id === document.getElementById("content-3").id) {
       locationType = "Video with Descriptive Audio";
+
+      document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
+      document.getElementById("DescriptionOutdoor1").style.visibility =
+        "hidden";
+      document.getElementById("DescriptionVideo1").style.visibility = "visible";
+      document.getElementById("Descriptionshots1").style.visibility = "hidden";
+
       console.log(locationType);
     } else if ("content-" + id === document.getElementById("content-4").id) {
       locationType = "Screen Shots";
       console.log(locationType);
+
+      document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
+      document.getElementById("DescriptionOutdoor1").style.visibility =
+        "hidden";
+      document.getElementById("DescriptionVideo1").style.visibility = "hidden";
+
+      document.getElementById("Descriptionshots1").style.visibility = "visible";
     } else {
       console.log("not working");
 
       document.getElementById("circleHide2").style.visibility = "hidden";
+
+      document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
+      document.getElementById("DescriptionOutdoor1").style.visibility =
+        "hidden";
+      document.getElementById("DescriptionVideo1").style.visibility = "hidden";
+
+      document.getElementById("Descriptionshots1").style.visibility = "hidden";
 
       alert("Done !, Re-Take Site Pictures");
       //window.location.assign("index.html");
@@ -84,8 +126,10 @@ FoodForm.addEventListener("submit", function (e) {
 
   Building = selectorBuilding[selectorBuilding.selectedIndex].value;
 
-  Description = document.getElementById("Description").value;
-
+  var selectorDescription = document.getElementById("DescriptionOutdoor");
+  Description =
+    selectorDescription[selectorDescription.selectorDescription.selectedIndex]
+      .value;
   console.log(Activity);
   console.log(facilityType);
   console.log(Description);
