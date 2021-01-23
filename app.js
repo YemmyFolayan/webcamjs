@@ -139,7 +139,7 @@ FoodForm.addEventListener("submit", function (e) {
     Description +
     today +
     ImageNumber +
-    ".jpg";
+    ".jpeg";
   getLocation();
 });
 
@@ -187,7 +187,7 @@ function showPosition(position) {
     Description +
     today +
     ImageNumber +
-    ".jpg";
+    ".jpeg";
 }
 
 // FIA, SiteName, facilityType, Activity, Building, Description,
@@ -222,9 +222,6 @@ function take_snapshot() {
   // take snapshot and get image data
   Webcam.snap(function (data_uri) {
     // display results in page
-    imgData = data_uri;
-
-    console.log(imgData);
 
     document.getElementById("results").innerHTML =
       "<h5>Note : Supply Site Information in the form Below and <br> Click Download</h5>" +
@@ -263,6 +260,9 @@ function take_snapshot() {
       cw = tempCanvas.width = canvas.width;
       ch = tempCanvas.height = canvas.height;
       tempCtx.drawImage(canvas, 0, 0);
+
+      imgData = tempCtx.getImageData(0, 0, cw, ch);
+      console.log(imgData);
       tempCtx.font = "18px verdana";
       var textWidth = tempCtx.measureText(text).width;
       tempCtx.globalAlpha = 0.5;
@@ -273,6 +273,14 @@ function take_snapshot() {
       // just testing by adding tempCanvas to document
       tempCanvas2.appendChild(tempCanvas);
       return tempCanvas.toDataURL();
+      /*
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      var img = document.getElementById("scream");
+      ctx.drawImage(img, 0, 0);
+      var base64String = ctx.getImageData(0, 0, c.width, c.height);
+
+      */
     }
   });
 }
@@ -286,7 +294,7 @@ textWrapper.innerHTML = textWrapper.textContent.replace(
 );
 
 anime
-  .timeline({ loop: false })
+  .timeline({ loop: true })
   .add({
     targets: ".ml1 .letter",
     scale: [0.3, 1],
@@ -344,7 +352,6 @@ reverseGeocoder.getClientCoordinates(function (result) {
 console.log("IMAGE DATA");
 
 ////PREV NEXT
-0;
 
 var video = document.createElement("video");
 video.src = "./assets/Black.mp4";
@@ -355,81 +362,93 @@ const DownloadZip = () => {
 
   var img = zip.folder("Outdoor Photos");
 
-  var imgData2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
+  let base64String = btoa(String.fromCharCode(...new Uint8Array(imgData)));
 
-  //SO CONVERT THE DATA URL TO BASE64
+  console.log(base64String);
+
+  //var base64String2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
+
+  //SO CONVERT THE DATA URL TO base64
   //SOLUTION
-  //The image data is either a base64 string (as above) or a binary array.
+  //The image data is either a base64 string (as above) or a base64 array.
   //These can both be obtained from the canvas element with toDataURL or getImageData respectively.
-  //format name, data url, format
-  console.log(imgData);
-  img.file("Yard_sign.jpeg", imgData);
-  img.file("Yard_overview/south.jpg", imgData, { base64: false });
-  img.file("Yard_overview/west.jpg", imgData, { base64: false });
-  img.file("Yard_overview/North.jpg", imgData, { base64: false });
-  img.file("Yard_overview/East.jpg", imgData, { base64: false });
+  //file(name, data [,options])
 
-  img.file("Fencing.gif", imgData2, { base64: true });
-  img.file("Building_enclosure.jpg", imgData, { base64: false });
-  img.file("Target_wall_for_mast.jpg", imgData, { base64: false });
-  img.file("Target_wall_for_mast_Roof.jpg", imgData, { base64: false });
-  img.file("Bruce_box.jpg", imgData, { base64: false });
-  img.file("Building_and_tower_grounds.jpg", imgData, { base64: false });
-  img.file("All_outdoor_communications.jpg", imgData, { base64: false });
-  img.file("Existing_masts_towers_VSAT.jpg", imgData, { base64: false });
-  img.file("towers_VSAT_cableRouting.jpg", imgData, { base64: false });
-  img.file("tower_conduit.jpg", imgData, { base64: false });
-  img.file("trenching_(Tremwa).jpg", imgData, { base64: false });
-  img.file("Existing_cable_trays.jpg", imgData, { base64: false });
-  img.file("outdoor_facilities.jpg", imgData, { base64: false });
-  img.file("Proposed_slurry_pit.jpg", imgData, { base64: false });
-  img.file("overhead_wiring.jpg", imgData, { base64: false });
-  //base64 : false
+  console.log(base64String);
+  console.log(imgData);
+  img.file("Yard_sign.jpeg", base64String, { base64: true });
+  img.file("Yard_overview/south.jpeg", base64String, { base64: true });
+  img.file("Yard_overview/west.jpeg", base64String, { base64: true });
+  img.file("Yard_overview/North.jpeg", base64String, { base64: true });
+  img.file("Yard_overview/East.jpeg", base64String, { base64: true });
+
+  img.file("Fencing.gif", base64String, { base64: true });
+  img.file("Building_enclosure.jpeg", base64String, { base64: true });
+  img.file("Target_wall_for_mast.jpeg", base64String, { base64: true });
+  img.file("Target_wall_for_mast_Roof.jpeg", base64String, { base64: true });
+  img.file("Bruce_box.jpeg", base64String, { base64: true });
+  img.file("Building_and_tower_grounds.jpeg", base64String, { base64: true });
+  img.file("All_outdoor_communications.jpeg", base64String, { base64: true });
+  img.file("Existing_masts_towers_VSAT.jpeg", base64String, { base64: true });
+  img.file("towers_VSAT_cableRouting.jpeg", base64String, { base64: true });
+  img.file("tower_conduit.jpeg", base64String, { base64: true });
+  img.file("trenching_(Tremwa).jpeg", base64String, { base64: true });
+  img.file("Existing_cable_trays.jpeg", base64String, { base64: true });
+  img.file("outdoor_facilities.jpeg", base64String, { base64: true });
+  img.file("Proposed_slurry_pit.jpeg", base64String, { base64: true });
+  img.file("overhead_wiring.jpeg", base64String, { base64: true });
+  //base64 : true
 
   var img2 = zip.folder("Indoor Photos");
-  img2.file("From_the_doorway.jpg", imgData, { base64: false });
-  img2.file("indoor_communications_rooms.jpg", imgData, { base64: false });
-  img2.file("Cable_entry_point.jpg", imgData, { base64: false });
-  img2.file("Existing_cable_runs.jpg", imgData, { base64: false });
-  img2.file("Telco_WAN_termination.jpg", imgData, { base64: false });
-  img2.file("cable_termination_equipment.jpg", imgData, { base64: false });
-  img2.file("Wall_boards.jpg", imgData, { base64: false });
-  img2.file("Patch_panels.jpg", imgData, { base64: false });
-  img2.file("equipment_install_location.jpg", imgData, { base64: false });
-  img2.file("rack_install_location.jpg", imgData, { base64: false });
-  img2.file("antenna_mounting_location.jpg", imgData, { base64: false });
-  img2.file("Equipment_interconnections.jpg", imgData, { base64: false });
-  img2.file("data_networking_gear.jpg", imgData, { base64: false });
-  img2.file("Switches_routers_modems.jpg", imgData, { base64: false });
-  img2.file("Identify_active_and_spare_ports.jpg", imgData, { base64: false });
-  img2.file("Telephones_and_telephone_numbers.jpg", imgData, { base64: false });
-  img2.file("Cable_jacks_and_proposed.jpg", imgData, { base64: false });
-  img2.file("radio_equipment.jpg", imgData, { base64: false });
-  img2.file("Barton.jpg", imgData, { base64: false });
-  img2.file("Bristol.jpg", imgData, { base64: false });
-  img2.file("PBX.jpg", imgData, { base64: false });
-  img2.file("unusual.jpg", imgData, { base64: false });
-  img2.file("safety_issues_dangers_concerns.jpg", imgData, { base64: false });
+  img2.file("From_the_doorway.jpeg", base64String, { base64: true });
+  img2.file("indoor_communications_rooms.jpeg", base64String, { base64: true });
+  img2.file("Cable_entry_point.jpeg", base64String, { base64: true });
+  img2.file("Existing_cable_runs.jpeg", base64String, { base64: true });
+  img2.file("Telco_WAN_termination.jpeg", base64String, { base64: true });
+  img2.file("cable_termination_equipment.jpeg", base64String, { base64: true });
+  img2.file("Wall_boards.jpeg", base64String, { base64: true });
+  img2.file("Patch_panels.jpeg", base64String, { base64: true });
+  img2.file("equipment_install_location.jpeg", base64String, { base64: true });
+  img2.file("rack_install_location.jpeg", base64String, { base64: true });
+  img2.file("antenna_mounting_location.jpeg", base64String, { base64: true });
+  img2.file("Equipment_interconnections.jpeg", base64String, { base64: true });
+  img2.file("data_networking_gear.jpeg", base64String, { base64: true });
+  img2.file("Switches_routers_modems.jpeg", base64String, { base64: true });
+  img2.file("Identify_active_and_spare_ports.jpeg", base64String, {
+    base64: true,
+  });
+  img2.file("Telephones_and_telephone_numbers.jpeg", base64String, {
+    base64: true,
+  });
+  img2.file("Cable_jacks_and_proposed.jpeg", base64String, { base64: true });
+  img2.file("radio_equipment.jpeg", base64String, { base64: true });
+  img2.file("Barton.jpeg", base64String, { base64: true });
+  img2.file("Bristol.jpeg", base64String, { base64: true });
+  img2.file("PBX.jpeg", base64String, { base64: true });
+  img2.file("unusual.jpeg", base64String, { base64: true });
+  img2.file("safety_issues_dangers_concerns.jpeg", base64String, {
+    base64: true,
+  });
 
   var video = zip.folder("Video with Descriptive Audio");
   video.file("Video_Yard_overview.mp4", video.src);
   video.file("Video_Outside_each_building.mp4", video.src);
   video.file("Video_Inside_each_building.mp4", video.src);
   video.file("Video_Existing_network_cabinets.mp4", video.src, {
-    base64: false,
+    base64: true,
   });
   video.file("Video_Proposed_solution_inside.mp4", video.src, {
-    base64: false,
+    base64: true,
   });
-  video.file("Video_direction_to_services.mp4", video.src, { base64: false });
+  video.file("Video_direction_to_services.mp4", video.src, { base64: true });
   video.file("Video_safety_issues_dangers_concerns.mp4", video.src, {
-    base64: false,
+    base64: true,
   });
 
   var img4 = zip.folder("Screen Shots");
-  img4.file("Speed_tests.jpg", imgData, { base64: false });
-  img4.file("Cellular_signal_tests.jpg", imgData, { base64: false });
-  img4.file("Satellite_signal_tests.jpg", imgData, { base64: false });
+  img4.file("Speed_tests.jpeg", base64String, { base64: true });
+  img4.file("Cellular_signal_tests.jpeg", base64String, { base64: true });
+  img4.file("Satellite_signal_tests.jpeg", base64String, { base64: true });
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
     // see FileSaver.js
