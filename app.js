@@ -80,7 +80,7 @@ $("body").on("click", ".next", function () {
       document.getElementById("hideSection").style.visibility = "hidden";
       document.getElementById("downloadZip").style.visibility = "visible";
 
-      alert("Done !, Re-Take Site Pictures");
+      alert("Done !, Proceed to Download Files");
       //window.location.assign("index.html");
     }
   }
@@ -364,6 +364,7 @@ const DownloadZip = () => {
 
   let base64String = btoa(String.fromCharCode(...new Uint8Array(imgData)));
 
+  console.log("base64below");
   console.log(base64String);
 
   //var base64String2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
@@ -373,6 +374,8 @@ const DownloadZip = () => {
   //The image data is either a base64 string (as above) or a base64 array.
   //These can both be obtained from the canvas element with toDataURL or getImageData respectively.
   //file(name, data [,options])
+
+  //it takes jszip it doesnot allow dataurl
 
   console.log(base64String);
   console.log(imgData);
