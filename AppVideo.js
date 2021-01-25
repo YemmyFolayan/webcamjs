@@ -82,6 +82,7 @@ const VideoRecord = () => {
         chunks.push(ev.data);
       };
       mediaRecorder.onstop = (ev) => {
+        console.log(blobVideo);
         blobVideo = new Blob(chunks, { type: "video/mp4;" });
         chunks = [];
         let videoURL = window.URL.createObjectURL(blobVideo);
