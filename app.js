@@ -231,6 +231,7 @@ function take_snapshot() {
       '" href="' +
       data_uri +
       '" title="ImageName"><button class="button">Download  ⬇</button></a>';
+
     DataURL1 = data_uri;
     //Water mark image
     var canvas = document.getElementById("canvas");
@@ -380,16 +381,10 @@ console.log("IMAGE DATA");
 
 ////PREV NEXT
 
-var video = document.createElement("video");
-video.src = "./assets/Black.mp4";
-video.type = "video/mp4";
-
 const DownloadZip = () => {
   var zip = new JSZip();
 
   var img = zip.folder("Outdoor Photos");
-
-  console.log(imgData.data);
 
   //var blob2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
 
@@ -454,21 +449,6 @@ const DownloadZip = () => {
   img2.file("PBX.png", blob, { base64: false });
   img2.file("unusual.png", blob, { base64: false });
   img2.file("safety_issues_dangers_concerns.png", blob, {
-    base64: false,
-  });
-
-  var video = zip.folder("Video with Descriptive Audio");
-  video.file("Video_Yard_overview.mp4", video.src);
-  video.file("Video_Outside_each_building.mp4", video.src);
-  video.file("Video_Inside_each_building.mp4", video.src);
-  video.file("Video_Existing_network_cabinets.mp4", video.src, {
-    base64: false,
-  });
-  video.file("Video_Proposed_solution_inside.mp4", video.src, {
-    base64: false,
-  });
-  video.file("Video_direction_to_services.mp4", video.src, { base64: false });
-  video.file("Video_safety_issues_dangers_concerns.mp4", video.src, {
     base64: false,
   });
 

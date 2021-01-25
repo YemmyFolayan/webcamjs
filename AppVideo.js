@@ -1,5 +1,7 @@
 console.log("videkkkkoo");
 
+let blobVideo;
+
 const VideoRecord = () => {
   let constraintObj = {
     audio: false,
@@ -80,17 +82,19 @@ const VideoRecord = () => {
         chunks.push(ev.data);
       };
       mediaRecorder.onstop = (ev) => {
-        let blob = new Blob(chunks, { type: "video/mp4;" });
+        blobVideo = new Blob(chunks, { type: "video/mp4;" });
         chunks = [];
-        let videoURL = window.URL.createObjectURL(blob);
+        let videoURL = window.URL.createObjectURL(blobVideo);
+
         vidSave.src = videoURL;
 
         console.log(vidSave);
 
-        document.getElementById("downloadVid").innerHTML =
+        /* document.getElementById("downloadVid").innerHTML =
           '<a  download="video" href="' +
           videoURL +
           '" title="video"><button class="button">Download Video ⬇</button></a>';
+      */
       };
     })
     .catch(function (err) {
@@ -101,3 +105,32 @@ const VideoRecord = () => {
 VideoRecord();
 
 console.log("videooooo");
+
+const DownloadVideoZip = () => {
+  var zip = new JSZip();
+
+  var video = zip.folder("Video with Descriptive Audio");
+  video.file("Video_Yard_overview.mp4", blobVideo, { base64: false });
+  video.file("Video_Outside_each_building.mp4", blobVideo, {
+    base64: false,
+  });
+  video.file("Video_Inside_each_building.mp4", blobVideo, {
+    base64: false,
+  });
+  video.file("Video_Existing_network_cabinets.mp4", blobVideo, {
+    base64: false,
+  });
+  video.file("Video_Proposed_solution_inside.mp4", blobVideo, {
+    base64: false,
+  });
+  video.file("Video_direction_to_services.mp4", blobVideo, {
+    base64: false,
+  });
+  video.file("Video_safety_issues_dangers_concerns.mp4", blobVideo, {
+    base64: false,
+  });
+  zip.generateAsync({ type: "blob" }).then(function (content) {
+    // see FileSaver.js
+    saveAs(content, "Comserve Video.zip");
+  });
+};
