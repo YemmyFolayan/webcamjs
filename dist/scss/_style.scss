@@ -242,11 +242,11 @@ header {
 
 .projects__grid {
   width: 100%;
-  margin: 2.5rem auto;
+  margin: -1.25rem !important;
   display: grid;
   -webkit-box-align: center;
   align-items: center;
-  gap: 1rem;
+
   grid-template-columns: 1fr;
 }
 

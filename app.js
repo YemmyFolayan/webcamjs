@@ -9,6 +9,7 @@ let today;
 let FIA;
 
 let locationType;
+let locationTypeSecond;
 
 let city;
 let country;
@@ -106,6 +107,426 @@ $("body").on("click", ".back", function () {
 //then  let facilityType = "Meter";
 
 $("body").on("click", ".edit-previous", function () {});
+
+////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+////////////SECOND ONE
+
+var counterSecond = 1;
+$("body").on("click", ".nextSecond", function () {
+  $(".contentSecond").hide();
+
+  counterSecond++;
+  $("#contentSecond-" + counterSecond + "").show();
+
+  ////////////////////////////////
+
+  console.log("before ifSecond");
+  if (counterSecond > 1) {
+    $(".backSecond").show();
+    var idSecond = counterSecond;
+    if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-1").id
+    ) {
+      locationTypeSecond = "Yard sign";
+      //document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
+      //document.getElementById("DescriptionOutdoor1").style.visibility ="visible";
+      //document.getElementById("DescriptionVideo1").style.visibility = "hidden";
+      //document.getElementById("Descriptionshots1").style.visibility = "hidden";
+
+      console.log(locationType);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-2").id
+    ) {
+      locationTypeSecond = "Yard_overview/south";
+
+      console.log(locationType);
+      console.log("catch");
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-3").id
+    ) {
+      locationTypeSecond = "Yard_overview/west";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-4").id
+    ) {
+      locationTypeSecond = "Yard_overview/North";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-5").id
+    ) {
+      locationTypeSecond = "Yard_overview/East";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-6").id
+    ) {
+      locationTypeSecond = "Fencing";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-7").id
+    ) {
+      locationTypeSecond = "Building_enclosure";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-8").id
+    ) {
+      locationTypeSecond = "Target_wall_for_mast";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-9").id
+    ) {
+      locationTypeSecond = "Target_wall_for_mast_Roof";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-10").id
+    ) {
+      locationTypeSecond = "Bruce_box";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-11").id
+    ) {
+      locationTypeSecond = "Building_and_tower_grounds";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-12").id
+    ) {
+      locationTypeSecond = "All_outdoor_communications";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-13").id
+    ) {
+      locationTypeSecond = "Existing_masts_towers_VSAT";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-14").id
+    ) {
+      locationTypeSecond = "towers_VSAT_cableRouting";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-15").id
+    ) {
+      locationTypeSecond = "tower_conduit";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-16").id
+    ) {
+      locationTypeSecond = "trenching_(Tremwa)";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-17").id
+    ) {
+      locationTypeSecond = "Existing_cable_trays";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-18").id
+    ) {
+      locationTypeSecond = "outdoor_facilities";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-19").id
+    ) {
+      locationTypeSecond = "Proposed_slurry_pit";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-20").id
+    ) {
+      locationTypeSecond = "overhead_wiring";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-21").id
+    ) {
+      locationTypeSecond = "From_the_doorway";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-22").id
+    ) {
+      locationTypeSecond = "indoor_communications_rooms";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-23").id
+    ) {
+      locationTypeSecond = "Cable_entry_point";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-24").id
+    ) {
+      locationTypeSecond = "Existing_cable_runs";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-25").id
+    ) {
+      locationTypeSecond = "Telco_WAN_termination";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-26").id
+    ) {
+      locationTypeSecond = "cable_termination_equipment";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-27").id
+    ) {
+      locationTypeSecond = "Wall_boards";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-28").id
+    ) {
+      locationTypeSecond = "Patch_panels";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-29").id
+    ) {
+      locationTypeSecond = "equipment_install_location";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-30").id
+    ) {
+      locationTypeSecond = "rack_install_location";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-31").id
+    ) {
+      locationTypeSecond = "antenna_mounting_location";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-32").id
+    ) {
+      locationTypeSecond = "Equipment_interconnections";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-33").id
+    ) {
+      locationTypeSecond = "data_networking_gear";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-34").id
+    ) {
+      locationTypeSecond = "Switches_routers_modems";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-35").id
+    ) {
+      locationTypeSecond = "Identify_active_and_spare_ports";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-36").id
+    ) {
+      locationTypeSecond = "Telephones_and_telephone_numbers";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-37").id
+    ) {
+      locationTypeSecond = "Cable_jacks_and_proposed";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-38").id
+    ) {
+      locationTypeSecond = "radio_equipment";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-39").id
+    ) {
+      locationTypeSecond = "Barton";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-40").id
+    ) {
+      locationTypeSecond = "PBX";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-41").id
+    ) {
+      locationTypeSecond = "unusual";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-42").id
+    ) {
+      locationTypeSecond = "safety_issues_dangers_concerns";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-43").id
+    ) {
+      locationTypeSecond = "Speed_tests";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-44").id
+    ) {
+      locationTypeSecond = "Cellular_signal_tests";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-45").id
+    ) {
+      locationTypeSecond = "Satellite_signal_tests";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-46").id
+    ) {
+      locationTypeSecond = "Video_Yard_overview";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-47").id
+    ) {
+      locationTypeSecond = "Video_Outside_each_building";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-48").id
+    ) {
+      locationTypeSecond = "Video_Inside_each_building";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-49").id
+    ) {
+      locationTypeSecond = "Video_Existing_network_cabinets";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-50").id
+    ) {
+      locationTypeSecond = "Video_Proposed_solution_inside";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-51").id
+    ) {
+      locationTypeSecond = "Video_direction_to_services";
+
+      console.log(locationTypeSecond);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-52").id
+    ) {
+      locationTypeSecond = "Video_safety_issues_dangers_concerns";
+
+      console.log(locationTypeSecond);
+    } else {
+      console.log("Second condiiotns not working");
+
+      document.getElementById("hideSection").style.visibility = "hidden";
+      document.getElementById("downloadZip").style.visibility = "visible";
+
+      alert("Done !, Proceed to Download Files");
+      //window.location.assign("index.html");
+    }
+  }
+  if (counterSecond > 57) {
+    $(".contentSecond-holder").hide();
+    $(".endSecond").show();
+  }
+});
+
+$("body").on("click", ".backSecond", function () {
+  //alert(counter);
+  counter--;
+  $(".contentSecond").hide();
+  var idSecond = counterSecond;
+  $("#contentSecond-" + idSecond).show();
+  if (counterSecond < 57) {
+    $(".backSecond").hide();
+  }
+});
+
+const newLocal = ".edit-previousSecond";
+// if content-1 =  ("#content-" + id)
+//then  let facilityType = "Meter";
+
+$("body").on("click", newLocal, function () {});
 
 // and FIA as zipcode, site name from gps/ facility type and Activity
 
