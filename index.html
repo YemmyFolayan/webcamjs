@@ -103,7 +103,11 @@
 
   <!-- About Section  -->
 
-  <section class="about">
+  <section class="about container">
+
+  <div class="projects__grid">
+
+  <div class="project">
 
     <div class="about__inner wrap padded" id="hideSection">
 
@@ -113,20 +117,20 @@
            
             <div class="content" id="content-1" style="display: block;">
      
-                <input type="text" id="Outdoor" value="Outdoor Photos" class="dynamicText">Outdoor Photos</input>
+                <input type="text" id="Outdoor" value="Outdoor Photos" class="dynamicText"></input>
               
             </div>
             <div class="content" id="content-2">
-                <input type="text" id="Indoor" value="Indoor Photos" class="dynamicText">Indoor Photos</input>
+                <input type="text" id="Indoor" value="Indoor Photos" class="dynamicText"></input>
          
             </div>
 
             <div class="content" id="content-3">
-                <input type="text" id="Video" value="Video with Descriptive Audio" class="dynamicText">Video with Descriptive Audio</input>
+                <input type="text" id="Video" value="Video with Descriptive Audio" class="dynamicText"></input>
               
             </div>
           <div class="content" id="content-4">
-              <input type="text" id="Shots" value="Screen Shots" class="dynamicText">Screen Shots</input>
+              <input type="text" id="Shots" value="Screen Shots" class="dynamicText"></input>
             
           </div>
 
@@ -172,6 +176,10 @@
           </div>
 
 
+
+
+
+
           <!--TEST RUN-->
 
 
@@ -202,7 +210,7 @@
 
 
 <!--SECOND PREV NEXT-->
-<div class="contentSecond-holder">
+        <div class="contentSecond-holder">
 
           <div id="OutdoorPix">
 
@@ -468,6 +476,8 @@
 
             </div>
 
+            </div>
+
 
             <!-- SECOND ONE-->
 
@@ -479,18 +489,35 @@
 
             </div>
 
+            <form>
+              <input
+                class="circle zoom"
+                type="button"
+                value=""
+                onClick="take_snapshot()"
+              />
+            </form>
+
 
             <div class="projects">     <button type="button" class="nextSecond button">Next &raquo; </button> </div>  
 
  
 
 
+  
 
             </div>
 
 
 
           </div>
+
+
+   
+
+
+
+
 
 
 
@@ -514,6 +541,8 @@
       </div>
 
 
+
+      <div class="project">
       <div class="about__avatar">
         <div class="" id="results"><h5> Your captured image will appear here... </h5>
           
@@ -549,29 +578,14 @@
 
         
       </div>
-      <div class="about__wrap" id="circleHide2">
 
-        <div id="circleHide3">
-       
-        <h4 class="section__heading" margin="800px">
 
-        <div id="circleHide"
-          <form>
-            <input
-              class="circle zoom"
-              type="button"
-              value=""
-              onClick="take_snapshot()"
-            />
-          </form>
-        </h4>
-        <p class="about__intro">
-          <span class="howdy"> Howdy! ⤵</span>
-         Tap To take Snapshot
-        </p>
-      </div>
+         </div>
 
-  
+
+
+
+     
        
         <!-- Social List  -->
 

@@ -11,11 +11,11 @@
 **/
 
 .zoom {
-  padding: 50px;
+  padding: 20px;
   background-color: green;
   transition: transform 0.2s;
-  width: 200px;
-  height: 200px;
+  width: 70px !important;
+  height: 70px !important;
   margin: 0 auto;
 }
 
@@ -246,14 +246,13 @@ button .back:hover .next:hover {
 }
 
 .circle {
-  height: 150px !important;
-  width: 150px !important;
+  height: 60px !important;
+  width: 60px !important;
   border-radius: 100%;
   background-image: url(./images/takephoto.webp) !important;
   background-size: cover;
   font-weight: 800;
   color: antiquewhite;
-  margin-left: 50px !important;
 }
 
 .floating-box3 {
@@ -363,6 +362,7 @@ input[type="submit"] {
   box-sizing: border-box;
   border: 1px solid #555;
   outline: none;
+  border-radius: 10px;
 }
 
 input[type="text"]:focus {
@@ -423,6 +423,13 @@ u {
 }
 
 /* Add some content at the bottom of the video/page */
+
+.projects__grid {
+  margin: -1.25rem !important;
+
+  gap: 1rem;
+}
+
 .content,
 .contentSecond {
   position: relative;
