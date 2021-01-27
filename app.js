@@ -112,6 +112,10 @@ $("body").on("click", ".edit-previous", function () {});
 //////////////////////////////////////////////////////////////
 
 ////////////SECOND ONE
+Description = "Yard_sign";
+
+console.log(Description);
+console.log("before ifSecond");
 
 var counterSecond = 1;
 $("body").on("click", ".nextSecond", function () {
@@ -120,9 +124,7 @@ $("body").on("click", ".nextSecond", function () {
   counterSecond++;
   $("#contentSecond-" + counterSecond + "").show();
 
-  ////////////////////////////////
-
-  console.log("before ifSecond");
+  ////////////////
   if (counterSecond > 1) {
     $(".backSecond").show();
     var idSecond = counterSecond;
@@ -131,10 +133,6 @@ $("body").on("click", ".nextSecond", function () {
       document.getElementById("contentSecond-1").id
     ) {
       locationTypeSecond = "Yard sign";
-      //document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
-      //document.getElementById("DescriptionOutdoor1").style.visibility ="visible";
-      //document.getElementById("DescriptionVideo1").style.visibility = "hidden";
-      //document.getElementById("Descriptionshots1").style.visibility = "hidden";
 
       console.log(locationType);
     } else if (
@@ -142,8 +140,11 @@ $("body").on("click", ".nextSecond", function () {
       document.getElementById("contentSecond-2").id
     ) {
       locationTypeSecond = "Yard_overview/south";
+      Description = document.getElementById("Yard_overview/south").value;
 
-      console.log(locationType);
+      console.log(Description);
+
+      console.log(locationTypeSecond);
       console.log("catch");
     } else if (
       "contentSecond-" + idSecond ===
@@ -152,6 +153,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Yard_overview/west";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Yard_overview/west").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-4").id
@@ -159,6 +163,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Yard_overview/North";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Yard_overview/North").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-5").id
@@ -166,6 +173,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Yard_overview/East";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Yard_overview/East").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-6").id
@@ -173,6 +183,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Fencing";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Fencing").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-7").id
@@ -180,6 +193,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Building_enclosure";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Building_enclosure").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-8").id
@@ -187,6 +203,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Target_wall_for_mast";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Target_wall_for_mast").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-9").id
@@ -194,6 +213,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Target_wall_for_mast_Roof";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Target_wall_for_mast_Roof").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-10").id
@@ -201,6 +223,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Bruce_box";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Bruce_box").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-11").id
@@ -208,6 +233,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Building_and_tower_grounds";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Building_and_tower_grounds").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-12").id
@@ -215,6 +243,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "All_outdoor_communications";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("All_outdoor_communications").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-13").id
@@ -222,6 +253,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Existing_masts_towers_VSAT";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Existing_masts_towers_VSAT").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-14").id
@@ -229,6 +263,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "towers_VSAT_cableRouting";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("towers_VSAT_cableRouting").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-15").id
@@ -236,6 +273,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "tower_conduit";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("tower_conduit").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-16").id
@@ -243,6 +283,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "trenching_(Tremwa)";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("trenching_(Tremwa)").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-17").id
@@ -250,6 +293,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Existing_cable_trays";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Existing_cable_trays").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-18").id
@@ -257,6 +303,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "outdoor_facilities";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("outdoor_facilities").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-19").id
@@ -264,6 +313,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Proposed_slurry_pit";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Proposed_slurry_pit").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-20").id
@@ -271,6 +323,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "overhead_wiring";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("overhead_wiring").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-21").id
@@ -278,6 +333,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "From_the_doorway";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("From_the_doorway").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-22").id
@@ -285,6 +343,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "indoor_communications_rooms";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("indoor_communications_rooms")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-23").id
@@ -292,6 +354,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Cable_entry_point";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Cable_entry_point").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-24").id
@@ -299,6 +364,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Existing_cable_runs";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Existing_cable_runs").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-25").id
@@ -306,6 +374,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Telco_WAN_termination";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Telco_WAN_termination").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-26").id
@@ -313,6 +384,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "cable_termination_equipment";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("cable_termination_equipment")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-27").id
@@ -320,6 +395,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Wall_boards";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Wall_boards").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-28").id
@@ -327,6 +405,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Patch_panels";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Patch_panels").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-29").id
@@ -334,6 +415,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "equipment_install_location";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("equipment_install_location").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-30").id
@@ -341,6 +425,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "rack_install_location";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("rack_install_location").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-31").id
@@ -348,6 +435,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "antenna_mounting_location";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("antenna_mounting_location").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-32").id
@@ -355,6 +445,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Equipment_interconnections";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Equipment_interconnections").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-33").id
@@ -362,6 +455,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "data_networking_gear";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("data_networking_gear").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-34").id
@@ -369,6 +465,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Switches_routers_modems";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Switches_routers_modems").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-35").id
@@ -376,6 +475,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Identify_active_and_spare_ports";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Identify_active_and_spare_ports")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-36").id
@@ -383,6 +486,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Telephones_and_telephone_numbers";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Telephones_and_telephone_numbers")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-37").id
@@ -390,6 +497,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Cable_jacks_and_proposed";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Cable_jacks_and_proposed").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-38").id
@@ -397,6 +507,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "radio_equipment";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("radio_equipment").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-39").id
@@ -404,6 +517,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Barton";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Barton").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-40").id
@@ -411,6 +527,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "PBX";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("PBX").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-41").id
@@ -418,6 +537,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "unusual";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("unusual").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-42").id
@@ -425,6 +547,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "safety_issues_dangers_concerns";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("safety_issues_dangers_concerns")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-43").id
@@ -432,6 +558,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Speed_tests";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Speed_tests").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-44").id
@@ -439,6 +568,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Cellular_signal_tests";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Cellular_signal_tests").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-45").id
@@ -446,6 +578,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Satellite_signal_tests";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Satellite_signal_tests").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-46").id
@@ -453,6 +588,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Video_Yard_overview";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Yard_overview").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-47").id
@@ -460,6 +598,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Video_Outside_each_building";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Outside_each_building")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-48").id
@@ -467,6 +609,9 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Video_Inside_each_building";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Inside_each_building").value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-49").id
@@ -474,6 +619,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Video_Existing_network_cabinets";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Existing_network_cabinets")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-50").id
@@ -481,6 +630,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Video_Proposed_solution_inside";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Proposed_solution_inside")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-51").id
@@ -488,6 +641,10 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Video_direction_to_services";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById("Video_direction_to_services")
+        .value;
+
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-52").id
@@ -495,6 +652,11 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Video_safety_issues_dangers_concerns";
 
       console.log(locationTypeSecond);
+      Description = document.getElementById(
+        "Video_safety_issues_dangers_concerns"
+      ).value;
+
+      console.log(Description);
     } else {
       console.log("Second condiiotns not working");
 
@@ -513,7 +675,7 @@ $("body").on("click", ".nextSecond", function () {
 
 $("body").on("click", ".backSecond", function () {
   //alert(counter);
-  counter--;
+  counterSecond--;
   $(".contentSecond").hide();
   var idSecond = counterSecond;
   $("#contentSecond-" + idSecond).show();
@@ -545,8 +707,8 @@ FoodForm.addEventListener("submit", function (e) {
 
   Building = selectorBuilding[selectorBuilding.selectedIndex].value;
 
-  var selectorDescription = document.getElementById("DescriptionOutdoor");
-  Description = selectorDescription[selectorDescription.selectedIndex].value;
+  /* var selectorDescription = document.getElementById("DescriptionOutdoor");
+  Description = selectorDescription[selectorDescription.selectedIndex].value; */
   console.log(Activity);
   console.log(facilityType);
   console.log(Description);
