@@ -18,10 +18,6 @@ let exactLocation;
 let imgData;
 let DataURL1;
 let blob;
-document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
-document.getElementById("DescriptionOutdoor1").style.visibility = "visible";
-document.getElementById("DescriptionVideo1").style.visibility = "hidden";
-document.getElementById("Descriptionshots1").style.visibility = "hidden";
 document.getElementById("downloadZip").style.visibility = "hidden";
 
 var counter = 1;
