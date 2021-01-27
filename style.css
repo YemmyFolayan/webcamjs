@@ -140,7 +140,8 @@ a {
 }
 
 /*NEXT PREV */
-.content {
+.content,
+.contentSecond {
   display: none;
 }
 button .back:hover .next:hover {
@@ -422,7 +423,8 @@ u {
 }
 
 /* Add some content at the bottom of the video/page */
-.content {
+.content,
+.contentSecond {
   position: relative;
   bottom: 0;
   top: 0;
