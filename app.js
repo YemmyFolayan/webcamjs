@@ -670,7 +670,7 @@ function take_snapshot() {
       ctx.drawImage(img, 0, 0);
 
       var dateLocation = today + "  " + exactLocation;
-      dataURL = watermarkedDataURL(canvas, dateLocation);
+      let dataURL;
 
       console.log("data url2");
       console.log(dataURL);
