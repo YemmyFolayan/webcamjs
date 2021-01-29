@@ -20,6 +20,10 @@ let DataURL1;
 let blob;
 document.getElementById("downloadZip").style.visibility = "hidden";
 
+document.getElementById("SHOWHIDE").style.visibility = "hidden";
+
+///Disable next and previous for outdoor, attach next to each content limit
+
 var counter = 1;
 $("body").on("click", ".next", function () {
   $(".content").hide();
@@ -34,16 +38,18 @@ $("body").on("click", ".next", function () {
     $(".back").show();
     var id = counter;
     if ("content-" + id === document.getElementById("content-1").id) {
-      locationType = "Outdoor Photos";
+      //locationType = "Outdoor Photos";
       document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
       document.getElementById("DescriptionOutdoor1").style.visibility =
         "visible";
       document.getElementById("DescriptionVideo1").style.visibility = "hidden";
       document.getElementById("Descriptionshots1").style.visibility = "hidden";
 
-      console.log(locationType);
+      //console.log(locationType);
+
+      //Shift contentSecond-1 TO contentSecond-20
     } else if ("content-" + id === document.getElementById("content-2").id) {
-      locationType = "Indoor Photos";
+      //locationType = "Indoor Photos";
       document.getElementById("DescriptionIndoor1").style.visibility =
         "visible";
       document.getElementById("DescriptionOutdoor1").style.visibility =
@@ -51,9 +57,11 @@ $("body").on("click", ".next", function () {
       document.getElementById("DescriptionVideo1").style.visibility = "hidden";
       document.getElementById("Descriptionshots1").style.visibility = "hidden";
 
-      console.log(locationType);
+      //console.log(locationType);
+
+      //Shift contentSecond-21 TO contentSecond-42
     } else if ("content-" + id === document.getElementById("content-3").id) {
-      locationType = "Video with Descriptive Audio";
+      //locationType = "Video with Descriptive Audio";
 
       document.getElementById("DescriptionIndoor1").style.visibility = "hidden";
       document.getElementById("DescriptionOutdoor1").style.visibility =
@@ -61,7 +69,9 @@ $("body").on("click", ".next", function () {
       document.getElementById("DescriptionVideo1").style.visibility = "visible";
       document.getElementById("Descriptionshots1").style.visibility = "hidden";
 
-      console.log(locationType);
+      //console.log(locationType);
+
+      //Shift contentSecond-43 TO contentSecond-45
     } else if ("content-" + id === document.getElementById("content-4").id) {
       locationType = "Screen Shots";
       console.log(locationType);
@@ -72,6 +82,8 @@ $("body").on("click", ".next", function () {
       document.getElementById("DescriptionVideo1").style.visibility = "hidden";
 
       document.getElementById("Descriptionshots1").style.visibility = "visible";
+
+      //Shift contentSecond-46 TO contentSecond-52
     } else {
       console.log("not working");
 
@@ -128,6 +140,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-1").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Yard sign";
 
       console.log(locationType);
@@ -135,6 +149,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-2").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Yard_overview/south";
       Description = document.getElementById("Yard_overview/south").value;
 
@@ -146,6 +162,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-3").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Yard_overview/west";
 
       console.log(locationTypeSecond);
@@ -156,16 +174,22 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-4").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Yard_overview/North";
 
       console.log(locationTypeSecond);
       Description = document.getElementById("Yard_overview/North").value;
+
+      console.log("switch to Indoorrrr");
 
       console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-5").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Yard_overview/East";
 
       console.log(locationTypeSecond);
@@ -176,6 +200,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-6").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Fencing";
 
       console.log(locationTypeSecond);
@@ -186,6 +212,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-7").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Building_enclosure";
 
       console.log(locationTypeSecond);
@@ -196,6 +224,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-8").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Target_wall_for_mast";
 
       console.log(locationTypeSecond);
@@ -206,6 +236,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-9").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Target_wall_for_mast_Roof";
 
       console.log(locationTypeSecond);
@@ -216,6 +248,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-10").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Bruce_box";
 
       console.log(locationTypeSecond);
@@ -226,6 +260,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-11").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Building_and_tower_grounds";
 
       console.log(locationTypeSecond);
@@ -236,6 +272,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-12").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "All_outdoor_communications";
 
       console.log(locationTypeSecond);
@@ -246,6 +284,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-13").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Existing_masts_towers_VSAT";
 
       console.log(locationTypeSecond);
@@ -256,6 +296,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-14").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "towers_VSAT_cableRouting";
 
       console.log(locationTypeSecond);
@@ -266,6 +308,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-15").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "tower_conduit";
 
       console.log(locationTypeSecond);
@@ -276,6 +320,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-16").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "trenching_(Tremwa)";
 
       console.log(locationTypeSecond);
@@ -286,6 +332,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-17").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Existing_cable_trays";
 
       console.log(locationTypeSecond);
@@ -296,6 +344,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-18").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "outdoor_facilities";
 
       console.log(locationTypeSecond);
@@ -306,6 +356,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-19").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Proposed_slurry_pit";
 
       console.log(locationTypeSecond);
@@ -316,6 +368,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-20").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "overhead_wiring";
 
       console.log(locationTypeSecond);
@@ -326,16 +380,26 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-21").id
     ) {
+      locationType = "Outdoor Photos";
+      console.log(locationType);
       locationTypeSecond = "From_the_doorway";
 
       console.log(locationTypeSecond);
       Description = document.getElementById("From_the_doorway").value;
 
       console.log(Description);
+
+      /////////////////SHOWHIDE
+
+      $("#content-2").show();
+
+      $("#content-1").hide();
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-22").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "indoor_communications_rooms";
 
       console.log(locationTypeSecond);
@@ -347,6 +411,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-23").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Cable_entry_point";
 
       console.log(locationTypeSecond);
@@ -357,6 +423,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-24").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Existing_cable_runs";
 
       console.log(locationTypeSecond);
@@ -367,6 +435,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-25").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Telco_WAN_termination";
 
       console.log(locationTypeSecond);
@@ -377,6 +447,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-26").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "cable_termination_equipment";
 
       console.log(locationTypeSecond);
@@ -388,6 +460,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-27").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Wall_boards";
 
       console.log(locationTypeSecond);
@@ -398,6 +472,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-28").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Patch_panels";
 
       console.log(locationTypeSecond);
@@ -408,6 +484,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-29").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "equipment_install_location";
 
       console.log(locationTypeSecond);
@@ -418,6 +496,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-30").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "rack_install_location";
 
       console.log(locationTypeSecond);
@@ -428,6 +508,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-31").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "antenna_mounting_location";
 
       console.log(locationTypeSecond);
@@ -438,6 +520,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-32").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Equipment_interconnections";
 
       console.log(locationTypeSecond);
@@ -448,6 +532,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-33").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "data_networking_gear";
 
       console.log(locationTypeSecond);
@@ -458,6 +544,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-34").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Switches_routers_modems";
 
       console.log(locationTypeSecond);
@@ -468,6 +556,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-35").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Identify_active_and_spare_ports";
 
       console.log(locationTypeSecond);
@@ -479,6 +569,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-36").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Telephones_and_telephone_numbers";
 
       console.log(locationTypeSecond);
@@ -490,6 +582,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-37").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Cable_jacks_and_proposed";
 
       console.log(locationTypeSecond);
@@ -500,6 +594,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-38").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "radio_equipment";
 
       console.log(locationTypeSecond);
@@ -510,6 +606,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-39").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Barton";
 
       console.log(locationTypeSecond);
@@ -520,6 +618,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-40").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "PBX";
 
       console.log(locationTypeSecond);
@@ -530,6 +630,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-41").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "unusual";
 
       console.log(locationTypeSecond);
@@ -540,6 +642,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-42").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "safety_issues_dangers_concerns";
 
       console.log(locationTypeSecond);
@@ -551,16 +655,24 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-43").id
     ) {
+      locationType = "Indoor Photos";
+      console.log(locationType);
       locationTypeSecond = "Speed_tests";
 
       console.log(locationTypeSecond);
       Description = document.getElementById("Speed_tests").value;
 
       console.log(Description);
+      //////////////SHOWHIDE
+      $("#content-3").show();
+
+      $("#content-2").hide();
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-44").id
     ) {
+      locationType = "ScreenShot";
+      console.log(locationType);
       locationTypeSecond = "Cellular_signal_tests";
 
       console.log(locationTypeSecond);
@@ -571,6 +683,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-45").id
     ) {
+      locationType = "ScreenShot";
+      console.log(locationType);
       locationTypeSecond = "Satellite_signal_tests";
 
       console.log(locationTypeSecond);
@@ -581,16 +695,24 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-46").id
     ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
       locationTypeSecond = "Video_Yard_overview";
 
       console.log(locationTypeSecond);
       Description = document.getElementById("Video_Yard_overview").value;
 
       console.log(Description);
+      //////////////////SHOWHIDE
+      $("#content-4").show();
+
+      $("#content-3").hide();
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-47").id
     ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
       locationTypeSecond = "Video_Outside_each_building";
 
       console.log(locationTypeSecond);
@@ -602,6 +724,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-48").id
     ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
       locationTypeSecond = "Video_Inside_each_building";
 
       console.log(locationTypeSecond);
@@ -612,6 +736,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-49").id
     ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
       locationTypeSecond = "Video_Existing_network_cabinets";
 
       console.log(locationTypeSecond);
@@ -623,6 +749,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-50").id
     ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
       locationTypeSecond = "Video_Proposed_solution_inside";
 
       console.log(locationTypeSecond);
@@ -634,6 +762,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-51").id
     ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
       locationTypeSecond = "Video_direction_to_services";
 
       console.log(locationTypeSecond);
@@ -645,6 +775,8 @@ $("body").on("click", ".nextSecond", function () {
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-52").id
     ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
       locationTypeSecond = "Video_safety_issues_dangers_concerns";
 
       console.log(locationTypeSecond);
@@ -654,7 +786,7 @@ $("body").on("click", ".nextSecond", function () {
 
       console.log(Description);
     } else {
-      console.log("Second condiiotns not working");
+      console.log("Second conditions not working");
 
       document.getElementById("hideSection").style.visibility = "hidden";
       document.getElementById("downloadZip").style.visibility = "visible";
