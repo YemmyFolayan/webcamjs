@@ -841,8 +841,13 @@ function getLocation() {
   }
 }
 
+var counterBlob = 1;
+
 function take_snapshot() {
   // take snapshot and get image data
+  counterBlob = counterBlob + 1;
+  console.log("counterBlob");
+  console.log(counterBlob);
   Webcam.snap(function (data_uri) {
     // display results in page
 
@@ -892,7 +897,10 @@ function take_snapshot() {
         }
 
         var dataView = new DataView(arrayBuffer);
+
         blob = new Blob([dataView.buffer], { type: mimeString });
+
+        "blob" + counterBlob == blob;
 
         return blob;
       }
@@ -1021,63 +1029,63 @@ const DownloadZip = () => {
   console.log(blob);
   console.log(blob);
   img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob2, { base64: false });
+  img.file(ImageName, blob3, { base64: false });
+  img.file(ImageName, blob4, { base64: false });
+  img.file(ImageName, blob5, { base64: false });
 
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob6, { base64: false });
+  img.file(ImageName, blob7, { base64: false });
+  img.file(ImageName, blob8, { base64: false });
+  img.file(ImageName, blob9, { base64: false });
+  img.file(ImageName, blob10, { base64: false });
+  img.file(ImageName, blob11, { base64: false });
+  img.file(ImageName, blob12, { base64: false });
+  img.file(ImageName, blob13, { base64: false });
+  img.file(ImageName, blob14, { base64: false });
+  img.file(ImageName, blob15, { base64: false });
+  img.file(ImageName, blob16, { base64: false });
+  img.file(ImageName, blob17, { base64: false });
+  img.file(ImageName, blob18, { base64: false });
+  img.file(ImageName, blob19, { base64: false });
+  img.file(ImageName, blob20, { base64: false });
   //base64 : false
 
   var img2 = zip.folder("Indoor Photos");
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, {
+  img2.file(ImageName, blob21, { base64: false });
+  img2.file(ImageName, blob22, { base64: false });
+  img2.file(ImageName, blob23, { base64: false });
+  img2.file(ImageName, blob24, { base64: false });
+  img2.file(ImageName, blob25, { base64: false });
+  img2.file(ImageName, blob26, { base64: false });
+  img2.file(ImageName, blob27, { base64: false });
+  img2.file(ImageName, blob28, { base64: false });
+  img2.file(ImageName, blob29, { base64: false });
+  img2.file(ImageName, blob30, { base64: false });
+  img2.file(ImageName, blob31, { base64: false });
+  img2.file(ImageName, blob32, { base64: false });
+  img2.file(ImageName, blob33, { base64: false });
+  img2.file(ImageName, blob34, { base64: false });
+  img2.file(ImageName, blob35, {
     base64: false,
   });
   img2.file(ImageName, blob, {
     base64: false,
   });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, { base64: false });
-  img2.file(ImageName, blob, {
+  img2.file(ImageName, blob36, { base64: false });
+  img2.file(ImageName, blob37, { base64: false });
+  img2.file(ImageName, blob38, { base64: false });
+  img2.file(ImageName, blob39, { base64: false });
+  img2.file(ImageName, blob40, { base64: false });
+  img2.file(ImageName, blob41, { base64: false });
+  img2.file(ImageName, blob42, {
     base64: false,
   });
 
   var img4 = zip.folder("Screen Shots");
-  img4.file(ImageName, blob, { base64: false });
-  img4.file(ImageName, blob, { base64: false });
-  img4.file(ImageName, blob, { base64: false });
+  img4.file(ImageName, blob43, { base64: false });
+  img4.file(ImageName, blob44, { base64: false });
+  img4.file(ImageName, blob45, { base64: false });
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
     // see FileSaver.js
@@ -1088,3 +1096,5 @@ const DownloadZip = () => {
 };
 
 //CHANGE BLOB TO DIFFERENT REFRENCE
+
+//MY APPROACH SET COUNTER
