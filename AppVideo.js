@@ -71,11 +71,14 @@ const VideoRecord = () => {
       let mediaRecorder = new MediaRecorder(mediaStreamObj);
       let chunks = [];
 
+      var counterBlobVideo = 0;
+
       start.addEventListener("click", (ev) => {
         mediaRecorder.start();
         console.log(mediaRecorder.state);
 
         alert("Started Recording");
+        counterBlobVideo = counterBlobVideo + 1;
       });
       stop.addEventListener("click", (ev) => {
         mediaRecorder.stop();
@@ -94,6 +97,37 @@ const VideoRecord = () => {
 
         console.log(vidSave);
 
+        if ("blobVideo1" == "blobVideo" + counterBlobVideo) {
+          blobVideo1 = blobVideo;
+          console.log(counterBlobVideo);
+          console.log(blobVideo1);
+        } else if ("blobVideo2" == "blobVideo" + counterBlobVideo) {
+          blobVideo2 = blobVideo;
+          console.log(counterBlobVideo);
+          console.log(blobVideo2);
+        } else if ("blobVideo3" == "blobVideo" + counterBlobVideo) {
+          blobVideo3 = blobVideo;
+          console.log(counterBlobVideo);
+          console.log(blobVideo3);
+        } else if ("blobVideo4" == "blobVideo" + counterBlobVideo) {
+          blobVideo4 = blobVideo;
+          console.log(counterBlobVideo);
+          console.log(blobVideo4);
+        } else if ("blobVideo5" == "blobVideo" + counterBlobVideo) {
+          blobVideo5 = blobVideo;
+          console.log(counterBlobVideo);
+          console.log(blobVideo5);
+        } else if ("blobVideo6" == "blobVideo" + counterBlobVideo) {
+          blobVideo6 = blobVideo;
+          console.log(counterBlobVideo);
+          console.log(blobVideo6);
+        } else if ("blobVideo7" == "blobVideo" + counterBlobVideo) {
+          blobVideo7 = blobVideo;
+          console.log(counterBlobVideo);
+          console.log(blobVideo7);
+        } else {
+          console.log("Done!");
+        }
         /* document.getElementById("downloadVid").innerHTML =
           '<a  download="video" href="' +
           videoURL +
@@ -262,23 +296,23 @@ const DownloadVideoZip = () => {
   var zip = new JSZip();
 
   var video = zip.folder("Video with Descriptive Audio");
-  video.file("Video_Yard_overview.mp4", blobVideo, { base64: false });
-  video.file(videoName, blobVideo, {
+  video.file("Video_Yard_overview.mp4", blobVideo1, { base64: false });
+  video.file(videoName, blobVideo2, {
     base64: false,
   });
-  video.file(videoName, blobVideo, {
+  video.file(videoName, blobVideo3, {
     base64: false,
   });
-  video.file(videoName, blobVideo, {
+  video.file(videoName, blobVideo4, {
     base64: false,
   });
-  video.file(videoName, blobVideo, {
+  video.file(videoName, blobVideo5, {
     base64: false,
   });
-  video.file(videoName, blobVideo, {
+  video.file(videoName, blobVideo6, {
     base64: false,
   });
-  video.file(videoName, blobVideo, {
+  video.file(videoName, blobVideo7, {
     base64: false,
   });
   zip.generateAsync({ type: "blob" }).then(function (content) {

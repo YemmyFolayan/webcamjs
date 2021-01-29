@@ -19,7 +19,6 @@ let imgData;
 let DataURL1;
 let blob;
 
-let ImageName;
 document.getElementById("downloadZip").style.visibility = "hidden";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
@@ -125,14 +124,12 @@ $("body").on("click", ".edit-previous", function () {});
 
 Description = "Yard_sign";
 
-console.log(ImageName);
+console.log(Description);
 console.log("before ifSecond");
 
 var counterSecond = 1;
 $("body").on("click", ".nextSecond", function () {
   $(".contentSecond").hide();
-
-  ImageName = Description + ".png";
 
   counterSecond++;
   $("#contentSecond-" + counterSecond + "").show();
@@ -159,7 +156,7 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Yard_overview/south";
       Description = document.getElementById("Yard_overview/south").value;
 
-      console.log(ImageName);
+      console.log(Description);
 
       console.log(locationTypeSecond);
       console.log("catch");
@@ -174,7 +171,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Yard_overview/west").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-4").id
@@ -188,7 +185,7 @@ $("body").on("click", ".nextSecond", function () {
 
       console.log("switch to Indoorrrr");
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-5").id
@@ -200,7 +197,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Yard_overview/East").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-6").id
@@ -212,7 +209,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Fencing").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-7").id
@@ -224,7 +221,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Building_enclosure").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-8").id
@@ -236,7 +233,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Target_wall_for_mast").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-9").id
@@ -248,7 +245,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Target_wall_for_mast_Roof").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-10").id
@@ -260,7 +257,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Bruce_box").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-11").id
@@ -272,7 +269,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Building_and_tower_grounds").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-12").id
@@ -284,7 +281,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("All_outdoor_communications").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-13").id
@@ -296,7 +293,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Existing_masts_towers_VSAT").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-14").id
@@ -308,7 +305,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("towers_VSAT_cableRouting").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-15").id
@@ -320,7 +317,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("tower_conduit").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-16").id
@@ -332,7 +329,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("trenching_(Tremwa)").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-17").id
@@ -344,7 +341,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Existing_cable_trays").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-18").id
@@ -356,7 +353,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("outdoor_facilities").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-19").id
@@ -368,7 +365,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Proposed_slurry_pit").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-20").id
@@ -380,7 +377,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("overhead_wiring").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-21").id
@@ -392,7 +389,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("From_the_doorway").value;
 
-      console.log(ImageName);
+      console.log(Description);
 
       /////////////////SHOWHIDE
 
@@ -411,7 +408,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("indoor_communications_rooms")
         .value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-23").id
@@ -423,7 +420,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Cable_entry_point").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-24").id
@@ -435,7 +432,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Existing_cable_runs").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-25").id
@@ -447,7 +444,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Telco_WAN_termination").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-26").id
@@ -460,7 +457,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("cable_termination_equipment")
         .value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-27").id
@@ -472,7 +469,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Wall_boards").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-28").id
@@ -484,7 +481,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Patch_panels").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-29").id
@@ -496,7 +493,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("equipment_install_location").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-30").id
@@ -508,7 +505,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("rack_install_location").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-31").id
@@ -520,7 +517,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("antenna_mounting_location").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-32").id
@@ -532,7 +529,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Equipment_interconnections").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-33").id
@@ -544,7 +541,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("data_networking_gear").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-34").id
@@ -556,7 +553,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Switches_routers_modems").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-35").id
@@ -569,7 +566,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("Identify_active_and_spare_ports")
         .value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-36").id
@@ -582,7 +579,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("Telephones_and_telephone_numbers")
         .value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-37").id
@@ -594,7 +591,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Cable_jacks_and_proposed").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-38").id
@@ -606,7 +603,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("radio_equipment").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-39").id
@@ -618,7 +615,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Barton").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-40").id
@@ -630,7 +627,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("PBX").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-41").id
@@ -642,7 +639,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("unusual").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-42").id
@@ -655,19 +652,19 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("safety_issues_dangers_concerns")
         .value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-43").id
     ) {
-      locationType = "Indoor Photos";
+      locationType = "ScreenShot";
       console.log(locationType);
       locationTypeSecond = "Speed_tests";
 
       console.log(locationTypeSecond);
       Description = document.getElementById("Speed_tests").value;
 
-      console.log(ImageName);
+      console.log(Description);
       //////////////SHOWHIDE
       $("#content-3").show();
 
@@ -683,7 +680,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Cellular_signal_tests").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-45").id
@@ -695,7 +692,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Satellite_signal_tests").value;
 
-      console.log(ImageName);
+      console.log(Description);
     } else {
       console.log("Second conditions not working");
 
@@ -750,7 +747,7 @@ FoodForm.addEventListener("submit", function (e) {
   Description = selectorDescription[selectorDescription.selectedIndex].value; */
   console.log(Activity);
   console.log(facilityType);
-  console.log(ImageName);
+  console.log(Description);
   console.log(Building);
 
   FileName =
@@ -841,11 +838,12 @@ function getLocation() {
   }
 }
 
-var counterBlob = 1;
+var counterBlob = 0;
 
 function take_snapshot() {
   // take snapshot and get image data
   counterBlob = counterBlob + 1;
+
   console.log("counterBlob");
   console.log(counterBlob);
   Webcam.snap(function (data_uri) {
@@ -857,7 +855,7 @@ function take_snapshot() {
       FileName +
       '" href="' +
       data_uri +
-      '" title="ImageName"><button class="button">Download  ⬇</button></a>';
+      '" title="Description"><button class="button">Download  ⬇</button></a>';
 
     DataURL1 = data_uri;
     //Water mark image
@@ -900,12 +898,150 @@ function take_snapshot() {
 
         blob = new Blob([dataView.buffer], { type: mimeString });
 
-        "blob" + counterBlob == blob;
-
         return blob;
       }
 
       dataURItoBlob();
+
+      if ("blob1" == "blob" + counterBlob) {
+        blob1 = blob;
+        console.log(counterBlob);
+        console.log(blob1);
+      } else if ("blob2" == "blob" + counterBlob) {
+        blob2 = blob;
+        console.log(blob2);
+      } else if ("blob3" == "blob" + counterBlob) {
+        blob3 = blob;
+        console.log(blob3);
+      } else if ("blob4" == "blob" + counterBlob) {
+        blob4 = blob;
+        console.log(blob4);
+      } else if ("blob5" == "blob" + counterBlob) {
+        blob5 = blob;
+        console.log(blob5);
+      } else if ("blob6" == "blob" + counterBlob) {
+        blob6 = blob;
+        console.log(blob6);
+      } else if ("blob7" == "blob" + counterBlob) {
+        blob7 = blob;
+        console.log(blob7);
+      } else if ("blob8" == "blob" + counterBlob) {
+        blob8 = blob;
+        console.log(blob8);
+      } else if ("blob9" == "blob" + counterBlob) {
+        blob9 = blob;
+        console.log(blob9);
+      } else if ("blob10" == "blob" + counterBlob) {
+        blob10 = blob;
+        console.log(blob10);
+      } else if ("blob11" == "blob" + counterBlob) {
+        blob11 = blob;
+        console.log(blob11);
+      } else if ("blob12" == "blob" + counterBlob) {
+        blob12 = blob;
+        console.log(blob12);
+      } else if ("blob13" == "blob" + counterBlob) {
+        blob13 = blob;
+        console.log(blob13);
+      } else if ("blob14" == "blob" + counterBlob) {
+        blob14 = blob;
+        console.log(blob14);
+      } else if ("blob15" == "blob" + counterBlob) {
+        blob15 = blob;
+        console.log(blob15);
+      } else if ("blob16" == "blob" + counterBlob) {
+        blob16 = blob;
+        console.log(blob16);
+      } else if ("blob17" == "blob" + counterBlob) {
+        blob17 = blob;
+        console.log(blob2);
+      } else if ("blob18" == "blob" + counterBlob) {
+        blob18 = blob;
+        console.log(blob18);
+      } else if ("blob19" == "blob" + counterBlob) {
+        blob19 = blob;
+        console.log(blob19);
+      } else if ("blob20" == "blob" + counterBlob) {
+        blob20 = blob;
+        console.log(blob20);
+      } else if ("blob21" == "blob" + counterBlob) {
+        blob21 = blob;
+        console.log(blob21);
+      } else if ("blob22" == "blob" + counterBlob) {
+        blob22 = blob;
+        console.log(blob2);
+      } else if ("blob23" == "blob" + counterBlob) {
+        blob23 = blob;
+        console.log(blob23);
+      } else if ("blob24" == "blob" + counterBlob) {
+        blob24 = blob;
+        console.log(blob24);
+      } else if ("blob25" == "blob" + counterBlob) {
+        blob25 = blob;
+        console.log(blob25);
+      } else if ("blob26" == "blob" + counterBlob) {
+        blob26 = blob;
+        console.log(blob26);
+      } else if ("blob27" == "blob" + counterBlob) {
+        blob27 = blob;
+        console.log(blob27);
+      } else if ("blob28" == "blob" + counterBlob) {
+        blob28 = blob;
+        console.log(blob28);
+      } else if ("blob29" == "blob" + counterBlob) {
+        blob29 = blob;
+        console.log(blob29);
+      } else if ("blob30" == "blob" + counterBlob) {
+        blob30 = blob;
+        console.log(blob30);
+      } else if ("blob31" == "blob" + counterBlob) {
+        blob31 = blob;
+        console.log(blob31);
+      } else if ("blob32" == "blob" + counterBlob) {
+        blob32 = blob;
+        console.log(blob32);
+      } else if ("blob33" == "blob" + counterBlob) {
+        blob33 = blob;
+        console.log(blob33);
+      } else if ("blob34" == "blob" + counterBlob) {
+        blob34 = blob;
+        console.log(blob34);
+      } else if ("blob35" == "blob" + counterBlob) {
+        blob35 = blob;
+        console.log(blob35);
+      } else if ("blob36" == "blob" + counterBlob) {
+        blob36 = blob;
+        console.log(blob36);
+      } else if ("blob37" == "blob" + counterBlob) {
+        blob37 = blob;
+        console.log(blob37);
+      } else if ("blob38" == "blob" + counterBlob) {
+        blob38 = blob;
+        console.log(blob38);
+      } else if ("blob39" == "blob" + counterBlob) {
+        blob39 = blob;
+        console.log(blob39);
+      } else if ("blob40" == "blob" + counterBlob) {
+        blob40 = blob;
+        console.log(blob40);
+      } else if ("blob41" == "blob" + counterBlob) {
+        blob41 = blob;
+        console.log(blob41);
+      } else if ("blob42" == "blob" + counterBlob) {
+        blob42 = blob;
+        console.log(blob42);
+      } else if ("blob43" == "blob" + counterBlob) {
+        blob43 = blob;
+        console.log(blob43);
+      } else if ("blob44" == "blob" + counterBlob) {
+        blob44 = blob;
+        console.log(blob44);
+      } else if ("blob45" == "blob" + counterBlob) {
+        blob45 = blob;
+        console.log(blob45);
+      } else {
+        console.log("WTF");
+      }
 
       //Comserve Inc,Calgary,Canada
     }
@@ -1011,6 +1147,102 @@ console.log("IMAGE DATA");
 
 ////PREV NEXT
 
+let blob1;
+
+const DownloadZip = () => {
+  console.log(blob1);
+  console.log(blob2);
+  var zip = new JSZip();
+
+  var img = zip.folder("Outdoor Photos");
+
+  //var blob2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
+
+  //SO CONVERT THE DATA URL TO base64
+  //SOLUTION
+  //The image data is either a base64 string (as above) or a base64 array.
+  //These can both be obtained from the canvas element with toDataURL or getImageData respectively.
+  //file(name, data [,options])
+
+  //Jszip it takes data it doesnot allow dataurl
+
+  console.log(blob);
+  console.log(blob);
+  img.file("Yard_sign.png", blob1, { base64: false });
+  img.file("Yard_overview/south.png", blob2, { base64: false });
+  img.file("Yard_overview/west.png", blob3, { base64: false });
+  img.file("Yard_overview/North.png", blob4, { base64: false });
+  img.file("Yard_overview/East.png", blob5, { base64: false });
+
+  img.file("Fencing.png", blob6, { base64: false });
+  img.file("Building_enclosure.png", blob7, { base64: false });
+  img.file("Target_wall_for_mast.png", blob8, { base64: false });
+  img.file("Target_wall_for_mast_Roof.png", blob9, { base64: false });
+  img.file("Bruce_box.png", blob10, { base64: false });
+  img.file("Building_and_tower_grounds.png", blob11, { base64: false });
+  img.file("All_outdoor_communications.png", blob12, { base64: false });
+  img.file("Existing_masts_towers_VSAT.png", blob13, { base64: false });
+  img.file("towers_VSAT_cableRouting.png", blob14, { base64: false });
+  img.file("tower_conduit.png", blob15, { base64: false });
+  img.file("trenching_(Tremwa).png", blob16, { base64: false });
+  img.file("Existing_cable_trays.png", blob17, { base64: false });
+  img.file("outdoor_facilities.png", blob18, { base64: false });
+  img.file("Proposed_slurry_pit.png", blob19, { base64: false });
+  img.file("overhead_wiring.png", blob20, { base64: false });
+  //base64 : false
+
+  var img2 = zip.folder("Indoor Photos");
+  img2.file("From_the_doorway.png", blob21, { base64: false });
+  img2.file("indoor_communications_rooms.png", blob22, { base64: false });
+  img2.file("Cable_entry_point.png", blob23, { base64: false });
+  img2.file("Existing_cable_runs.png", blob24, { base64: false });
+  img2.file("Telco_WAN_termination.png", blob25, { base64: false });
+  img2.file("cable_termination_equipment.png", blob26, { base64: false });
+  img2.file("Wall_boards.png", blob27, { base64: false });
+  img2.file("Patch_panels.png", blob28, { base64: false });
+  img2.file("equipment_install_location.png", blob29, { base64: false });
+  img2.file("rack_install_location.png", blob30, { base64: false });
+  img2.file("antenna_mounting_location.png", blob31, { base64: false });
+  img2.file("Equipment_interconnections.png", blob32, { base64: false });
+  img2.file("data_networking_gear.png", blob33, { base64: false });
+  img2.file("Switches_routers_modems.png", blob34, { base64: false });
+  img2.file("Identify_active_and_spare_ports.png", blob35, {
+    base64: false,
+  });
+  img2.file("Telephones_and_telephone_numbers.png", blob, {
+    base64: false,
+  });
+  img2.file("Cable_jacks_and_proposed.png", blob36, { base64: false });
+  img2.file("radio_equipment.png", blob37, { base64: false });
+  img2.file("Barton.png", blob38, { base64: false });
+  img2.file("Bristol.png", blob39, { base64: false });
+  img2.file("PBX.png", blob40, { base64: false });
+  img2.file("unusual.png", blob41, { base64: false });
+  img2.file("safety_issues_dangers_concerns.png", blob42, {
+    base64: false,
+  });
+
+  var img4 = zip.folder("Screen Shots");
+  img4.file("Speed_tests.png", blob43, { base64: false });
+  img4.file("Cellular_signal_tests.png", blob44, { base64: false });
+  img4.file("Satellite_signal_tests.png", blob45, { base64: false });
+
+  zip.generateAsync({ type: "blob" }).then(function (content) {
+    // see FileSaver.js
+    saveAs(content, "Comserve Geocam.zip");
+
+    console.log("zip");
+  });
+};
+
+//CHANGE BLOB TO DIFFERENT REFRENCE
+
+//MY APPROACH SET COUNTER
+
+//////////////////////////////////////
+
+/*
+
 const DownloadZip = () => {
   var zip = new JSZip();
 
@@ -1028,73 +1260,147 @@ const DownloadZip = () => {
 
   console.log(blob);
   console.log(blob);
-  img.file(ImageName, blob, { base64: false });
-  img.file(ImageName, blob2, { base64: false });
-  img.file(ImageName, blob3, { base64: false });
-  img.file(ImageName, blob4, { base64: false });
-  img.file(ImageName, blob5, { base64: false });
+  img.file("Yard_sign.png", blob, { base64: false });
+  img.file("Yard_overview/south.png", blob, { base64: false });
+  img.file("Yard_overview/west.png", blob, { base64: false });
+  img.file("Yard_overview/North.png", blob, { base64: false });
+  img.file("Yard_overview/East.png", blob, { base64: false });
 
-  img.file(ImageName, blob6, { base64: false });
-  img.file(ImageName, blob7, { base64: false });
-  img.file(ImageName, blob8, { base64: false });
-  img.file(ImageName, blob9, { base64: false });
-  img.file(ImageName, blob10, { base64: false });
-  img.file(ImageName, blob11, { base64: false });
-  img.file(ImageName, blob12, { base64: false });
-  img.file(ImageName, blob13, { base64: false });
-  img.file(ImageName, blob14, { base64: false });
-  img.file(ImageName, blob15, { base64: false });
-  img.file(ImageName, blob16, { base64: false });
-  img.file(ImageName, blob17, { base64: false });
-  img.file(ImageName, blob18, { base64: false });
-  img.file(ImageName, blob19, { base64: false });
-  img.file(ImageName, blob20, { base64: false });
+  img.file("Fencing.png", blob, { base64: false });
+  img.file("Building_enclosure.png", blob, { base64: false });
+  img.file("Target_wall_for_mast.png", blob, { base64: false });
+  img.file("Target_wall_for_mast_Roof.png", blob, { base64: false });
+  img.file("Bruce_box.png", blob, { base64: false });
+  img.file("Building_and_tower_grounds.png", blob, { base64: false });
+  img.file("All_outdoor_communications.png", blob, { base64: false });
+  img.file("Existing_masts_towers_VSAT.png", blob, { base64: false });
+  img.file("towers_VSAT_cableRouting.png", blob, { base64: false });
+  img.file("tower_conduit.png", blob, { base64: false });
+  img.file("trenching_(Tremwa).png", blob, { base64: false });
+  img.file("Existing_cable_trays.png", blob, { base64: false });
+  img.file("outdoor_facilities.png", blob, { base64: false });
+  img.file("Proposed_slurry_pit.png", blob, { base64: false });
+  img.file("overhead_wiring.png", blob, { base64: false });
   //base64 : false
 
   var img2 = zip.folder("Indoor Photos");
-  img2.file(ImageName, blob21, { base64: false });
-  img2.file(ImageName, blob22, { base64: false });
-  img2.file(ImageName, blob23, { base64: false });
-  img2.file(ImageName, blob24, { base64: false });
-  img2.file(ImageName, blob25, { base64: false });
-  img2.file(ImageName, blob26, { base64: false });
-  img2.file(ImageName, blob27, { base64: false });
-  img2.file(ImageName, blob28, { base64: false });
-  img2.file(ImageName, blob29, { base64: false });
-  img2.file(ImageName, blob30, { base64: false });
-  img2.file(ImageName, blob31, { base64: false });
-  img2.file(ImageName, blob32, { base64: false });
-  img2.file(ImageName, blob33, { base64: false });
-  img2.file(ImageName, blob34, { base64: false });
-  img2.file(ImageName, blob35, {
+  img2.file("From_the_doorway.png", blob, { base64: false });
+  img2.file("indoor_communications_rooms.png", blob, { base64: false });
+  img2.file("Cable_entry_point.png", blob, { base64: false });
+  img2.file("Existing_cable_runs.png", blob, { base64: false });
+  img2.file("Telco_WAN_termination.png", blob, { base64: false });
+  img2.file("cable_termination_equipment.png", blob, { base64: false });
+  img2.file("Wall_boards.png", blob, { base64: false });
+  img2.file("Patch_panels.png", blob, { base64: false });
+  img2.file("equipment_install_location.png", blob, { base64: false });
+  img2.file("rack_install_location.png", blob, { base64: false });
+  img2.file("antenna_mounting_location.png", blob, { base64: false });
+  img2.file("Equipment_interconnections.png", blob, { base64: false });
+  img2.file("data_networking_gear.png", blob, { base64: false });
+  img2.file("Switches_routers_modems.png", blob, { base64: false });
+  img2.file("Identify_active_and_spare_ports.png", blob, {
     base64: false,
   });
-  img2.file(ImageName, blob, {
+  img2.file("Telephones_and_telephone_numbers.png", blob, {
     base64: false,
   });
-  img2.file(ImageName, blob36, { base64: false });
-  img2.file(ImageName, blob37, { base64: false });
-  img2.file(ImageName, blob38, { base64: false });
-  img2.file(ImageName, blob39, { base64: false });
-  img2.file(ImageName, blob40, { base64: false });
-  img2.file(ImageName, blob41, { base64: false });
-  img2.file(ImageName, blob42, {
+  img2.file("Cable_jacks_and_proposed.png", blob, { base64: false });
+  img2.file("radio_equipment.png", blob, { base64: false });
+  img2.file("Barton.png", blob, { base64: false });
+  img2.file("Bristol.png", blob, { base64: false });
+  img2.file("PBX.png", blob, { base64: false });
+  img2.file("unusual.png", blob, { base64: false });
+  img2.file("safety_issues_dangers_concerns.png", blob, {
     base64: false,
   });
 
-  var img4 = zip.folder("Screen Shots");
-  img4.file(ImageName, blob43, { base64: false });
-  img4.file(ImageName, blob44, { base64: false });
-  img4.file(ImageName, blob45, { base64: false });
 
-  zip.generateAsync({ type: "blob" }).then(function (content) {
-    // see FileSaver.js
-    saveAs(content, "Comserve Geocam.zip");
 
-    console.log("zip");
-  });
-};
 
-//CHANGE BLOB TO DIFFERENT REFRENCE
 
-//MY APPROACH SET COUNTER
+
+*/
+
+/*
+
+
+  const DownloadZip = () => {
+    console.log(blob1);
+    console.log(blob2);
+    var zip = new JSZip();
+  
+    var img = zip.folder("Outdoor Photos");
+  
+    //var blob2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
+  
+    //SO CONVERT THE DATA URL TO base64
+    //SOLUTION
+    //The image data is either a base64 string (as above) or a base64 array.
+    //These can both be obtained from the canvas element with toDataURL or getImageData respectively.
+    //file(name, data [,options])
+  
+    //Jszip it takes data it doesnot allow dataurl
+  
+    console.log(blob);
+    console.log(blob);
+    img.file("Yard_sign.png", blob1, { base64: false });
+    img.file(Description, blob2, { base64: false });
+    img.file(Description, blob3, { base64: false });
+    img.file(Description, blob4, { base64: false });
+    img.file(Description, blob5, { base64: false });
+  
+    img.file(Description, blob6, { base64: false });
+    img.file(Description, blob7, { base64: false });
+    img.file(Description, blob8, { base64: false });
+    img.file(Description, blob9, { base64: false });
+    img.file(Description, blob10, { base64: false });
+    img.file(Description, blob11, { base64: false });
+    img.file(Description, blob12, { base64: false });
+    img.file(Description, blob13, { base64: false });
+    img.file(Description, blob14, { base64: false });
+    img.file(Description, blob15, { base64: false });
+    img.file(Description, blob16, { base64: false });
+    img.file(Description, blob17, { base64: false });
+    img.file(Description, blob18, { base64: false });
+    img.file(Description, blob19, { base64: false });
+    img.file(Description, blob20, { base64: false });
+    //base64 : false
+  
+    var img2 = zip.folder("Indoor Photos");
+    img2.file(Description, blob21, { base64: false });
+    img2.file(Description, blob22, { base64: false });
+    img2.file(Description, blob23, { base64: false });
+    img2.file(Description, blob24, { base64: false });
+    img2.file(Description, blob25, { base64: false });
+    img2.file(Description, blob26, { base64: false });
+    img2.file(Description, blob27, { base64: false });
+    img2.file(Description, blob28, { base64: false });
+    img2.file(Description, blob29, { base64: false });
+    img2.file(Description, blob30, { base64: false });
+    img2.file(Description, blob31, { base64: false });
+    img2.file(Description, blob32, { base64: false });
+    img2.file(Description, blob33, { base64: false });
+    img2.file(Description, blob34, { base64: false });
+    img2.file(Description, blob35, {
+      base64: false,
+    });
+    img2.file(Description, blob, {
+      base64: false,
+    });
+    img2.file(Description, blob36, { base64: false });
+    img2.file(Description, blob37, { base64: false });
+    img2.file(Description, blob38, { base64: false });
+    img2.file(Description, blob39, { base64: false });
+    img2.file(Description, blob40, { base64: false });
+    img2.file(Description, blob41, { base64: false });
+    img2.file(Description, blob42, {
+      base64: false,
+    });
+  
+    var img4 = zip.folder("Screen Shots");
+    img4.file(Description, blob43, { base64: false });
+    img4.file(Description, blob44, { base64: false });
+    img4.file(Description, blob45, { base64: false });
+
+
+    */
