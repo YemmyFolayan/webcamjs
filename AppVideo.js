@@ -77,7 +77,7 @@ const VideoRecord = () => {
         mediaRecorder.start();
         console.log(mediaRecorder.state);
 
-        alert("Started Recording");
+        alert("Started Recording, Tap Stop Recording to Save video");
         counterBlobVideo = counterBlobVideo + 1;
       });
       stop.addEventListener("click", (ev) => {
@@ -127,6 +127,8 @@ const VideoRecord = () => {
           console.log(blobVideo7);
         } else {
           console.log("Done!");
+          alert("Done !, Proceed to Download Files");
+          document.getElementById("GridHidden").style.visibility = "hidden";
         }
         /* document.getElementById("downloadVid").innerHTML =
           '<a  download="video" href="' +
@@ -297,22 +299,22 @@ const DownloadVideoZip = () => {
 
   var video = zip.folder("Video with Descriptive Audio");
   video.file("Video_Yard_overview.mp4", blobVideo1, { base64: false });
-  video.file(videoName, blobVideo2, {
+  video.file("Video_Outside_each_building.mp4", blobVideo2, {
     base64: false,
   });
-  video.file(videoName, blobVideo3, {
+  video.file("Video_Inside_each_building.mp4", blobVideo3, {
     base64: false,
   });
-  video.file(videoName, blobVideo4, {
+  video.file("Video_Existing_network_cabinets.mp4", blobVideo4, {
     base64: false,
   });
-  video.file(videoName, blobVideo5, {
+  video.file("Video_Proposed_solution_inside.mp4", blobVideo5, {
     base64: false,
   });
-  video.file(videoName, blobVideo6, {
+  video.file("Video_direction_to_services.mp4", blobVideo6, {
     base64: false,
   });
-  video.file(videoName, blobVideo7, {
+  video.file("Video_safety_issues_dangers_concerns.mp4", blobVideo7, {
     base64: false,
   });
   zip.generateAsync({ type: "blob" }).then(function (content) {
