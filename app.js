@@ -18,6 +18,8 @@ let exactLocation;
 let imgData;
 let DataURL1;
 let blob;
+
+let ImageName;
 document.getElementById("downloadZip").style.visibility = "hidden";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
@@ -120,14 +122,17 @@ $("body").on("click", ".edit-previous", function () {});
 //////////////////////////////////////////////////////////////
 
 ////////////SECOND ONE
+
 Description = "Yard_sign";
 
-console.log(Description);
+console.log(ImageName);
 console.log("before ifSecond");
 
 var counterSecond = 1;
 $("body").on("click", ".nextSecond", function () {
   $(".contentSecond").hide();
+
+  ImageName = Description + ".png";
 
   counterSecond++;
   $("#contentSecond-" + counterSecond + "").show();
@@ -154,7 +159,7 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Yard_overview/south";
       Description = document.getElementById("Yard_overview/south").value;
 
-      console.log(Description);
+      console.log(ImageName);
 
       console.log(locationTypeSecond);
       console.log("catch");
@@ -169,7 +174,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Yard_overview/west").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-4").id
@@ -183,7 +188,7 @@ $("body").on("click", ".nextSecond", function () {
 
       console.log("switch to Indoorrrr");
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-5").id
@@ -195,7 +200,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Yard_overview/East").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-6").id
@@ -207,7 +212,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Fencing").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-7").id
@@ -219,7 +224,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Building_enclosure").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-8").id
@@ -231,7 +236,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Target_wall_for_mast").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-9").id
@@ -243,7 +248,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Target_wall_for_mast_Roof").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-10").id
@@ -255,7 +260,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Bruce_box").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-11").id
@@ -267,7 +272,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Building_and_tower_grounds").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-12").id
@@ -279,7 +284,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("All_outdoor_communications").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-13").id
@@ -291,7 +296,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Existing_masts_towers_VSAT").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-14").id
@@ -303,7 +308,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("towers_VSAT_cableRouting").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-15").id
@@ -315,7 +320,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("tower_conduit").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-16").id
@@ -327,7 +332,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("trenching_(Tremwa)").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-17").id
@@ -339,7 +344,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Existing_cable_trays").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-18").id
@@ -351,7 +356,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("outdoor_facilities").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-19").id
@@ -363,7 +368,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Proposed_slurry_pit").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-20").id
@@ -375,7 +380,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("overhead_wiring").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-21").id
@@ -387,7 +392,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("From_the_doorway").value;
 
-      console.log(Description);
+      console.log(ImageName);
 
       /////////////////SHOWHIDE
 
@@ -406,7 +411,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("indoor_communications_rooms")
         .value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-23").id
@@ -418,7 +423,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Cable_entry_point").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-24").id
@@ -430,7 +435,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Existing_cable_runs").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-25").id
@@ -442,7 +447,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Telco_WAN_termination").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-26").id
@@ -455,7 +460,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("cable_termination_equipment")
         .value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-27").id
@@ -467,7 +472,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Wall_boards").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-28").id
@@ -479,7 +484,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Patch_panels").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-29").id
@@ -491,7 +496,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("equipment_install_location").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-30").id
@@ -503,7 +508,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("rack_install_location").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-31").id
@@ -515,7 +520,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("antenna_mounting_location").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-32").id
@@ -527,7 +532,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Equipment_interconnections").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-33").id
@@ -539,7 +544,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("data_networking_gear").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-34").id
@@ -551,7 +556,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Switches_routers_modems").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-35").id
@@ -564,7 +569,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("Identify_active_and_spare_ports")
         .value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-36").id
@@ -577,7 +582,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("Telephones_and_telephone_numbers")
         .value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-37").id
@@ -589,7 +594,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Cable_jacks_and_proposed").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-38").id
@@ -601,7 +606,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("radio_equipment").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-39").id
@@ -613,7 +618,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Barton").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-40").id
@@ -625,7 +630,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("PBX").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-41").id
@@ -637,7 +642,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("unusual").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-42").id
@@ -650,7 +655,7 @@ $("body").on("click", ".nextSecond", function () {
       Description = document.getElementById("safety_issues_dangers_concerns")
         .value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-43").id
@@ -662,7 +667,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Speed_tests").value;
 
-      console.log(Description);
+      console.log(ImageName);
       //////////////SHOWHIDE
       $("#content-3").show();
 
@@ -678,7 +683,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Cellular_signal_tests").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-45").id
@@ -690,7 +695,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationTypeSecond);
       Description = document.getElementById("Satellite_signal_tests").value;
 
-      console.log(Description);
+      console.log(ImageName);
     } else {
       console.log("Second conditions not working");
 
@@ -745,7 +750,7 @@ FoodForm.addEventListener("submit", function (e) {
   Description = selectorDescription[selectorDescription.selectedIndex].value; */
   console.log(Activity);
   console.log(facilityType);
-  console.log(Description);
+  console.log(ImageName);
   console.log(Building);
 
   FileName =
@@ -1015,64 +1020,64 @@ const DownloadZip = () => {
 
   console.log(blob);
   console.log(blob);
-  img.file("Yard_sign.png", blob, { base64: false });
-  img.file("Yard_overview/south.png", blob, { base64: false });
-  img.file("Yard_overview/west.png", blob, { base64: false });
-  img.file("Yard_overview/North.png", blob, { base64: false });
-  img.file("Yard_overview/East.png", blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
 
-  img.file("Fencing.png", blob, { base64: false });
-  img.file("Building_enclosure.png", blob, { base64: false });
-  img.file("Target_wall_for_mast.png", blob, { base64: false });
-  img.file("Target_wall_for_mast_Roof.png", blob, { base64: false });
-  img.file("Bruce_box.png", blob, { base64: false });
-  img.file("Building_and_tower_grounds.png", blob, { base64: false });
-  img.file("All_outdoor_communications.png", blob, { base64: false });
-  img.file("Existing_masts_towers_VSAT.png", blob, { base64: false });
-  img.file("towers_VSAT_cableRouting.png", blob, { base64: false });
-  img.file("tower_conduit.png", blob, { base64: false });
-  img.file("trenching_(Tremwa).png", blob, { base64: false });
-  img.file("Existing_cable_trays.png", blob, { base64: false });
-  img.file("outdoor_facilities.png", blob, { base64: false });
-  img.file("Proposed_slurry_pit.png", blob, { base64: false });
-  img.file("overhead_wiring.png", blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
+  img.file(ImageName, blob, { base64: false });
   //base64 : false
 
   var img2 = zip.folder("Indoor Photos");
-  img2.file("From_the_doorway.png", blob, { base64: false });
-  img2.file("indoor_communications_rooms.png", blob, { base64: false });
-  img2.file("Cable_entry_point.png", blob, { base64: false });
-  img2.file("Existing_cable_runs.png", blob, { base64: false });
-  img2.file("Telco_WAN_termination.png", blob, { base64: false });
-  img2.file("cable_termination_equipment.png", blob, { base64: false });
-  img2.file("Wall_boards.png", blob, { base64: false });
-  img2.file("Patch_panels.png", blob, { base64: false });
-  img2.file("equipment_install_location.png", blob, { base64: false });
-  img2.file("rack_install_location.png", blob, { base64: false });
-  img2.file("antenna_mounting_location.png", blob, { base64: false });
-  img2.file("Equipment_interconnections.png", blob, { base64: false });
-  img2.file("data_networking_gear.png", blob, { base64: false });
-  img2.file("Switches_routers_modems.png", blob, { base64: false });
-  img2.file("Identify_active_and_spare_ports.png", blob, {
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, {
     base64: false,
   });
-  img2.file("Telephones_and_telephone_numbers.png", blob, {
+  img2.file(ImageName, blob, {
     base64: false,
   });
-  img2.file("Cable_jacks_and_proposed.png", blob, { base64: false });
-  img2.file("radio_equipment.png", blob, { base64: false });
-  img2.file("Barton.png", blob, { base64: false });
-  img2.file("Bristol.png", blob, { base64: false });
-  img2.file("PBX.png", blob, { base64: false });
-  img2.file("unusual.png", blob, { base64: false });
-  img2.file("safety_issues_dangers_concerns.png", blob, {
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, { base64: false });
+  img2.file(ImageName, blob, {
     base64: false,
   });
 
   var img4 = zip.folder("Screen Shots");
-  img4.file("Speed_tests.png", blob, { base64: false });
-  img4.file("Cellular_signal_tests.png", blob, { base64: false });
-  img4.file("Satellite_signal_tests.png", blob, { base64: false });
+  img4.file(ImageName, blob, { base64: false });
+  img4.file(ImageName, blob, { base64: false });
+  img4.file(ImageName, blob, { base64: false });
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
     // see FileSaver.js
@@ -1081,3 +1086,5 @@ const DownloadZip = () => {
     console.log("zip");
   });
 };
+
+//CHANGE BLOB TO DIFFERENT REFRENCE
