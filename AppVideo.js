@@ -2,6 +2,9 @@ console.log("videkkkkoo");
 
 let blobVideo;
 
+let videoName;
+let locationTypeSecond;
+
 const VideoRecord = () => {
   let constraintObj = {
     audio: false,
@@ -105,29 +108,177 @@ const VideoRecord = () => {
 
 VideoRecord();
 
+locationTypeSecond = "Video_Yard_overview";
+
 console.log("videooooo");
+
+var counterSecond = 46;
+$("body").on("click", ".next", function () {
+  $(".contentSecond").hide();
+
+  counterSecond++;
+  $("#contentSecond-" + counterSecond + "").show();
+
+  videoName = locationTypeSecond + ".mp4";
+
+  ////////////////
+  if (counterSecond > 46) {
+    $(".backSecond").show();
+    var idSecond = counterSecond;
+    if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-46").id
+    ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
+      locationTypeSecond = "Video_Yard_overview";
+
+      console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Yard_overview").value;
+
+      console.log(Description);
+      //////////////////SHOWHIDE
+      //$("#content-4").show();
+
+      //$("#content-3").hide();
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-47").id
+    ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
+      locationTypeSecond = "Video_Outside_each_building";
+
+      console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Outside_each_building")
+        .value;
+
+      console.log(Description);
+      console.log(videoName);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-48").id
+    ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
+      locationTypeSecond = "Video_Inside_each_building";
+
+      console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Inside_each_building").value;
+
+      console.log(Description);
+      console.log(videoName);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-49").id
+    ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
+      locationTypeSecond = "Video_Existing_network_cabinets";
+
+      console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Existing_network_cabinets")
+        .value;
+
+      console.log(Description);
+      console.log(videoName);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-50").id
+    ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
+      locationTypeSecond = "Video_Proposed_solution_inside";
+
+      console.log(locationTypeSecond);
+      Description = document.getElementById("Video_Proposed_solution_inside")
+        .value;
+
+      console.log(Description);
+      console.log(videoName);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-51").id
+    ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
+      locationTypeSecond = "Video_direction_to_services";
+
+      console.log(locationTypeSecond);
+      Description = document.getElementById("Video_direction_to_services")
+        .value;
+
+      console.log(Description);
+      console.log(videoName);
+    } else if (
+      "contentSecond-" + idSecond ===
+      document.getElementById("contentSecond-52").id
+    ) {
+      locationType = "Video with Descriptive Audio";
+      console.log(locationType);
+      locationTypeSecond = "Video_safety_issues_dangers_concerns";
+
+      console.log(locationTypeSecond);
+      Description = document.getElementById(
+        "Video_safety_issues_dangers_concerns"
+      ).value;
+
+      console.log(Description);
+      console.log(videoName);
+      //Shift contentSecond-46 TO contentSecond-52
+    } else {
+      console.log("not working");
+
+      alert("Done !, Proceed to Download Files");
+      //window.location.assign("index.html");
+    }
+  }
+  if (counterSecond > 52) {
+    $(".contentSecond-holder").hide();
+    $(".endSecond").show();
+  }
+});
+
+$("body").on("click", ".backSecond", function () {
+  //alert(counter);
+  counterSecond--;
+  $(".contentSecond").hide();
+  var idSecond = counterSecond;
+  $("#contentSecond-" + idSecond).show();
+  if (counterSecond < 52) {
+    $(".backSecond").hide();
+  }
+});
+
+const newLocal = ".edit-previousSecond";
+// if content-1 =  ("#content-" + id)
+//then  let facilityType = "Meter";
+
+$("body").on("click", newLocal, function () {});
+
+console.log(videoName);
 
 const DownloadVideoZip = () => {
   var zip = new JSZip();
 
   var video = zip.folder("Video with Descriptive Audio");
   video.file("Video_Yard_overview.mp4", blobVideo, { base64: false });
-  video.file("Video_Outside_each_building.mp4", blobVideo, {
+  video.file(videoName, blobVideo, {
     base64: false,
   });
-  video.file("Video_Inside_each_building.mp4", blobVideo, {
+  video.file(videoName, blobVideo, {
     base64: false,
   });
-  video.file("Video_Existing_network_cabinets.mp4", blobVideo, {
+  video.file(videoName, blobVideo, {
     base64: false,
   });
-  video.file("Video_Proposed_solution_inside.mp4", blobVideo, {
+  video.file(videoName, blobVideo, {
     base64: false,
   });
-  video.file("Video_direction_to_services.mp4", blobVideo, {
+  video.file(videoName, blobVideo, {
     base64: false,
   });
-  video.file("Video_safety_issues_dangers_concerns.mp4", blobVideo, {
+  video.file(videoName, blobVideo, {
     base64: false,
   });
   zip.generateAsync({ type: "blob" }).then(function (content) {
