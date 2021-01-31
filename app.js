@@ -1,3 +1,9 @@
+//TO DO
+
+//1) FIX PREVIOUS BUTTON
+//2) REPLACE AND CANCEL (DIALOG)
+//3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
+
 var FoodForm = document.getElementById("foodForm");
 
 let Activity;
@@ -18,6 +24,7 @@ let exactLocation;
 let imgData;
 let DataURL1;
 let blob;
+let zippedMail;
 
 document.getElementById("downloadZip").style.visibility = "hidden";
 
@@ -712,10 +719,19 @@ $("body").on("click", ".nextSecond", function () {
 $("body").on("click", ".backSecond", function () {
   //alert(counter);
   counterSecond--;
+
+  var txt;
+  if (confirm("Do you want to Replace previous image!")) {
+    //txt = "You pressed OK!";
+  } else {
+    //txt = "You pressed Cancel!";
+  }
+  //document.getElementById("demo").innerHTML = txt;
+
   $(".contentSecond").hide();
   var idSecond = counterSecond;
   $("#contentSecond-" + idSecond).show();
-  if (counterSecond < 46) {
+  if (counterSecond < 2) {
     $(".backSecond").hide();
   }
 });
@@ -1231,12 +1247,78 @@ const DownloadZip = () => {
     // see FileSaver.js
     saveAs(content, "Comserve Geocam.zip");
 
+    zippedMail = content;
+
+    console.log(content);
+
     console.log("zip");
   });
 };
 
+////////////////share
+const shareButton = document.querySelector(".share-button");
+const shareDialog = document.querySelector(".share-dialog");
+const closeButton = document.querySelector(".close-button");
+
+shareButton.addEventListener("click", (event) => {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "WebShare API Demo",
+        url: "https://codepen.io/ayoisaiah/pen/YbNazJ",
+      })
+      .then(() => {
+        console.log("Thanks for sharing!");
+      })
+      .catch(console.error);
+  } else {
+    shareDialog.classList.add("is-open");
+  }
+});
+
+closeButton.addEventListener("click", (event) => {
+  shareDialog.classList.remove("is-open");
+});
+
+var FoodForm = document.getElementById("SendEmailForm");
+
+SendEmailForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var senderEmail = document.getElementById("senderEmail").value;
+
+  console.log(senderEmail);
+  Email.send({
+    SecureToken: "56e05383-b7ec-4596-bf55-a0ba77bad984",
+    To: senderEmail,
+    From: "foyemc@gmail.com",
+    Subject: "Comserve_Geocam Files",
+    Body: "Well that was easy!!",
+    Attachments: [
+      {
+        name: "Comserve_Geocam",
+        path: zippedMail,
+      },
+    ],
+  }).then(function (message) {
+    alert("Mail has been sent successfully");
+  });
+});
 //CHANGE BLOB TO DIFFERENT REFRENCE
 
+function myCopyFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
 //MY APPROACH SET COUNTER
 
 //////////////////////////////////////

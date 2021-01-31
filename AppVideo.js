@@ -1,3 +1,9 @@
+//TO DO
+
+//1) FIX PREVIOUS BUTTON
+//2) REPLACE AND CANCEL (DIALOG)
+//3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
+
 console.log("videkkkkoo");
 
 let blobVideo;
@@ -159,7 +165,7 @@ $("body").on("click", ".next", function () {
 
   ////////////////
   if (counterSecond > 46) {
-    $(".backSecond").show();
+    $(".back").show();
     var idSecond = counterSecond;
     if (
       "contentSecond-" + idSecond ===
@@ -275,14 +281,14 @@ $("body").on("click", ".next", function () {
   }
 });
 
-$("body").on("click", ".backSecond", function () {
+$("body").on("click", ".back", function () {
   //alert(counter);
   counterSecond--;
   $(".contentSecond").hide();
   var idSecond = counterSecond;
   $("#contentSecond-" + idSecond).show();
-  if (counterSecond < 52) {
-    $(".backSecond").hide();
+  if (counterSecond < 47) {
+    $(".back").hide();
   }
 });
 
