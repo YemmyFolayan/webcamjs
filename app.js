@@ -759,6 +759,8 @@ FoodForm.addEventListener("submit", function (e) {
 
   Building = selectorBuilding[selectorBuilding.selectedIndex].value;
 
+  FIA = document.getElementById("FacilityNo").value;
+
   /* var selectorDescription = document.getElementById("DescriptionOutdoor");
   Description = selectorDescription[selectorDescription.selectedIndex].value; */
   console.log(Activity);
@@ -1144,7 +1146,7 @@ reverseGeocoder.getClientLocation(function (result) {
   country = result.countryName;
   //Building = result.principalSubdivision;
   //Description = result.countryName;
-  FIA = result.postcode;
+  //FIA = result.postcode;
 
   exactLocation = city + "," + country;
 
