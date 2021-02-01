@@ -21,10 +21,10 @@
 
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-<script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c">
-</script>
+<!--<script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c">
+</script>-->
 
-<!--  <script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js id="onedrive-js" client-id="000000004015A50A""></script> -->
+<script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js" id="onedrive-js" client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c"></script>
   
 
 
@@ -49,7 +49,7 @@
         success: function(files) { alert("files"); },
         progress: function(percent) { alert("progress"); },
         cancel: function() { alert("cancel"); },
-        error: function(error) { alert(error); }
+        error: function(error) { alert("error"); }
       }      
       OneDrive.save(saverOptions);
     }
@@ -248,7 +248,7 @@
       <!--<p class="textWhite"> Click to Download All Pictures & Video captured </p>-->
       <button type="button" class="button" onclick="DownloadZip()">Download Zip Folder ✔</button>
 
-        < class="share-dialog">
+        <div class="share-dialog">
           <header>
             <h3 class="dialog-title">Share File to  
             <svg>
