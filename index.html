@@ -37,8 +37,8 @@
 
 
   <script type="text/javascript">
-    function launchSaveToOneDrive(){
-      var odOptions = {
+    function launchSaveToOneDrive() {
+      var saverOptions = {
         clientId: "6c08c824-55f6-4b54-85fa-fd8c269b230c",
         action: "save",
         sourceInputElementId: "fileUploadControl",
@@ -51,7 +51,7 @@
         cancel: function() { alert("cancel"); },
         error: function(error) { alert(error); }
       }      
-      OneDrive.save(odOptions);
+      OneDrive.save(saverOptions);
     }
   </script>
 
