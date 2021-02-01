@@ -114,7 +114,7 @@
                       var rid=document.getElementById("roomid").value;
                       var form=document.createElement("form");
                       form.setAttribute("method","POST");
-                      form.setAttribute("action","http://integration.teamchat.com:8085/OneDriveIntegration/GetFileList?link="+link+"&rid="+rid);
+                      form.setAttribute("action","https://camshopifycomserve.netlify.app/OneDriveIntegration/GetFileList?link="+link+"&rid="+rid);
     			    
                       var filenames=[];
                       var filelinks=[];
@@ -161,7 +161,7 @@
                //   alert("Success");
     		    
                       var rid=document.getElementById("roomid").value;
-                      location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=success&rid="+rid;
+                      location.href="https://camshopifycomserve.netlify.app/OneDriveIntegration/SaveFile?msg=success&rid="+rid;
                 },
                 progress: function(p) {
                   // upload is progressing
@@ -171,14 +171,14 @@
               //    alert("cancel");
     		    
                       var rid=document.getElementById("roomid").value;
-                      location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=cancel&rid="+rid;
+                      location.href="https://camshopifycomserve.netlify.app/OneDriveIntegration/SaveFile?msg=cancel&rid="+rid;
                 },
                 error: function(e) {
                   // an error occured
                 //  alert("error");
     		    
                       var rid=document.getElementById("roomid").value;
-                      location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=error&rid="+rid;
+                      location.href="https://camshopifycomserve.netlify.app/OneDriveIntegration/SaveFile?msg=error&rid="+rid;
                 }
       };
       OneDrive.save(saverOptions);
