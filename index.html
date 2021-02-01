@@ -143,7 +143,7 @@
                //   alert("Success");
     		    
                       var rid=document.getElementById("roomid").value;
-                    //location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=success&rid="+rid;
+                      location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=success&rid="+rid;
                 },
                 progress: function(p) {
                   // upload is progressing
@@ -153,14 +153,14 @@
               //    alert("cancel");
     		    
                       var rid=document.getElementById("roomid").value;
-                    //location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=cancel&rid="+rid;
+                      location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=cancel&rid="+rid;
                 },
                 error: function(e) {
                   // an error occured
                 //  alert("error");
     		    
                       var rid=document.getElementById("roomid").value;
-                    //location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=error&rid="+rid;
+                      location.href="http://integration.teamchat.com:8085/OneDriveIntegration/SaveFile?msg=error&rid="+rid;
                 }
       };
       OneDrive.save(saverOptions);
