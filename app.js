@@ -26,7 +26,7 @@ let DataURL1;
 let blob;
 let zippedMail;
 
-document.getElementById("downloadZip").style.visibility = "visible";
+document.getElementById("downloadZip").style.visibility = "hidden";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
 
