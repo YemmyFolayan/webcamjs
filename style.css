@@ -732,8 +732,8 @@ header {
 
 .slider > a {
   display: inline-flex;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: white;
   text-decoration: none;
   align-items: center;
