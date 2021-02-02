@@ -38,7 +38,7 @@ body {
     "Segoe UI Symbol";
   font-size: 1rem;
   background-color: #f7fafc;
-  line-height: 1.6;
+
   color: #4a5568;
   -webkit-font-smoothing: antialiased;
 }
@@ -165,12 +165,12 @@ header {
 
 .section__heading {
   text-align: center;
-  // font-weight: 600;
+  font-weight: 600;
   text-transform: uppercase;
 
   span {
     display: inline-block;
-    font-size: 1rem;
+
     background-color: $primary--clr;
     padding: 8px 1rem;
     color: #fff;
