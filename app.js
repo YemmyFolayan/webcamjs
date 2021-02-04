@@ -1,4 +1,4 @@
-//TODO clear cache when site loads, use logo
+//TODO clear cache when site loads, use logo structure it very well
 
 //1) FIX PREVIOUS BUTTON
 //2) REPLACE AND CANCEL (DIALOG)

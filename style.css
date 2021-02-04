@@ -733,6 +733,10 @@ header {
   background: transparent;
 }
 
+.centerAll {
+  margin-left: 200px !important;
+}
+
 .smallImg {
   width: 140px;
   height: 140px;
