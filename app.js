@@ -1,4 +1,4 @@
-//TO DO
+//TODO clear cache when site loads, use logo
 
 //1) FIX PREVIOUS BUTTON
 //2) REPLACE AND CANCEL (DIALOG)
