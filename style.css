@@ -732,6 +732,11 @@ header {
 .slides::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.smallImg {
+  width: 140px;
+  height: 140px;
+}
 .slides > div {
   scroll-snap-align: start;
   flex-shrink: 0;
