@@ -870,7 +870,7 @@ function take_snapshot() {
     // display results in page
 
     document.getElementById("results").innerHTML =
-      "<h5>Note : Supply Site Information in the form Below and <br> Click Download</h5>" +
+      // "<h5>Note : Supply Site Information in the form Below and <br> Click Download</h5>" +
       '<a  download="' +
       FileName +
       '" href="' +

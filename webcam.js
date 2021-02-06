@@ -317,10 +317,11 @@
       if (this.userMedia) {
         // setup webcam video container
         var video = document.createElement("video");
+        video.setAttribute("class", "cameraVideo");
         video.setAttribute("autoplay", "autoplay");
         video.setAttribute("playsinline", "playsinline");
-        video.style.width = "" + this.params.dest_width + "px";
-        video.style.height = "" + this.params.dest_height + "px";
+        video.style.width = "280px";
+        video.style.height = "480px";
 
         if (scaleX != 1.0 || scaleY != 1.0) {
           elem.style.overflow = "hidden";

@@ -319,7 +319,6 @@ h5 {
 #results {
   background: url(./images/location3.jpeg);
   font-weight: 800;
-  border: white;
 
   width: 400px;
   height: 380px !important;
@@ -352,12 +351,12 @@ h5 {
 
   background-size: cover;
   width: 400px;
-  height: 280px !important;
+  height: 480px !important;
 
   border-radius: 20px;
-  border-width: 20px;
+  border-width: 5px;
 
-  border-color: rgb(39, 30, 168) !important;
+  border-color: #0a64ff !important;
 }
 
 video {
@@ -463,7 +462,7 @@ u {
 }
 
 canvas {
-  border: 1px solid red;
+  border: 1px solid #0a64ff;
 }
 
 .hidden-mobile {
@@ -671,6 +670,11 @@ header {
   margin-right: 0;
   width: 30px;
   height: 30px;
+}
+.solid,
+.results {
+  border-style: solid !important;
+  border-color: #0a64ff !important;
 }
 
 .link {
