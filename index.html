@@ -1,1411 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./src/css/main.css">
-
-  <link rel="icon" href="/images/36.png" type="image/gif" sizes="36x36">
-
-  <meta http-equiv="cache-control" content="no-cache" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="-1" />
-
-  <link rel="manifest" href='./manifest.json'/>
-
-  <title>CamShopify Comserve</title>
+  <head>
+    <title>Login page | Camshopify</title>
+    <meta charset="utf-8" / >
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="keywords" content="IntrioBasket.ng IntrioBasket food items rice vegetables flour ecommerce shopping cart IntrioBasket.ng IntrioBasket website">
+    <meta name="author" content="MARTECH | Deer Creative Theme">
 
 
-  <script src="webcam.js"></script>
-  <!-- First, include the Webcam.js JavaScript Library -->
-  <script type="text/javascript" src="webcam.min.js"></script>
-
-  <script type="text/javascript" src="dist/jszip.js"> </script>
-  <script type="text/javascript" src="dist/FileSaver.js"> </script>
-
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-<script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js" id="onedrive-js" client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c">
-</script>
-
-<!--<script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" 000000004015A50A client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c"></script>-->
-  
+    <link rel="icon" href="/images/36.png" type="image/gif" sizes="36x36">
 
 
-  <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-  <script src="https://cdn.jsdelivr.net/gh/bigdatacloudapi/js-reverse-geocode-client@latest/bigdatacloud_reverse_geocode.min.js" type="text/javascript"></script>
-
-
-  <!--<script type="text/javascript">
-    function launchSaveToOneDrive() {
-      var saverOptions = {
-        clientId: "6c08c824-55f6-4b54-85fa-fd8c269b230c",
-        action: "save",
-        sourceInputElementId: "fileUploadControl",
-        sourceUri: "",
-        fileName: "file.txt",
-        openInNewWindow: true,
-        advanced: {},
-        success: function(files) { alert("files"); },
-        progress: function(percent) { alert("progress"); },
-        cancel: function() { alert("cancel"); },
-        error: function(error) { alert("error"); }
-      }      
-      OneDrive.save(saverOptions);
-    }
-  </script> -->
-
-
-
-  <script type="text/javascript">
-  function launchOneDriveDownloader() {
-      var pickerOptions = { 
-               success: function(files) {
-                    // Handle returned file object(s)
-                  //  alert("success");
-                  var id=document.createElement("form");
-                  var link=files.link;
-                  var rid=document.getElementById("roomid").value;
-                  var form=document.createElement("form");
-                  form.setAttribute("method","POST");
-                  form.setAttribute("action","https://camshopifycomserve.netlify.app/OneDriveIntegration/GetFileList?link="+link+"&rid="+rid);
- 			    
-                  var filenames=[];
-                  var filelinks=[];
-                  for (i = 0; i < files.values.length; i++) {
-                      filelinks[i]=files.values[i].link;
-                      filenames[i]=files.values[i].fileName;
- 			        
-                  }
-                //  alert(filenames);
-                //  alert(filelinks);
-                 var hiddenField = document.createElement("input");
-                  hiddenField.setAttribute("type", "text");
-                      hiddenField.setAttribute("name", "filenames");
-                      hiddenField.setAttribute("value", filenames);
-                  form.appendChild(hiddenField);
-                  var hiddenField = document.createElement("input");
-                  hiddenField.setAttribute("type", "text");
-                      hiddenField.setAttribute("name", "filelinks");
-                      hiddenField.setAttribute("value", filelinks);
-                  form.appendChild(hiddenField);
-                  form.submit();
-    			    
-    			    
-                    },
-
-                    cancel: function() {
-                        // handle when the user cancels picking a file
-                       // alert("You didn't choose any file");
-                    },
-
-                    linkType: "downloadLink", // or "downloadLink"  webViewLink,
-                    multiSelect: true // or true
-      };
-      OneDrive.open(pickerOptions);
-  }
-
-  function launchOneDrivePicker() {
-      var pickerOptions = { 
-               success: function(files) {
-                      // Handle returned file object(s)
-                      var id=document.createElement("form");
-                      var link=files.link;
-                      var rid=document.getElementById("roomid").value;
-                      var form=document.createElement("form");
-                      form.setAttribute("method","POST");
-                      form.setAttribute("action","https://camshopifycomserve.netlify.app/OneDriveIntegration/GetFileList?link="+link+"&rid="+rid);
-    			    
-                      var filenames=[];
-                      var filelinks=[];
-                      for (i = 0; i < files.values.length; i++) {
-                          filelinks[i]=files.values[i].link;
-                          filenames[i]=files.values[i].fileName;
-    			        
-                      }
-                    //  alert(filenames);
-                    //  alert(filelinks);
-                     var hiddenField = document.createElement("input");
-                      hiddenField.setAttribute("type", "text");
-                      hiddenField.setAttribute("name", "filenames");
-                      hiddenField.setAttribute("value", filenames);
-                      form.appendChild(hiddenField);
-                      var hiddenField = document.createElement("input");
-                      hiddenField.setAttribute("type", "text");
-                      hiddenField.setAttribute("name", "filelinks");
-                      hiddenField.setAttribute("value", filelinks);
-                      form.appendChild(hiddenField);
-                      form.submit();
-    			    
-    			    
-                    },
-
-                    cancel: function() {
-                        // handle when the user cancels picking a file
-                       // alert("You didn't pick ");
-                    },
-
-                    linkType: "webViewLink", // or "downloadLink"  webViewLink,
-                    multiSelect: true // or true
-      };
-      OneDrive.open(pickerOptions);
-  }
-
-
-      function launchOneDriveSaver(){
-      var saverOptions = { 
-
-              clientId: "6c08c824-55f6-4b54-85fa-fd8c269b230c",
-              action: "save",
-              sourceInputElementId: "fileUploadControl",
-              sourceUri: "",
-              fileName: "file.txt",
-              openInNewWindow: true,
-     
-
-              file: "file",
-                success: function(){
-                  // upload is complete
-               //   alert("Success");
-    		    
-                      var rid=document.getElementById("roomid").value;
-                      location.href="https://camshopifycomserve.netlify.app/OneDriveIntegration/SaveFile?msg=success&rid="+rid;
-                },
-                progress: function(p) {
-                  // upload is progressing
-                },
-                cancel: function(){
-                  // upload was cancelled
-              //    alert("cancel");
-    		    
-                      var rid=document.getElementById("roomid").value;
-                      location.href="https://camshopifycomserve.netlify.app/OneDriveIntegration/SaveFile?msg=cancel&rid="+rid;
-                },
-                error: function(e) {
-                  // an error occured
-                //  alert("error");
-    		    
-                      var rid=document.getElementById("roomid").value;
-                      location.href="https://camshopifycomserve.netlify.app/OneDriveIntegration/SaveFile?msg=error&rid="+rid;
-                }
-      };
-      OneDrive.save(saverOptions);
-  }
-      function storeRoomId(){
-          var rid=window.location.href.split("=");
-          document.getElementById("roomid").value=rid[1];
-          //alert(document.getElementById("roomid").value);
-      }
-  </script>
-</head>
-
-<body>
-
-  <!-- Header Area  -->
-  <header>
-
-   
-    <nav>
-
-      <ul>
-
-
-        
-        <li><a href="/index.html"> 
-        <img class="imagebanner"
-        src="images/comserve-logo-ret.png"
-        alt="Comserve Logo"
-        style="width: 350px; height: 80px"
-        />
-        </a></li>
-        <li><a class="active hover" href="/index.html"> Home 📸 </a> </li>
-        <li><a class="hover" href="http://www.comserves.com/projects/">Projects</a></li>
-        <li><a class="hover" href="http://www.comserves.com/contact-2/">Contact 📠</a></li>
-        <li><a class="hover" href="/webcam.html"> Video 📹</a></li>
-     
-        <li><a href="http://www.comserves.com/about-us/">About 🔋</a></li>
-      </ul>
-
-    </nav>
-
-    <div class="projects__grid">
-
-
-    <div class="projects textWhite">
-
-
-    <h1 class="ml1">
-      <span class="text-wrapper">
-        <span class="line line1"></span>
-        <span class="letters">GEO CAMSHOPIFY </span>
-        <span class="line line2"></span>
-      </span>
-      🏗
-    </h1>
-
-    </div>
-
-
-    <div class="projects textWhite">Engineering, Systems Integrations, Automations & Controls</div>  
-    <div class="projects">
+    <meta property="og:title" content="CamShopify |Comserves Geotagging App" />
+    <meta property="og:description" content="CamShopify |Comserves Geotagging App" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="assets/images/images/comserve-logo-ret.png" />
+    <meta property="og:locale" content="en_NG" />
+    <meta name="title" content="CamShopify |Comserves" />
     
-    <div id="downloadZip">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom_bootstrap.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/elegant.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/scroll.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <link rel="shortcut icon" href="assets/images/shortcut_logo.png">
+    <link rel="stylesheet" href="assets/css/materialize.css">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  </head>
 
-      <!--<p class="textWhite"> Click to Download All Pictures & Video captured </p>-->
-      <button type="button" class="button" onclick="DownloadZip()">Download Zip Folder 🎬</button>
-
-        <div class="share-dialog">
-          <header>
-            <h3 class="dialog-title">Share File to  🎬
-            <svg>
-              <use href="#share-icon"></use>
-            </svg></h3>
-            <button class="close-button"><svg><use href="#close"></use></svg></button>
-          </header>
-          <div class="targets">
-         
-
-            <!--ONE DRIVE-->
-
-           <!-- <input id="fileUploadControl" name="fileUploadControl" type="file" />-->
-            <button class="button" onclick="launchSaveToOneDrive();">Save to OneDrive 🎬</button>
-
-            <button class="button" onclick="launchSaveToGoogleDrive();">Save to GoogleDrive 🎬</button>
-
-            <!--NEW ONE DRIVE-->
-
-           
-              <button style="background-color:#159ceb; color:#fff;" class="btn btn-lg btn-block" onclick="launchOneDrivePicker();">Open 🎬</button></div>
-           
-              <button style="background-color:#159ceb; color:#fff;" class="btn btn-lg btn-block"  onclick="launchOneDriveDownloader();">Download 🎬</button>
-            
-
-              <div id="save">
-              <div class="custom-file-upload">
-                  <!--<label for="file">File: </label>--> 
-                  <input type="file" id="file" name="file"  />
+  <body>
+    <div id="main">
+      <header>
+        <div class="header-block d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="header-left d-flex flex-column flex-md-row align-items-center">
+                  <p class="d-flex align-items-center"><i class="fas fa-envelope"></i>+1 (214)-884-5686</p>
+                  <p class="d-flex align-items-center"><i class="fas fa-phone"></i>info@comserves.com</p>
+                </div>
               </div>
-              &nbsp;
-              <button style="background-color:#159ceb; color:#fff;" class="btn btn-lg btn-block" onclick="launchOneDriveSaver();">Upload 🎬</button>&nbsp;
-             
-
-
-    
-              <form method="post" id="SendEmailForm"> 
-                <input type="text" id="senderEmail" class="" placeholder="Email" />
-
+              <div class="col-12 col-md-6">
+                <div class="header-right d-flex flex-column flex-md-row justify-content-md-end justify-content-center align-items-center">
+                  <div class="social-link d-flex"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-instagram"> </i></a></div>
                 
-                <input  type="submit" class="button" value="✉ Share Via Mail"/> 
-              </form> 
-          
+
+
+
+
+                  <div class="login d-flex"><a href="register.html"><i class="fas fa-user"></i>SignUp</a></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="link">
-            <div class="pen-url"><input type="text" value="https://comserves.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?e=5%3A6318753069a046928f41e0671a3ee901&at=9&RootFolder=%2FShared%20Documents%2FMichael%20Folayan&FolderCTID=0x012000F48AE807333B6A43BD4105A29D6686E6" id="myInput"></div>
-            <button class="copy-link" onclick="myCopyFunction()">Copy Link</button>
+        </div>
+        <nav class="navigation d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-2"><a class="logo" href="index.html"><img src="images/comserve-logo-ret.png" alt=""></a></div>
+              <div class="col-8">
+                <div class="navgition-menu d-flex align-items-center justify-content-center">
+                  <ul class="mb-0">
+                
+
+
+
+
+                                       
+                  
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </nav>
+        <div id="mobile-menu">
+          <div class="container">
+            <div class="row">
+              <div class="col-3">
+                <div class="mobile-menu_block d-flex align-items-center"><a class="mobile-menu--control" href="index.html"><i class="fas fa-bars"></i></a>
+                  <div id="ogami-mobile-menu">
+                    <button class="no-round-btn" id="mobile-menu--closebtn">Close menu</button>
+                    <div class="mobile-menu_items">
+                      <ul class="mb-0 d-flex flex-column">
+                           <ul class="sub-menu">
+                            <li><a href="login.html">login</a></li>
+                            <li><a href="register.html">register</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                                 <li><a href="about_us.html">about us</a></li>
+                            <li><a href="contact_us.html">contact us</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mobile-login">
+                      <h2>My account</h2><a href="register.html">SignUp</a><a href="register.html">Register</a>
+                    </div>
+                    <div class="mobile-social"><a href=""><i class="fab fa-facebook-f"> </i></a><a href=""><i class="fab fa-twitter"></i></a><a href=""><i class="fab fa-invision"> </i></a><a href=""><i class="fab fa-instagram"> </i></a></div>
+                  </div>
+                  <div class="ogamin-mobile-menu_bg"></div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center"><a href=""><img src="images/comserve-logo-ret.png" alt=""></a></div>
+              </div>
+              <div class="col-3">
+              </div>
+            </div>
           </div>
         </div>
 
-        <button class="button share-button" type="button" title="Share this article">
-          <svg>
-            <use href="#share-icon"></use>
-          </svg>
-          <span>Share</span>
-        </button>
-
-        <svg class="hidden">
-          <defs>
-            <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol>
-    
-            <symbol id="email" viewBox="0 0 24 24" fill="#777" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></symbol>
-    
-            <symbol id="linkedin" viewBox="0 0 24 24" fill="#0077B5" stroke="#0077B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></symbol>
-    
-            <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></symbol>
-          </defs>
-        </svg>
+      </header>
+      <!-- End header-->
+      <div class="ogami-breadcrumb">
+        <div class="container">
+          <ul>
+            <li> <a class="breadcrumb-link" href="index.html"> <i class="fas fa-home"></i>Home</a></li>
+            <li> <a class="breadcrumb-link active" href="javascript:void()">Login</a></li>
+          </ul>
+        </div>
       </div>
- </div>  
+      <!-- End breadcrumb-->
+      <div class="account">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 mx-auto" id="containerr">
+              <h1 class="title">Login <img src="/assets/images/admin.png"></h1>
+              <form id="form" method="post" novalidate>
+                <label for="user-name">Username or email address *</label>
+                <input class="no-round-input" id="email" type="email" name="email" onfocusout="validateEmail()">
+                <span class="helper-text"></span>
+                <label for="password">Password *</label>
 
-  
-    </div>
+                <input class="no-round-input" id="password" type="password" name="password" onfocusout="validatePassword()">
+                <span class="helper-text"></span>
 
-    <div class="header__inner wrap padded">
-     
+                <div class="account-method">
+                  <div class="account-save">
+                    <input id="savepass" type="checkbox">
+                    <label for="savepass">Save Password</label>
+                  </div>
 
-    </div>
-  </header>
+                    <div class="account-save">
+                   <a class="create-account" href="/resetEmail.html"><label> Reset Password</label></a>
+                    </div>
 
-  <!-- About Section  -->
 
-  <section class="about container">
-
-  <div class="projects__grid">
-
-  <div class="project">
-
-    <div class="about__inner wrap padded" id="hideSection">
-
-      <div class="about__avatar">
-
-        <div class="content-holder">
-           
-            <div class="content" id="content-1" style="display: block;">
-     
-                <input type="text" id="Outdoor" value="Outdoor Photos" class="dynamicText"></input>
-              
+                  </div>
+                <div class="account-function">
+                  <button class="no-round-btn" type="submit">Sign in</button><a class="create-account" href="register.html">Or create an account</a>
+                </div>
+              </form>
             </div>
-            <div class="content" id="content-2">
-                <input type="text" id="Indoor" value="Indoor Photos" class="dynamicText"></input>
-         
-            </div>
-
-            <div class="content" id="content-3">
-               <input type="text" id="Shots" value="Screen Shots" class="dynamicText"></input>
-            </div>
-          <div class="content" id="content-4">
-              <input type="text" id="Video" value="Video with Descriptive Audio" class="dynamicText"></input>
-          </div>
-
-
-
-
-
-           <div class="projects__grid prevGrid" id="SHOWHIDE">
-  
-
-
-          <div class="projects">
-
-            <button type="button" class="back button">&laquo; Previous</button> 
-
-
-          </div>
-
-
-          <div class="projects">     <button type="button" class="next button">Next &raquo; </button> </div>  
-
- 
-
-
-
-   
-
           </div>
         </div>
-
-
-          <div class="end">
-              <p class="dynamicText">Congratulation! You are done!</p>
-              <button type="button" class="edit-previous">Edit Previous Options</button>
-          </div>
-
-
-
-
-
-
-
-
-         
-          <div class="solid" id="my_camera">
-          </div>
-
-
-
-
-
-
-          <!--TEST RUN-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-
-
-
-<!--TEST RUN-->
-
-
-
-
-
-
-
-
-
-<!--SECOND PREV NEXT-->
-        <div class="contentSecond-holder">
-
-          <div id="OutdoorPix">📽
-
-            <div class="contentSecond" id="contentSecond-1" style="display: block;">
-     
-                <input type="text" id="Yard_sign" value="Yard_sign" class="dynamicText"></input>
-              
-            </div>
-            <div class="contentSecond" id="contentSecond-2">
-                <input type="text" id="Yard_overview/south" value="Yard_overview/south" class="dynamicText"></input>
-         
-            </div>
-
-            <div class="contentSecond" id="contentSecond-3">
-                <input type="text" id="Yard_overview/west" value="Yard_overview/west" class="dynamicText"></input>
-              
-            </div>
-          <div class="contentSecond" id="contentSecond-4">
-              <input type="text" id="Yard_overview/North" value="Yard_overview/North" class="dynamicText"></input>
-            
-          </div>
-
-          <div class="contentSecond" id="contentSecond-5">
-            <input type="text" id="Yard_overview/East" value="Yard_overview/East" class="dynamicText"></input>
-            
-          </div>
-
-
-          <div class="contentSecond" id="contentSecond-6">
-            <input type="text" id="Fencing" value="Fencing" class="dynamicText"></input>
-            
-          </div>
-
-          <div class="contentSecond" id="contentSecond-7">
-            <input type="text" id="Building_enclosure" value="Building_enclosure" class="dynamicText"></input>
-            
-          </div>
-
-
-            <div class="contentSecond" id="contentSecond-8">
-              <input type="text" id="Target_wall_for_mast" value="Target_wall_for_mast" class="dynamicText"></input>
-            
-            </div>
-
-
-            <div class="contentSecond" id="contentSecond-9">
-              <input type="text" id="Target_wall_for_mast_Roof" value="Target_wall_for_mast_Roof" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-10">
-              <input type="text" id="Bruce_box" value="Bruce_box" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-11">
-              <input type="text" id="Building_and_tower_grounds" value="Building_and_tower_grounds" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-12">
-              <input type="text" id="All_outdoor_communications" value="All_outdoor_communications" class="dynamicText"></input>
-            
-            </div>
-
-             <div class="contentSecond" id="contentSecond-13">
-              <input type="text" id="Existing_masts_towers_VSAT" value="Existing_masts_towers_VSAT" class="dynamicText"></input>
-            
-            </div>
-
-             <div class="contentSecond" id="contentSecond-14">
-              <input type="text" id="towers_VSAT_cableRouting" value="towers_VSAT_cableRouting" class="dynamicText"></input>
-            
-            </div>
-
-             <div class="contentSecond" id="contentSecond-15">
-              <input type="text" id="tower_conduit" value="tower_conduit" class="dynamicText"></input>
-            
-            </div>
-
-             <div class="contentSecond" id="contentSecond-16">
-              <input type="text" id="trenching_(Tremwa)" value="trenching_(Tremwa)" class="dynamicText"></input>
-            
-            </div>
-
-             <div class="contentSecond" id="contentSecond-17">
-              <input type="text" id="Existing_cable_trays" value="Existing_cable_trays" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-18">
-              <input type="text" id="outdoor_facilities" value="outdoor_facilities" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-19">
-              <input type="text" id="Proposed_slurry_pit" value="Proposed_slurry_pit" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-20">
-              <input type="text" id="overhead_wiring" value="overhead_wiring" class="dynamicText"></input>
-            
-            </div>
-
-
-
-
-          </div>
-
-
-          <div id="IndoorPix">
-
-             <div class="contentSecond" id="contentSecond-21">
-              <input type="text" id="From_the_doorway" value="From_the_doorway" class="dynamicText"></input>
-            
-            </div>
-
-             <div class="contentSecond" id="contentSecond-22">
-              <input type="text" id="indoor_communications_rooms" value="indoor_communications_rooms" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-23">
-              <input type="text" id="Cable_entry_point" value="Cable_entry_point" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-24">
-              <input type="text" id="Existing_cable_runs" value="Existing_cable_runs" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-25">
-              <input type="text" id="Telco_WAN_termination" value="Telco_WAN_termination" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-26">
-              <input type="text" id="cable_termination_equipment" value="cable_termination_equipment" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-27">
-              <input type="text" id="Wall_boards" value="Wall_boards" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-28">
-              <input type="text" id="Patch_panels" value="Patch_panels" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-29">
-              <input type="text" id="equipment_install_location" value="equipment_install_location" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-30">
-              <input type="text" id="rack_install_location" value="rack_install_location" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-31">
-              <input type="text" id="antenna_mounting_location" value="antenna_mounting_location" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-32">
-              <input type="text" id="Equipment_interconnections" value="Equipment_interconnections" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-33">
-              <input type="text" id="data_networking_gear" value="data_networking_gear" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-34">
-              <input type="text" id="Switches_routers_modems" value="Switches_routers_modems" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-35">
-              <input type="text" id="Identify_active_and_spare_ports" value="Identify_active_and_spare_ports" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-36">
-              <input type="text" id="Telephones_and_telephone_numbers" value="Telephones_and_telephone_numbers" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-37">
-              <input type="text" id="Cable_jacks_and_proposed" value="Cable_jacks_and_proposed" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-38">
-              <input type="text" id="radio_equipment" value="radio_equipment" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-39">
-              <input type="text" id="Barton" value="Barton" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-40">
-              <input type="text" id="PBX" value="PBX" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-41">
-              <input type="text" id="unusual" value="unusual" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-42">
-              <input type="text" id="safety_issues_dangers_concerns" value="safety_issues_dangers_concerns" class="dynamicText"></input>
-            
-            </div>
-
-          </div>
-
-
-          <div id="ScreenShotsPix">
-
-
-            <div class="contentSecond" id="contentSecond-43">
-              <input type="text" id="Speed_tests" value="Speed_tests" class="dynamicText"></input>
-            
-            </div>
-
-            <div class="contentSecond" id="contentSecond-44">
-              <input type="text" id="Cellular_signal_tests" value="Cellular_signal_tests" class="dynamicText"></input>
-            
-            </div>
-            <div class="contentSecond" id="contentSecond-45">
-              <input type="text" id="Satellite_signal_tests" value="Satellite_signal_tests" class="dynamicText"></input>
-            
-            </div>
-           
-
-
-          </div>
-
-
-         <!-- <div id="videoPix">
-
-             <div class="contentSecond" id="contentSecond-46">
-              <input type="text" id="Video_Yard_overview" value="Video_Yard_overview" class="dynamicText"></input>
-            
-            </div>
-
-             <div class="contentSecond" id="contentSecond-47">
-              <input type="text" id="Video_Outside_each_building" value="Video_Outside_each_building" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-48">
-              <input type="text" id="Video_Inside_each_building" value="Video_Inside_each_building" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-49">
-              <input type="text" id="Video_Existing_network_cabinets" value="Video_Existing_network_cabinets" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-50">
-              <input type="text" id="Video_Proposed_solution_inside" value="Video_Proposed_solution_inside" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-51">
-              <input type="text" id="Video_direction_to_services" value="Video_direction_to_services" class="dynamicText"></input>
-            
-            </div>
-             <div class="contentSecond" id="contentSecond-52">
-              <input type="text" id="Video_safety_issues_dangers_concerns" value="Video_safety_issues_dangers_concerns" class="dynamicText"></input>
-            
-            </div>
-
-            </div> -->
-
-            </div>
-
-
-            <!-- SECOND ONE-->
-
-            <div class="projects__grid prevGrid">
-             <div class="projects">
-
-              <button type="button" class="backSecond button Shadow">&laquo; Previous</button> 
-
-
-            </div>
-
-           <form>
-              <input
-                class="circle zoom"
-                type="button"
-                value=""
-                onClick="take_snapshot()"
-                
-              />
-            </form>
-            
-
-
-            <div class="projects">     <button type="button" onClick="take_snapshot()" class="nextSecond button Shadow">Next &raquo; 📸 </button> </div>  
-
- 
-
-
-  
-
-            </div>
-
-
-
-          </div>
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <div class="end">
-              <p class="dynamicText">Congratulation! You are done!</p>
-              <button type="button" class="edit-previousSecond">Edit Previous Options</button>
-          </div>
-
-          <p id="siteNamexy"> </p>
-        
-    
-        </div>
+      </div>
+      <!-- End account-->
       
-
-      </div>
-
-
-
-      <div class="project">
-   
-        <div class="solid" id="results"><h5> Your captured image will appear here... </h5>
-          
-
-          
-
-          <p><center>Choose the Activities details below (FacilityType, Building..)<br> Click Save to Generate FIleName </center></p>
-
-
-          
-              <!-- Configure a few settings and attach camera -->
-              <script language="JavaScript">
-                Webcam.set({
-                  width: 320,
-                  height: 280,
-                  image_format: "jpeg",
-                  jpeg_quality: 90,
-                  constraints: {
-                    width: { exact: 320 },
-                    height: { exact: 280 },
-                  },
-                });
-                Webcam.set("constraints", {
-                  facingMode: "environment",
-                });
-                Webcam.attach("#my_camera");
-
-                //front camera.. switch to back camera
-                //facingMode : user rep => front camera    environment rep Back camera
-              </script>
-		
-        </div>
-
-        
-  
-
-
-
-
-     
+      
+      <footer>
        
-        <!-- Social List  -->
-
-
-
-
-
-
-     
-        
        
-
-
-  </section>
-
-
-  
-  
-
-  <!-- Contact Section  -->
-
-  <section class="contact">
-    <div class="contact__inner wrap padded">
-
-
-
-      
-
-      <p id="demo"></p>
-
-   
-
-      <h4 class="section__heading">
-        <span>Let's Work on Your Idea!</span>
-      </h4>
-
-      <p id="demo"></p>
-
-
-     
-
-      <div class="contact__wrap">
-  
-        <div class="contact__form" id="contact__form">
-          <h3><u> Activity 📽</u></h3>
-          <form id="foodForm">
-    
-          <div class="m-3">
-          Facility Number 📽
-            <input
-            type="text"
-            id="FacilityNo"
-            name="Building2222"
-            class="no-round-input"
-            placeholder="Facility Number"
-            required
-            />
-          </div>
-           <div class="m-3">Facility Type 📽</div>
-            <select
-            class="round-input"
-            id="FacilityType"
-            type="text"
-            name="product_type">
-            <option value="MS" id="MS" name="Yes">MS (Meter Station)</option>
-            <option value="CS" id="CS" name="No">
-              CS (Compressor Station)
-            </option>
-            <option value="VL" id="VL" name="No">VL (Valve)</option>
-            <option value="PS" id="PS" name="No">PS (Pump Station)</option>
-            <option value="TM" id="TM" name="No">TM (Terminal)</option>
-            <option value="OF" id="OF" name="No">OF (office)</option>
-            <option value="RH" id="RH" name="No">RH (Radio Hub)</option>
-            <option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
-            </select>
-          </div>
-          <div class="m-3">
-            <div class="m-3"> Activity 📽
-            </div>
-            <select
-            class="round-input"
-            id="Activity"
-            type="text"
-            name="category_type"
-            
-            >
-            <option value="S" id="S" name="Yes">S (Survey)</option>
-            <option value="PI" id="PI" name="No">PI (Pre-install)</option>
-            <option value="AB" id="AB" name="No">AB (As Built)</option>
-            <option value="I" id="I" name="No">I (Investigation)</option>
-            </select>
-          </div>
-
- <div class="m-3">
-  <div class="m-3"> Building 📽
-  </div>
-  <select
-  class="round-input"
-  id="Building"
-  type="text"
-  name="category_type">
-
-
-  <option value="N/A" id="N/A" name="Yes">N/A</option>
-  <option value="Instrument" id="Instrument" name="No">Instrument </option>
-  </select>
-</div>
-
-
-<!--
- <div class="m-3" id="DescriptionOutdoor1">
-  <div class="m-3"> Description (OUTDOOR PHOTOS)
-  </div>
-  <select
-  class="round-input"
-  id="DescriptionOutdoor"
-  type="text"
-  name="category_type">
-
-  
-    <option value="Yard sign" id="N/A" name="Yes">Yard sign</option>
-     <option value="Yard overview" id="N/A" name="Yes">Yard overview</option>
-     <option value="Fencing" id="N/A" name="Yes">Fencing</option>
-     <option value="Building enclosure" id="N/A" name="Yes">Building enclosure</option>
-     <option value="Target wall for mast" id="N/A" name="Yes">Target wall for mast</option>
-     <option value="Bruce_box" id="N/A" name="Yes">Bruce_box</option>
-     <option value="Building_and_tower_grounds" id="N/A" name="Yes">Building_and_tower_grounds</option>
-     <option value="All outdoor communications" id="N/A" name="Yes">All outdoor communications</option>
-     <option value="Existing masts towers VSAT" id="N/A" name="Yes">Existing masts towers VSAT</option>
-     <option value="towers VSAT cableRouting" id="N/A" name="Yes">towers VSAT cableRouting</option>
-     <option value="tower conduit" id="N/A" name="Yes">tower conduit</option>
-     <option value="trenching (Tremwa)" id="N/A" name="Yes">trenching (Tremwa)</option>
-     <option value="Existing cable trays" id="N/A" name="Yes">Existing cable trays</option>
-     <option value="outdoor facilities" id="N/A" name="Yes">outdoor facilities</option>
-     <option value="Proposed slurry pit" id="N/A" name="Yes">Proposed slurry pit</option>
-     <option value="overhead wiring" id="N/A" name="Yes">overhead wiring</option>
-
-  </select>
-</div>
-
- <div class="m-3" id="DescriptionIndoor1">
-  <div class="m-3"> Description (INDOOR PHOTOS)
-  </div>
-  <select
-  class="round-input"
-  id="DescriptionIndoor"
-  type="text"
-  name="category_type">
-    <option value="From_the_doorway" id="Instrument" name="No">From_the_doorway </option>
-    <option value="indoor_communications_rooms" id="Instrument" name="No">indoor_communications_rooms </option>
-    <option value="Cable_entry_point" id="Instrument" name="No">Cable_entry_point </option>
-    <option value="Existing_cable_runs" id="Instrument" name="No">Existing_cable_runs </option>
-    <option value="Telco_WAN_termination" id="Instrument" name="No">Telco_WAN_termination </option>
-    <option value="cable_termination_equipment" id="Instrument" name="No">cable_termination_equipment </option>
-    <option value="Wall_boards" id="Instrument" name="No">Wall_boards </option>
-    <option value="Patch_panels" id="Instrument" name="No">Patch_panels </option>
-    <option value="equipment_install_location" id="Instrument" name="No">equipment_install_location </option>
-    <option value="rack_install_location" id="Instrument" name="No">rack_install_location </option>
-    <option value="antenna_mounting_location" id="Instrument" name="No">antenna_mounting_location </option>
-    <option value="Equipment_interconnections" id="Instrument" name="No">Equipment_interconnections </option>
-    <option value="data_networking_gear" id="Instrument" name="No">data_networking_gear </option>
-
-    <option value="Switches_routers_modems" id="Instrument" name="No">Switches_routers_modems </option>
-    <option value="Identify_active_and_spare_ports" id="Instrument" name="No">Identify_active_and_spare_ports </option>
-    <option value="Telephones and telephone_numbers" id="Instrument" name="No">Telephones_and_telephone_numbers </option>
-    <option value="Cable jacks and proposed" id="Instrument" name="No">Cable jacks and proposed </option>
-    <option value="radio equipment" id="Instrument" name="No">radio equipment </option>
-    <option value="Barton" id="Instrument" name="No">Barton </option>
-    <option value="Bristol" id="Instrument" name="No">Bristol </option>
-    <option value="PBX" id="Instrument" name="No">PBX </option>
-    <option value="unusual" id="Instrument" name="No">unusual </option>
-
-    <option value="safety issues dangers concerns" id="Instrument" name="No">safety issues dangers concerns </option>
-
-
-
-
-  </select>
-</div>
-
-
-
- <div class="m-3" id="DescriptionVideo1">
-  <div class="m-3"> Description (Video with Descriptive Audio)
-  </div>
-  <select
-  class="round-input"
-  id="Descriptionvideo"
-  type="text"
-  name="category_type">
-  <option value="Video_Yard_overview" id="Instrument" name="No">Video_Yard_overview </option>
-  <option value="Video_Outside_each_building" id="Instrument" name="No">Video_Outside_each_building </option>
-  <option value="Video_Inside_each_building" id="Instrument" name="No">Video_Inside_each_building </option>
-  <option value="Video_Existing_network_cabinets" id="Instrument" name="No">Video_Existing_network_cabinets </option>
-  <option value="Video_Proposed_solution_inside" id="Instrument" name="No">Video_Proposed_solution_inside </option>
-  <option value="Video_direction_to_services" id="Instrument" name="No">Video_direction_to_services </option>
-    <option value="Video_safety_issues_dangers_concerns" id="Instrument" name="No">Video_safety_issues_dangers_concerns </option>
-
-
- 
- 
- 
- 
-
-  </select>
-</div>
-
-
- <div class="m-3" id="Descriptionshots1">
-  <div class="m-3"> Description (Screen Shots)
-  </div>
-  <select
-  class="round-input"
-  id="Descriptionshots"
-  type="text"
-  name="category_type">
-
-     <option value="Speed_tests" id="Instrument" name="No">Speed_tests </option>
-     <option value="Cellular_signal_tests" id="Instrument" name="No">Cellular_signal_tests </option>
-     <option value="Satellite_signal_tests" id="Instrument" name="No">Satellite_signal_tests </option>
- 
-  </select>
-</div>
-
--->
-<!--
-          <div class="m-3">
-            <input
-            type="text"
-            id="Description"
-            name="Description222"
-            class="no-round-input"
-            placeholder="Description"
-            required
-            />
-          </div>
-
-          <div class="m-3">
-            <input
-            type="text"
-            id="Building"
-            name="Building2222"
-            class="no-round-input"
-            placeholder="Building"
-            required
-            />
-          </div> -->
-
-		
-
-          <div class="m-5" id="FIAA"
-            name="FIAA"
-            class="no-round-input"
-            placeholder="Fauto">
-            <input
-            type="submit"
-            id="js_send"
-            class="button"
-            value="Save File 💾"
-            />
-          </div>
-          </form>
-
-        </div>
-
-
-
-     
-   
-
-
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Projects Section  -->
-
-  <section class="projects">
-    <div class="projects__inner wrap padded">
-      <h4 class="section__heading">
-        <span>Some Wonderfull Works</span>
-      </h4>
-
-      <div class="projects__grid">
-        <div class="project">
-          <div class="project__art">
-            <img src="images/map1.jpg" alt="" class="project__image" />
-          </div>
-          <h4> People, Passion and Possibilities</h4>
-          <p class="project__intro">
-         
-          We are groups of seasoned professional engineers and consultants with multidisciplinary expertise to deliver sustainable, efficient and cost-effective solutions for mission-critical projects and business needs. </p>
-          <div class="project__links">
-            <a href="http://www.comserves.com/approach/">Our Approach at Comserve</a>
-          </div>
-        </div>
-        <div class="project">
-          <div class="project__art">
-            <img src="images/map2.jpg" alt="" class="project__image" />
-          </div>
-          <h4>Projects</h4>
-          <p class="project__intro">
-            Key Sectors: Oil and Gas, Renewable Energy, Utilities, Telecommunications and Information Technology.
-          </p>
-          <div class="project__links">
-            <a href="http://www.comserves.com/projects/">View Projects</a>
-          </div>
-        </div>
-        <div class="project">
-          <div class="project__art">
-            <img src="images/map3.jpg" alt="" class="project__image" />
-          </div>
-          <h4>East Calgary</h4>
-          <p class="project__intro">
-          Key Sectors: Oil and Gas, Renewable Energy, Utilities, Telecommunications and Information Technology.
-      </p>
-          <div class="project__links">
-            <a href="http://www.comserves.com/solutions/">View Solutions</a>
-          </div>
-        </div>
-      </div>
-     
-    </div>
-  </section>
-
-   <section class="projects">
-    <div class="projects__inner wrap padded">
-      <h4 class="section__heading">
-        <span>Facilities in Canada</span>
-      </h4>
-
-     
-
-      
-      <div class="htmllll">
-      
-      <div class="bodyyy">
-        <div class="slider">
-  
-          <a href="#slide-1">1</a>
-          <a href="#slide-2">2</a>
-          <a href="#slide-3">3</a>
-          <a href="#slide-4">4</a>
-          <a href="#slide-5">5</a>
-
-          <div class="slides">
-            <div id="slide-1"> Toronto's CN Tower <br>
-              
-                
-              <img src="images/Torontos_CN_Tower.jpg" alt="" class="" />
-               
-            </div>
-            <div id="slide-2">
-              Old Quebec (Vieux-Quebec)
-               <br>
-              <img src="images/canada-view-over-old-quebec.jpg" alt="" class="" />
-               
-            </div>
-            <div id="slide-3">
-              Whistler
-               <br>
-              <img src="images/canada-british-columbia-whistler-ski-hill.jpg" alt="" class="" />
-               
-            </div>
-            <div id="slide-4">
-              Ottawa's Parliament Hill
-               <br>
-              <img src="images/canada-british-columbia-whistler-ski-hill.jpg" alt="" class="" />
-               
-            </div>
-            <div id="slide-5">
-
-               St. John's Signal Hill National Historic Site
-               <br>
-              <img src="images/canada-british-columbia-whistler-ski-hill.jpg" alt="" class="" />
-               
+        <div class="footer-credit">
+          <div class="container">
+            <div class="footer-creadit_block d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-baseline align-items-md-center">
+              <p class="author">Copyright © 2021 Comserves - All Rights Reserved.</p><img class="payment-method" src="images/comserve-logo-ret.png" alt="">
             </div>
           </div>
         </div>
-
-
-        </div>
-        </div>
-
-     
-    </div>
-  </section>
-
-
-
-
-  <!-- Skills Section  -->
-
-  <section class="skills">
-    <div class="skills__inner wrap padded">
-      <h4 class="section__heading">
-        <span>Things We Can Do For You!</span>
-      </h4>
-
-      <div class="skills__grid">
-        <div class="skill__item">
-          <div class="skill__icon">
-            <img src="./assets/icons/website.svg" alt="">
-          </div>
-          <div class="skill__details">
-            <h4 class="skill__name">Website Design</h4>
-            <p class="skill__intro">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              debitis non ipsam!
-            </p>
-          </div>
-        </div>
-        <div class="skill__item">
-          <div class="skill__icon">
-            <img src="./assets/icons/cart.svg" alt="">
-          </div>
-          <div class="skill__details">
-            <h4 class="skill__name">E-Commerce</h4>
-            <p class="skill__intro">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              debitis non ipsam!
-            </p>
-          </div>
-        </div>
-        <div class="skill__item">
-          <div class="skill__icon">
-            <img src="./assets/icons/mobile.svg" alt="">
-          </div>
-          <div class="skill__details">
-            <h4 class="skill__name">App Development</h4>
-            <p class="skill__intro">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              debitis non ipsam!
-            </p>
-          </div>
-        </div>
-        <div class="skill__item">
-          <div class="skill__icon">
-            <img src="./assets/icons/graph-pie.svg" alt="">
-          </div>
-          <div class="skill__details">
-            <h4 class="skill__name">SEO</h4>
-            <p class="skill__intro">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              debitis non ipsam!
-            </p>
-          </div>
-        </div>
-        <div class="skill__item">
-          <div class="skill__icon">
-            <img src="./assets/icons/share.svg" alt="">
-          </div>
-          <div class="skill__details">
-            <h4 class="skill__name">Social Media</h4>
-            <p class="skill__intro">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              debitis non ipsam!
-            </p>
-          </div>
-        </div>
-        <div class="skill__item">
-          <div class="skill__icon">
-            <img src="./assets/icons/video-recording.svg" alt="">
-          </div>
-          <div class="skill__details">
-            <h4 class="skill__name">Videos</h4>
-            <p class="skill__intro">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              debitis non ipsam!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews Section  -->
-
-
-  <section class="reviews">
-
-  
-    <div class="reviews__inner wrap padded">
-      <h4 class="section__heading">
-        <span>Awesome reviews</span>
-      </h4>
-
-      <div class="review__card">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
-          <path
-            d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" />
-        </svg>
-        <div class="review__text">
- 
-          WHO WE ARE <p>
-          Comserve Technologies Inc. (CTI) is your dependable engineering, consulting and management solutions company.
-        </div>
-        <h3 class="name">Mr Shola Olatunji </h3>
-        <h4 class="who">CEO - Comserve </h4>
-      </div>
-
-      <div class="people">
-        <img src="./assets/images/avatar2.jpg" data-who="Intern - Yemi Folayan" data-name=' 
-        
-        Comserve Technologies Inc. (CTI) is your dependable engineering, consulting and management solutions company.' alt="" class="active">
-        <img src="./assets/images/image-2.png" data-who="Product Manager at EFGH Inc." data-name='Bobby Stephens'
-          data-review=" Comserve Technologies Inc. (CTI) is your dependable engineering, consulting and management solutions company." alt="">
-        <img src="./assets/images/image-3.png" data-who="Co-Host @HIJK FM." data-name='James Collins' data-review=" Comserve Technologies Inc. (CTI) is your dependable engineering, consulting and management solutions company." alt="">
-        <img src="./assets/images/image-4.png" data-who="CEO - LMNOP Inc." data-name='Kathleen Bennett' data-review=" Comserve Technologies Inc. (CTI) is your dependable engineering, consulting and management solutions company." alt="">
-        <img src="./assets/images/image-5.png" data-who="CEO - WXYZ Inc." data-name='Shirley Franklin' data-review=" Comserve Technologies Inc. (CTI) is your dependable engineering, consulting and management solutions company." alt="">
-      </div>
+      </footer>
+      <!-- End footer-->
     </div>
 
-  </section>
+
+    <!--Config -->
+
+    <script type="text/javascript" src="indexAuthentication.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.easing.js"></script>
+    <script src="assets/js/jquery.scrollUp.min.js"></script>
+    <script src="assets/js/jquery.zoom.min.js"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/numscroller-1.0.js"></script>
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 
-  <!--CLOUD-->
-
-
-
-
-
+  
+    <script type="text/javascript" src="assets/js/formvalidationlogin.js"></script>
+    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/js/materialize.js"></script>
 
 
  
 
-<!--END CLOUD-->
+  
 
-
-
-  <!-- Footer  -->
-
-  <footer>
-    Designed by <a href="https://github.com/YemmyFolayan">Michael Yemi Folayan ✍</a>.
-  </footer>
-
-  <canvas class="hidden-mobile" id="canvas" width=300 height=300></canvas>
-
-
-  <script>
-  $(document).ready(function(){
-    $('.dropdown-submenu a.test').on("click", function(e){
-      $(this).next('ul').toggle();
-      e.stopPropagation();
-      e.preventDefault();
-    });
-  });
-  </script>
-
-
-
-  <!-- SECOND ONE-->
-
-
-<!--ONE DRIVE-->
-
-
-
-  <script>
-      if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/sw.js')
-                .then(function() {
-                      console.log('Service Worker Registered');
-                });
-            }
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-
-
-  <!-- App Logic -->
-  <script src="app.js"></script>
-  <script src="https://www.webrtc-experiment.com/common.js"></script>
- 
-
-
-</body>
+  
 
 </html>

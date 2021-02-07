@@ -1268,8 +1268,8 @@ shareButton.addEventListener("click", (event) => {
   if (navigator.share) {
     navigator
       .share({
-        title: "WebShare API Demo",
-        url: "https://codepen.io/ayoisaiah/pen/YbNazJ",
+        title: "Comserves Camshopify Files",
+        url: zippedMail,
       })
       .then(() => {
         console.log("Thanks for sharing!");
