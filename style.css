@@ -72,6 +72,13 @@ a {
   color: black !important;
   font-weight: 800;
 }
+
+.cameraVideo,
+video {
+  /* width: 280px !important; */
+  height: 470px !important;
+  object-fit: fill !important;
+}
 @media (min-width: 1344px) and (max-width: 3000px) {
   .sitedetails {
     margin-bottom: 260px !important;
@@ -92,6 +99,13 @@ a {
   video {
     width: 550px !important;
     height: 300px !important;
+  }
+
+  .cameraVideo,
+  video {
+    /* width: 280px !important; */
+    height: 470px !important;
+    object-fit: fill !important;
   }
 
   .savedImage {

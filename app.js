@@ -27,8 +27,9 @@ let blob;
 let zippedMail;
 
 //error=unsupported_response_type&error_description=The+provided+value+for+the+input+parameter+'response_type'+is+not+allowed+for+this+client.+Expected+value+is+'code'.+'token'+is+disabled+for+this+app.&state=redirect_type%3dauth%26display%3dpage%26request_ts%3d1612299172777%26response_method%3durl%26secure_cookie%3dfalse
-
-document.getElementById("downloadZip").style.visibility = "hidden";
+document.getElementById("buttonHidden").style.visibility = "hidden";
+document.getElementById("buttonHidden2").style.visibility = "hidden";
+document.getElementById("downloadZip").style.visibility = "visible";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
 
