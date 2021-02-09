@@ -75,7 +75,7 @@ a {
 
 .cameraVideo,
 video {
-  /* width: 280px !important; */
+  /* width: 480px !important; */
   height: 470px !important;
   object-fit: fill !important;
 }
@@ -364,7 +364,7 @@ h5 {
   background: url(./images/cameraGif.gif);
 
   background-size: cover;
-  width: 400px;
+  width: 420px !important;
   height: 480px !important;
 
   border-radius: 20px;
@@ -397,6 +397,7 @@ input[type="submit"] {
   border: 1px solid #555;
   outline: none;
   border-radius: 10px;
+  text-align: center;
 }
 
 input[type="text"]:focus {
@@ -470,8 +471,8 @@ u {
   bottom: 0;
   top: 0;
 
-  color: #f1f1f1;
-  width: 70%;
+  color: #85abcf;
+  width: 100%;
   justify-content: center;
 }
 
