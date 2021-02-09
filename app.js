@@ -29,7 +29,7 @@ let zippedMail;
 //error=unsupported_response_type&error_description=The+provided+value+for+the+input+parameter+'response_type'+is+not+allowed+for+this+client.+Expected+value+is+'code'.+'token'+is+disabled+for+this+app.&state=redirect_type%3dauth%26display%3dpage%26request_ts%3d1612299172777%26response_method%3durl%26secure_cookie%3dfalse
 // document.getElementById("buttonHidden").style.visibility = "hidden";
 // document.getElementById("buttonHidden2").style.visibility = "hidden";
-document.getElementById("downloadZip").style.visibility = "visible";
+document.getElementById("downloadZip").style.visibility = "hidden";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
 
@@ -1491,3 +1491,66 @@ const DownloadZip = () => {
 
 
     */
+
+//    <!DOCTYPE html>
+//    <html>
+//    <head>
+//        <meta charset="utf-8" />
+//        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//        <title>Git Login App</title>
+//        <meta name="viewport" content="width=device-width, initial-scale=1">
+//        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+//        <script src="main.js"></script>
+//    </head>
+//    <body>
+//       <div>
+//           <button id="login">
+//               Upload Files to Drive
+//           </button>
+//       </div>
+//    </body>
+//    </html>
+
+//    $(document).ready(function(){
+
+//      // client id of the project
+
+//      var clientId = "";
+
+//      // redirect_uri of the project
+
+//      var redirect_uri = "";
+
+//      // scope of the project
+
+//      var scope = "https://www.googleapis.com/auth/drive";
+
+//      // the url to which the user is redirected to
+
+//      var url = "";
+
+//      // this is event click listener for the button
+
+//      $("#login").click(function(){
+
+//         // this is the method which will be invoked it takes four parameters
+
+//         signIn(clientId,redirect_uri,scope,url);
+
+//      });
+
+//      function signIn(clientId,redirect_uri,scope,url){
+
+//         // the actual url to which the user is redirected to
+
+//         url = "https://accounts.google.com/o/oauth2/v2/auth?redirect_uri="+redirect_uri
+//         +"&prompt=consent&response_type=code&client_id="+clientId+"&scope="+scope
+//         +"&access_type=offline";
+
+//         // this line makes the user redirected to the url
+
+//         window.location = url;
+
+//      }
+
+// });
