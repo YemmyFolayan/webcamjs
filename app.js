@@ -1,5 +1,6 @@
-//TODO clear cache when site loads, use logo structure it very well
+//TO DO clear cache when site loads, use logo structure it very well
 
+alert("Welcome, Kindly Supply Site Details below before Taking Site Pictures");
 //1) FIX PREVIOUS BUTTON
 //2) REPLACE AND CANCEL (DIALOG)
 //3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
@@ -20,6 +21,7 @@ let locationTypeSecond;
 let city;
 let country;
 let exactLocation;
+let siteName;
 
 let imgData;
 let DataURL1;
@@ -764,15 +766,19 @@ FoodForm.addEventListener("submit", function (e) {
 
   FIA = document.getElementById("FacilityNo").value;
 
+  siteName = document.getElementById("SiteName").value;
+
   /* var selectorDescription = document.getElementById("DescriptionOutdoor");
   Description = selectorDescription[selectorDescription.selectedIndex].value; */
   console.log(Activity);
   console.log(facilityType);
   console.log(Description);
   console.log(Building);
+  console.log(siteName);
 
   FileName =
     FIA +
+    siteName +
     exactLocation +
     facilityType +
     Activity +
@@ -796,6 +802,10 @@ var x = document.getElementById("demo");
 
 var xy = document.getElementById("siteNamexy");
 
+var long = document.getElementById("long");
+
+var lat = document.getElementById("lat");
+
 let latitude;
 let longitude;
 
@@ -807,6 +817,12 @@ function showPosition(position) {
 
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
+
+  console.log(latitude);
+  console.log(longitude);
+  long.innerHTML = "Longitude: " + longitude;
+  lat.innerHTML = "Latitude: " + latitude;
+
   if (dd < 10) {
     dd = "0" + dd;
   }
@@ -821,6 +837,7 @@ function showPosition(position) {
     exactLocation +
     "<br>File Name: " +
     FIA +
+    siteName +
     exactLocation +
     facilityType +
     Activity +
@@ -1168,6 +1185,9 @@ console.log("IMAGE DATA");
 
 ////PREV NEXT
 
+console.log("FIlename");
+console.log(FileName);
+
 let blob1;
 
 const DownloadZip = () => {
@@ -1189,11 +1209,14 @@ const DownloadZip = () => {
 
   console.log(blob);
   console.log(blob);
-  img.file("Yard_sign.png", blob1, { base64: false });
+  //img.file("Yard_sign.png", blob1, { base64: false });
+  img.file(FileName, blob1, { base64: false });
+
   img.file("Yard_overview/south.png", blob2, { base64: false });
   img.file("Yard_overview/west.png", blob3, { base64: false });
   img.file("Yard_overview/North.png", blob4, { base64: false });
-  img.file("Yard_overview/East.png", blob5, { base64: false });
+  //img.file("Yard_overview/East.png", blob5, { base64: false });
+  img.file(FileName, blob5, { base64: false });
 
   img.file("Fencing.png", blob6, { base64: false });
   img.file("Building_enclosure.png", blob7, { base64: false });
@@ -1326,6 +1349,7 @@ function myCopyFunction() {
 }
 //MY APPROACH SET COUNTER
 
+//getLocation();
 //////////////////////////////////////
 
 /*

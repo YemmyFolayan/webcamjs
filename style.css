@@ -195,6 +195,15 @@ button .back:hover .next:hover {
   #slide-5 {
     width: 400px !important;
   }
+  #demo {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #000;
+    width: 100% !important;
+    align-self: center;
+    align-content: center;
+  }
 
   .prevGrid {
     grid-template-columns: 1fr 1fr 1fr !important;
@@ -216,6 +225,16 @@ button .back:hover .next:hover {
 @media (min-width: 767px) and (max-width: 1000px) {
   .sitedetails {
     margin-bottom: 260px !important;
+  }
+
+  #demo {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #000;
+    width: 100% !important;
+    align-self: center;
+    align-content: center;
   }
   .prevGrid {
     grid-template-columns: 1fr 1fr 1fr !important;
@@ -382,6 +401,21 @@ video {
 
 #demo {
   background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border-color: #000;
+  width: 70%;
+  align-self: center;
+  align-content: center;
+}
+#long,
+#lat,
+#siteNamexy {
+  text-align: left;
+}
+.geoDetails {
+  width: 70%;
+  margin-left: 25px;
 }
 
 .camvid {
