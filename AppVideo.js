@@ -328,3 +328,14 @@ const DownloadVideoZip = () => {
     saveAs(content, "Comserve Video.zip");
   });
 };
+
+// let FileName =
+// FIA +
+// siteName +
+// facilityType +
+// Activity +
+// Building +
+// "Wall_boards" +
+// today +
+// ImageNumber +
+// ".png";

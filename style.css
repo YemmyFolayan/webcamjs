@@ -269,6 +269,7 @@ button .back:hover .next:hover {
   .centerSolid {
     padding-right: 15px !important;
     padding-left: 15px !important;
+    margin-left: 150px !important;
     justify-content: center !important;
   }
 
@@ -411,6 +412,14 @@ h5 {
 
   border-color: #0a64ff !important;
 }
+#results {
+  background: url(./images/location3.jpeg);
+  font-weight: 800;
+  width: 380px;
+  height: 680px !important;
+  margin-left: 200px;
+  text-align: center;
+}
 
 video {
   width: 450px;
@@ -532,6 +541,7 @@ u {
 
 canvas {
   border: 1px solid #0a64ff;
+  width: 370px !important;
 }
 
 .hidden-mobile {

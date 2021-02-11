@@ -5,6 +5,36 @@ alert("Welcome, Kindly Supply Site Details below before Taking Site Pictures");
 //2) REPLACE AND CANCEL (DIALOG)
 //3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
 
+const popupTemplateDOM = document.getElementById("dialog-confirm");
+const PopUP = () => {
+  $(function () {
+    $("#dialog-confirm").dialog({
+      resizable: false,
+      height: "auto",
+      width: 360,
+      modal: true,
+      buttons: {
+        Continue: function () {
+          window.location.assign("/Homepage.html");
+        },
+        "Re-Take": function () {
+          //window.location.assign("/Homepage.html");
+        },
+      },
+    });
+  });
+
+  let htmlString = popupTemplate();
+  let htmlFragment = document.createElement("div");
+  htmlFragment.innerHTML = htmlString;
+  popupTemplateDOM.appendChild(htmlFragment);
+};
+
+const popupTemplate = () => {
+  return `<p>
+  `;
+};
+
 var FoodForm = document.getElementById("foodForm");
 
 let Activity;
@@ -31,7 +61,7 @@ let zippedMail;
 //error=unsupported_response_type&error_description=The+provided+value+for+the+input+parameter+'response_type'+is+not+allowed+for+this+client.+Expected+value+is+'code'.+'token'+is+disabled+for+this+app.&state=redirect_type%3dauth%26display%3dpage%26request_ts%3d1612299172777%26response_method%3durl%26secure_cookie%3dfalse
 // document.getElementById("buttonHidden").style.visibility = "hidden";
 // document.getElementById("buttonHidden2").style.visibility = "hidden";
-document.getElementById("downloadZip").style.visibility = "hidden";
+document.getElementById("downloadZip").style.visibility = "visible";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
 
@@ -103,7 +133,8 @@ $("body").on("click", ".next", function () {
       document.getElementById("hideSection").style.visibility = "hidden";
       document.getElementById("downloadZip").style.visibility = "visible";
 
-      alert("Done !, Proceed to Download Files");
+      //alert("Done !, Proceed to Download Files");
+
       //window.location.assign("index.html");
     }
   }
@@ -167,6 +198,8 @@ $("body").on("click", ".nextSecond", function () {
       console.log(locationType);
       locationTypeSecond = "Yard_overview/south";
       Description = document.getElementById("Yard_overview/south").value;
+
+      //document.getElementById("demo").style.visibility = "hidden";
 
       console.log(Description);
 
@@ -712,6 +745,9 @@ $("body").on("click", ".nextSecond", function () {
       document.getElementById("downloadZip").style.visibility = "visible";
 
       alert("Done !, Proceed to Download Files");
+
+      PopUP();
+
       //window.location.assign("index.html");
     }
   }
@@ -784,8 +820,7 @@ FoodForm.addEventListener("submit", function (e) {
     Building +
     Description +
     today +
-    ImageNumber +
-    ".png";
+    ImageNumber;
   getLocation();
 });
 
@@ -909,7 +944,8 @@ function take_snapshot() {
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
 
-      var dateLocation = today + "  " + exactLocation;
+      var dateLocation =
+        today + "  " + "Lat: " + latitude + "/" + "Long: " + longitude;
       let dataURL;
 
       console.log("data url2");
@@ -1188,6 +1224,8 @@ console.log(FileName);
 
 let blob1;
 
+//FileNames = FIA + siteName + facilityType + Activity + Building + "Yard_sign" + today + ImageNumber;
+
 const DownloadZip = () => {
   console.log(blob1);
   console.log(blob2);
@@ -1208,65 +1246,551 @@ const DownloadZip = () => {
   console.log(blob);
   console.log(blob);
   //img.file("Yard_sign.png", blob1, { base64: false });
-  img.file(FileName, blob1, { base64: false });
 
-  img.file("Yard_overview/south.png", blob2, { base64: false });
-  img.file("Yard_overview/west.png", blob3, { base64: false });
-  img.file("Yard_overview/North.png", blob4, { base64: false });
-  //img.file("Yard_overview/East.png", blob5, { base64: false });
-  img.file(FileName, blob5, { base64: false });
+  let FileNameYard_sign =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Yard_sign" +
+    today +
+    ImageNumber +
+    ".png";
 
-  img.file("Fencing.png", blob6, { base64: false });
-  img.file("Building_enclosure.png", blob7, { base64: false });
-  img.file("Target_wall_for_mast.png", blob8, { base64: false });
-  img.file("Target_wall_for_mast_Roof.png", blob9, { base64: false });
-  img.file("Bruce_box.png", blob10, { base64: false });
-  img.file("Building_and_tower_grounds.png", blob11, { base64: false });
-  img.file("All_outdoor_communications.png", blob12, { base64: false });
-  img.file("Existing_masts_towers_VSAT.png", blob13, { base64: false });
-  img.file("towers_VSAT_cableRouting.png", blob14, { base64: false });
-  img.file("tower_conduit.png", blob15, { base64: false });
-  img.file("trenching_(Tremwa).png", blob16, { base64: false });
-  img.file("Existing_cable_trays.png", blob17, { base64: false });
-  img.file("outdoor_facilities.png", blob18, { base64: false });
-  img.file("Proposed_slurry_pit.png", blob19, { base64: false });
-  img.file("overhead_wiring.png", blob20, { base64: false });
+  console.log(FileNameYard_sign);
+
+  let FileNameYard_overview_East =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Yard_overview_East" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameYard_overview_south =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Yard_overview_south" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameYard_overview_west =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Yard_overview_west" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameYard_overview_North =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Yard_overview_North" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameFencing =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Fencing" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameBuilding_enclosure =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Building_enclosure" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameTarget_wall_for_mast =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Target_wall_for_mast" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameTarget_wall_for_mast_Roof =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Target_wall_for_mast_Roof" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameBruce_box =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Bruce_box" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameBuilding_and_tower_grounds =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Building_and_tower_grounds" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameAll_outdoor_communications =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "All_outdoor_communications" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameExisting_masts_towers_VSAT =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Existing_masts_towers_VSAT" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameTowers_VSAT_cableRouting =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "towers_VSAT_cableRouting" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNametower_conduit =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "tower_conduit" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNametrenching_Tremwa =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "trenching_(Tremwa)" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameExisting_cable_trays =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Existing_cable_trays" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameoutdoor_facilities =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "outdoor_facilities" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameProposed_slurry_pit =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Proposed_slurry_pit" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameoverhead_wiring =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "overhead_wiring" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameFrom_the_doorway =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "From_the_doorway" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameindoor_communications_rooms =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "indoor_communications_rooms" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameCable_entry_point =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Cable_entry_point" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameExisting_cable_runs =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Existing_cable_runs" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameTelco_WAN_termination =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Telco_WAN_termination" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNamecable_termination_equipment =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "cable_termination_equipment" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameWall_boards =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Wall_boards" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNamePatch_panels =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Patch_panels" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameequipment_install_location =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "equipment_install_location" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNamerack_install_location =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "rack_install_location" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameantenna_mounting_location =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "antenna_mounting_location" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameEquipment_interconnections =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Equipment_interconnections" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNamedata_networking_gear =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "data_networking_gear" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameSwitches_routers_modems =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Switches_routers_modems" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameIdentify_active_and_spare_ports =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Identify_active_and_spare_ports" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameTelephones_and_telephone_numbers =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Telephones_and_telephone_numbers" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameCable_jacks_and_proposed =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Cable_jacks_and_proposed" +
+    today +
+    ImageNumber +
+    ".png";
+
+  let FileNameradio_equipment =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "radio_equipment" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameBarton =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Barton" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameBristol =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Bristol" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNamePBX =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "PBX" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameunusual =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "unusual" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNamesafety_issues_dangers_concerns =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "safety_issues_dangers_concerns" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameSpeed_tests =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Speed_tests" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameCellular_signal_tests =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Cellular_signal_tests" +
+    today +
+    ImageNumber +
+    ".png";
+  let FileNameSatellite_signal_tests =
+    FIA +
+    siteName +
+    facilityType +
+    Activity +
+    Building +
+    "Satellite_signal_tests" +
+    today +
+    ImageNumber +
+    ".png";
+
+  console.log(FileNameYard_overview_East);
+
+  img.file(FileNameYard_sign, blob1, { base64: false });
+
+  img.file(FileNameYard_overview_south, blob2, { base64: false });
+  img.file(FileNameYard_overview_west, blob3, { base64: false });
+  img.file(FileNameYard_overview_North, blob4, { base64: false });
+  //img.file("Yard_overview_East.png", blob5, { base64: false });
+  img.file(FileNameYard_overview_East, blob5, { base64: false });
+
+  img.file(FileNameFencing, blob6, { base64: false });
+  img.file(FileNameBuilding_enclosure, blob7, { base64: false });
+  img.file(FileNameTarget_wall_for_mast, blob8, { base64: false });
+  img.file(FileNameTarget_wall_for_mast_Roof, blob9, { base64: false });
+  img.file(FileNameBruce_box, blob10, { base64: false });
+  img.file(FileNameBuilding_and_tower_grounds, blob11, { base64: false });
+  img.file(FileNameAll_outdoor_communications, blob12, { base64: false });
+  img.file(FileNameExisting_masts_towers_VSAT, blob13, { base64: false });
+  img.file(FileNameTowers_VSAT_cableRouting, blob14, { base64: false });
+  img.file(FileNametower_conduit, blob15, { base64: false });
+  img.file(FileNametrenching_Tremwa, blob16, { base64: false });
+  img.file(FileNameExisting_cable_trays, blob17, { base64: false });
+  img.file(FileNameoutdoor_facilities, blob18, { base64: false });
+  img.file(FileNameProposed_slurry_pit, blob19, { base64: false });
+  img.file(FileNameoverhead_wiring, blob20, { base64: false });
   //base64 : false
 
   var img2 = zip.folder("Indoor Photos");
-  img2.file("From_the_doorway.png", blob21, { base64: false });
-  img2.file("indoor_communications_rooms.png", blob22, { base64: false });
-  img2.file("Cable_entry_point.png", blob23, { base64: false });
-  img2.file("Existing_cable_runs.png", blob24, { base64: false });
-  img2.file("Telco_WAN_termination.png", blob25, { base64: false });
-  img2.file("cable_termination_equipment.png", blob26, { base64: false });
-  img2.file("Wall_boards.png", blob27, { base64: false });
-  img2.file("Patch_panels.png", blob28, { base64: false });
-  img2.file("equipment_install_location.png", blob29, { base64: false });
-  img2.file("rack_install_location.png", blob30, { base64: false });
-  img2.file("antenna_mounting_location.png", blob31, { base64: false });
-  img2.file("Equipment_interconnections.png", blob32, { base64: false });
-  img2.file("data_networking_gear.png", blob33, { base64: false });
-  img2.file("Switches_routers_modems.png", blob34, { base64: false });
-  img2.file("Identify_active_and_spare_ports.png", blob35, {
+  img2.file(FileNameFrom_the_doorway, blob21, { base64: false });
+  img2.file(FileNameindoor_communications_rooms, blob22, { base64: false });
+  img2.file(FileNameCable_entry_point, blob23, { base64: false });
+  img2.file(FileNameExisting_cable_runs, blob24, { base64: false });
+  img2.file(FileNameTelco_WAN_termination, blob25, { base64: false });
+  img2.file(FileNamecable_termination_equipment, blob26, { base64: false });
+  img2.file(FileNameWall_boards, blob27, { base64: false });
+  img2.file(FileNamePatch_panels, blob28, { base64: false });
+  img2.file(FileNameequipment_install_location, blob29, { base64: false });
+  img2.file(FileNamerack_install_location, blob30, { base64: false });
+  img2.file(FileNameantenna_mounting_location, blob31, { base64: false });
+  img2.file(FileNameEquipment_interconnections, blob32, { base64: false });
+  img2.file(FileNamedata_networking_gear, blob33, { base64: false });
+  img2.file(FileNameSwitches_routers_modems, blob34, { base64: false });
+  img2.file(FileNameIdentify_active_and_spare_ports, blob35, {
     base64: false,
   });
-  img2.file("Telephones_and_telephone_numbers.png", blob, {
+  img2.file(FileNameTelephones_and_telephone_numbers, blob, {
     base64: false,
   });
-  img2.file("Cable_jacks_and_proposed.png", blob36, { base64: false });
-  img2.file("radio_equipment.png", blob37, { base64: false });
-  img2.file("Barton.png", blob38, { base64: false });
-  img2.file("Bristol.png", blob39, { base64: false });
-  img2.file("PBX.png", blob40, { base64: false });
-  img2.file("unusual.png", blob41, { base64: false });
-  img2.file("safety_issues_dangers_concerns.png", blob42, {
+  img2.file(FileNameCable_jacks_and_proposed, blob36, { base64: false });
+  img2.file(FileNameradio_equipment, blob37, { base64: false });
+  img2.file(FileNameBarton, blob38, { base64: false });
+  img2.file(FileNameBristol, blob39, { base64: false });
+  img2.file(FileNamePBX, blob40, { base64: false });
+  img2.file(FileNameunusual, blob41, { base64: false });
+  img2.file(FileNamesafety_issues_dangers_concerns, blob42, {
     base64: false,
   });
 
   var img4 = zip.folder("Screen Shots");
-  img4.file("Speed_tests.png", blob43, { base64: false });
-  img4.file("Cellular_signal_tests.png", blob44, { base64: false });
+  img4.file(FileNameSpeed_tests, blob43, { base64: false });
+  img4.file(FileNameCellular_signal_tests, blob44, { base64: false });
   img4.file("Satellite_signal_tests.png", blob45, { base64: false });
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
@@ -1348,6 +1872,27 @@ function myCopyFunction() {
 //MY APPROACH SET COUNTER
 
 //getLocation();
+
+// $(function () {
+//   $(".click_me").click(function (e) {
+//     e.preventDefault();
+//     var message_alert = $("<p>Are you confirmed?</p>").dialog({
+//       buttons: {
+//         Yes: function () {
+//           alert("you clicked on yes");
+//         },
+//         No: function () {
+//           alert("you clicked on no");
+//         },
+//         Cancel: function () {
+//           alert("you clicked on cancel");
+//           message_alert.dialog("close");
+//         },
+//       },
+//     });
+//   });
+// });
+
 //////////////////////////////////////
 
 /*
