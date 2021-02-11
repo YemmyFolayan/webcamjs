@@ -173,6 +173,9 @@ button .back:hover .next:hover {
   color: black;
   display: none;
 }
+.backSecond {
+  margin-left: 40px;
+}
 .next {
   background-color: #4caf50;
   color: white;
@@ -191,6 +194,9 @@ button .back:hover .next:hover {
 @media (max-width: 576px) {
   .sitedetails {
     margin-bottom: 260px !important;
+  }
+  .project {
+    padding: 0rem !important;
   }
 
   #slide-1,

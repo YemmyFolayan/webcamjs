@@ -1,7 +1,7 @@
 //TO DO clear cache when site loads, use logo structure it very well
 
 alert("Welcome, Kindly Supply Site Details below before Taking Site Pictures");
-//1) FIX PREVIOUS BUTTON
+//1)
 //2) REPLACE AND CANCEL (DIALOG)
 //3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
 
@@ -745,6 +745,14 @@ $("body").on("click", ".nextSecond", function () {
       document.getElementById("downloadZip").style.visibility = "visible";
 
       alert("Done !, Proceed to Download Files");
+
+      var txt;
+      if (confirm("Press [Ok to Proceed] [Cancel to Retake pictures]")) {
+        //txt = "You pressed OK!";
+      } else {
+        //txt = "You pressed Cancel!";
+        window.location.assign("/Homepage.html");
+      }
 
       PopUP();
 
