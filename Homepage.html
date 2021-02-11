@@ -309,17 +309,18 @@
               </form> 
           
           </div>
-          <div class="link">
+         
+         <!-- <div class="link">
             <div class="pen-url"><input type="text" value="https://comserves.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?e=5%3A6318753069a046928f41e0671a3ee901&at=9&RootFolder=%2FShared%20Documents%2FMichael%20Folayan&FolderCTID=0x012000F48AE807333B6A43BD4105A29D6686E6" id="myInput"></div>
             <button class="copy-link" onclick="myCopyFunction()">Copy Link</button>
-          </div>
+          </div> -->
         </div>
 
-        <button class="button share-button" type="button" title="Share this article">
+        <button class="button share-button" type="button" title="Share File">
           <svg>
             <use href="#share-icon"></use>
           </svg>
-          <span>Share</span>
+          <span>Share File</span>
         </button>
 
         <svg class="hidden">
@@ -416,8 +417,10 @@
 
 
 
-         
+         <div class="centerSolid">
           <div class="solid" id="my_camera">
+          </div>
+
           </div>
 
 
@@ -912,7 +915,7 @@
             />
           </div>
          
-           <div class="m-3">Facility Type 📽</div>
+           <div class="m-3">Facility Type 📽
             <select
             class="round-input"
             id="FacilityType"
@@ -930,177 +933,44 @@
             <option value="MI" id="MI" name="No">MI (Miscellaneous)</option>
             </select>
           </div>
-          <div class="m-3">
+
             <div class="m-3"> Activity 📽
-            </div>
+         
             <select
             class="round-input"
             id="Activity"
             type="text"
-            name="category_type"
-            
-            >
+            name="category_type">
             <option value="S" id="S" name="Yes">S (Survey)</option>
             <option value="PI" id="PI" name="No">PI (Pre-install)</option>
             <option value="AB" id="AB" name="No">AB (As Built)</option>
             <option value="I" id="I" name="No">I (Investigation)</option>
             </select>
+
+
+
+
           </div>
-
- <div class="m-3">
-  <div class="m-3"> Building 📽
-  </div>
-  <select
-  class="round-input"
-  id="Building"
-  type="text"
-  name="category_type">
-
-
-  <option value="NA_" id="N/A" name="Yes">N/A</option>
-  <option value="Instrument" id="Instrument" name="No">Instrument </option>
-  </select>
-</div>
-
-
-<!--
- <div class="m-3" id="DescriptionOutdoor1">
-  <div class="m-3"> Description (OUTDOOR PHOTOS)
-  </div>
-  <select
-  class="round-input"
-  id="DescriptionOutdoor"
-  type="text"
-  name="category_type">
-
-  
-    <option value="Yard sign" id="N/A" name="Yes">Yard sign</option>
-     <option value="Yard overview" id="N/A" name="Yes">Yard overview</option>
-     <option value="Fencing" id="N/A" name="Yes">Fencing</option>
-     <option value="Building enclosure" id="N/A" name="Yes">Building enclosure</option>
-     <option value="Target wall for mast" id="N/A" name="Yes">Target wall for mast</option>
-     <option value="Bruce_box" id="N/A" name="Yes">Bruce_box</option>
-     <option value="Building_and_tower_grounds" id="N/A" name="Yes">Building_and_tower_grounds</option>
-     <option value="All outdoor communications" id="N/A" name="Yes">All outdoor communications</option>
-     <option value="Existing masts towers VSAT" id="N/A" name="Yes">Existing masts towers VSAT</option>
-     <option value="towers VSAT cableRouting" id="N/A" name="Yes">towers VSAT cableRouting</option>
-     <option value="tower conduit" id="N/A" name="Yes">tower conduit</option>
-     <option value="trenching (Tremwa)" id="N/A" name="Yes">trenching (Tremwa)</option>
-     <option value="Existing cable trays" id="N/A" name="Yes">Existing cable trays</option>
-     <option value="outdoor facilities" id="N/A" name="Yes">outdoor facilities</option>
-     <option value="Proposed slurry pit" id="N/A" name="Yes">Proposed slurry pit</option>
-     <option value="overhead wiring" id="N/A" name="Yes">overhead wiring</option>
-
-  </select>
-</div>
-
- <div class="m-3" id="DescriptionIndoor1">
-  <div class="m-3"> Description (INDOOR PHOTOS)
-  </div>
-  <select
-  class="round-input"
-  id="DescriptionIndoor"
-  type="text"
-  name="category_type">
-    <option value="From_the_doorway" id="Instrument" name="No">From_the_doorway </option>
-    <option value="indoor_communications_rooms" id="Instrument" name="No">indoor_communications_rooms </option>
-    <option value="Cable_entry_point" id="Instrument" name="No">Cable_entry_point </option>
-    <option value="Existing_cable_runs" id="Instrument" name="No">Existing_cable_runs </option>
-    <option value="Telco_WAN_termination" id="Instrument" name="No">Telco_WAN_termination </option>
-    <option value="cable_termination_equipment" id="Instrument" name="No">cable_termination_equipment </option>
-    <option value="Wall_boards" id="Instrument" name="No">Wall_boards </option>
-    <option value="Patch_panels" id="Instrument" name="No">Patch_panels </option>
-    <option value="equipment_install_location" id="Instrument" name="No">equipment_install_location </option>
-    <option value="rack_install_location" id="Instrument" name="No">rack_install_location </option>
-    <option value="antenna_mounting_location" id="Instrument" name="No">antenna_mounting_location </option>
-    <option value="Equipment_interconnections" id="Instrument" name="No">Equipment_interconnections </option>
-    <option value="data_networking_gear" id="Instrument" name="No">data_networking_gear </option>
-
-    <option value="Switches_routers_modems" id="Instrument" name="No">Switches_routers_modems </option>
-    <option value="Identify_active_and_spare_ports" id="Instrument" name="No">Identify_active_and_spare_ports </option>
-    <option value="Telephones and telephone_numbers" id="Instrument" name="No">Telephones_and_telephone_numbers </option>
-    <option value="Cable jacks and proposed" id="Instrument" name="No">Cable jacks and proposed </option>
-    <option value="radio equipment" id="Instrument" name="No">radio equipment </option>
-    <option value="Barton" id="Instrument" name="No">Barton </option>
-    <option value="Bristol" id="Instrument" name="No">Bristol </option>
-    <option value="PBX" id="Instrument" name="No">PBX </option>
-    <option value="unusual" id="Instrument" name="No">unusual </option>
-
-    <option value="safety issues dangers concerns" id="Instrument" name="No">safety issues dangers concerns </option>
-
-
-
-
-  </select>
-</div>
-
-
-
- <div class="m-3" id="DescriptionVideo1">
-  <div class="m-3"> Description (Video with Descriptive Audio)
-  </div>
-  <select
-  class="round-input"
-  id="Descriptionvideo"
-  type="text"
-  name="category_type">
-  <option value="Video_Yard_overview" id="Instrument" name="No">Video_Yard_overview </option>
-  <option value="Video_Outside_each_building" id="Instrument" name="No">Video_Outside_each_building </option>
-  <option value="Video_Inside_each_building" id="Instrument" name="No">Video_Inside_each_building </option>
-  <option value="Video_Existing_network_cabinets" id="Instrument" name="No">Video_Existing_network_cabinets </option>
-  <option value="Video_Proposed_solution_inside" id="Instrument" name="No">Video_Proposed_solution_inside </option>
-  <option value="Video_direction_to_services" id="Instrument" name="No">Video_direction_to_services </option>
-    <option value="Video_safety_issues_dangers_concerns" id="Instrument" name="No">Video_safety_issues_dangers_concerns </option>
-
-
- 
- 
- 
- 
-
-  </select>
-</div>
-
-
- <div class="m-3" id="Descriptionshots1">
-  <div class="m-3"> Description (Screen Shots)
-  </div>
-  <select
-  class="round-input"
-  id="Descriptionshots"
-  type="text"
-  name="category_type">
-
-     <option value="Speed_tests" id="Instrument" name="No">Speed_tests </option>
-     <option value="Cellular_signal_tests" id="Instrument" name="No">Cellular_signal_tests </option>
-     <option value="Satellite_signal_tests" id="Instrument" name="No">Satellite_signal_tests </option>
- 
-  </select>
-</div>
-
--->
-<!--
-          <div class="m-3">
-            <input
-            type="text"
-            id="Description"
-            name="Description222"
-            class="no-round-input"
-            placeholder="Description"
-            required
-            />
-          </div>
-
-          <div class="m-3">
-            <input
-            type="text"
+       
+            <div class="m-3"> Building 📽
+          
+            <select
+            class="round-input"
             id="Building"
-            name="Building2222"
-            class="no-round-input"
-            placeholder="Building"
-            required
-            />
-          </div> -->
+            type="text"
+            name="category_type">
+
+
+            <option value="NA_" id="N/A" name="Yes">N/A</option>
+            <option value="Instrument" id="Instrument" name="No">Instrument </option>
+            </select>
+
+
+
+
+          </div>
+
+
 
 		
 
@@ -1132,7 +1002,7 @@
 
 
   <!-- Projects Section  -->
-
+<!--
   <section class="projects">
     <div class="projects__inner wrap padded">
       <h4 class="section__heading">
@@ -1179,7 +1049,7 @@
       </div>
      
     </div>
-  </section>
+  </section> -->
 
    <section class="projects">
     <div class="projects__inner wrap padded">
@@ -1248,7 +1118,8 @@
 
 
   <!-- Skills Section  -->
-
+ 
+<!--
   <section class="skills">
     <div class="skills__inner wrap padded">
       <h4 class="section__heading">
@@ -1332,7 +1203,7 @@
     </div>
   </section>
 
-  <!-- Reviews Section  -->
+
 
 
   <section class="reviews">
@@ -1369,7 +1240,7 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
 
 
 
@@ -1390,7 +1261,7 @@
   <!-- Footer  -->
 
   <footer>
-    Designed by <a href="https://github.com/YemmyFolayan">Michael Yemi Folayan ✍</a>.
+    Developed by <a href="https://github.com/YemmyFolayan">Comserves Technology, INC. ✍</a>.
   </footer>
 
   <canvas class="hidden-mobile" id="canvas" width=300 height=300></canvas>

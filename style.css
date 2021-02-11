@@ -100,6 +100,11 @@ video {
     width: 550px !important;
     height: 300px !important;
   }
+  .centerSolid {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    justify-content: center !important;
+  }
 
   .cameraVideo,
   video {
@@ -205,6 +210,12 @@ button .back:hover .next:hover {
     align-content: center;
   }
 
+  .centerSolid {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    justify-content: center !important;
+  }
+
   .prevGrid {
     grid-template-columns: 1fr 1fr 1fr !important;
   }
@@ -222,6 +233,7 @@ button .back:hover .next:hover {
 .hidden-mobile {
   display: none;
 }
+
 @media (min-width: 767px) and (max-width: 1000px) {
   .sitedetails {
     margin-bottom: 260px !important;
@@ -251,6 +263,12 @@ button .back:hover .next:hover {
     width: 90%;
     padding-right: 15px;
     padding-left: 15px;
+    justify-content: center !important;
+  }
+
+  .centerSolid {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
     justify-content: center !important;
   }
 
@@ -353,7 +371,7 @@ h5 {
   background: url(./images/location3.jpeg);
   font-weight: 800;
 
-  width: 400px;
+  width: 380px;
   height: 680px !important;
   margin-left: 20px;
   text-align: center;
@@ -385,7 +403,7 @@ h5 {
   background: url(./images/cameraGif.gif);
 
   background-size: cover;
-  width: 420px !important;
+  width: 380px !important;
   height: 480px !important;
 
   border-radius: 20px;
@@ -726,6 +744,12 @@ header {
 .results {
   border-style: solid !important;
   border-color: #0a64ff !important;
+}
+
+.centerSolid {
+  padding-right: 15px;
+  padding-left: 15px;
+  justify-content: center !important;
 }
 
 .link {
