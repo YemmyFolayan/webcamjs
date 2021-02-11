@@ -61,7 +61,7 @@ let zippedMail;
 //error=unsupported_response_type&error_description=The+provided+value+for+the+input+parameter+'response_type'+is+not+allowed+for+this+client.+Expected+value+is+'code'.+'token'+is+disabled+for+this+app.&state=redirect_type%3dauth%26display%3dpage%26request_ts%3d1612299172777%26response_method%3durl%26secure_cookie%3dfalse
 // document.getElementById("buttonHidden").style.visibility = "hidden";
 // document.getElementById("buttonHidden2").style.visibility = "hidden";
-document.getElementById("downloadZip").style.visibility = "visible";
+document.getElementById("downloadZip").style.visibility = "hidden";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
 
@@ -834,12 +834,6 @@ console.log(ImageNumber);
 
 var x = document.getElementById("demo");
 
-var xy = document.getElementById("siteNamexy");
-
-var long = document.getElementById("long");
-
-var lat = document.getElementById("lat");
-
 let latitude;
 let longitude;
 
@@ -854,8 +848,6 @@ function showPosition(position) {
 
   console.log(latitude);
   console.log(longitude);
-  long.innerHTML = "Longitude: " + longitude;
-  lat.innerHTML = "Latitude: " + latitude;
 
   if (dd < 10) {
     dd = "0" + dd;
@@ -865,20 +857,14 @@ function showPosition(position) {
   }
   today = yyyy + mm + dd;
   console.log(today);
-  xy.innerHTML = exactLocation;
+
   x.innerHTML =
     "Location: " +
     exactLocation +
-    "<br>File Name: " +
-    FIA +
-    siteName +
-    facilityType +
-    Activity +
-    Building +
-    Description +
-    today +
-    ImageNumber +
-    ".png";
+    "<br>LONGITUDE: " +
+    longitude +
+    "<br> LATITUDE: " +
+    latitude;
 }
 
 // FIA, SiteName, facilityType, Activity, Building, Description,

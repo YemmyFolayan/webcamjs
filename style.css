@@ -238,6 +238,14 @@ button .back:hover .next:hover {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+  #results {
+    background: url(./images/location3.jpeg);
+    font-weight: 800;
+    width: 380px;
+    height: 680px !important;
+    margin-left: 200px !important;
+    text-align: center;
+  }
 
   #demo {
     background-color: white;
@@ -411,14 +419,6 @@ h5 {
   border-width: 5px;
 
   border-color: #0a64ff !important;
-}
-#results {
-  background: url(./images/location3.jpeg);
-  font-weight: 800;
-  width: 380px;
-  height: 680px !important;
-  margin-left: 200px;
-  text-align: center;
 }
 
 video {
