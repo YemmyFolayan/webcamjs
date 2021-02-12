@@ -25,18 +25,19 @@
  
     
   <title>CamShopify Comserve</title>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 
-  <script src="webcam.js"></script>
+  <script src="webcam.js"></script> 
   <!-- First, include the Webcam.js JavaScript Library -->
 
   <script type="text/javascript" src="dist/jszip.js"> </script>
   <script type="text/javascript" src="dist/FileSaver.js"> </script>
 
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-<script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js" id="onedrive-js" client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c">
-</script>
+
+  <script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js" id="onedrive-js" client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c">
+  </script>
 
 <!--<script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" 000000004015A50A client-id="6c08c824-55f6-4b54-85fa-fd8c269b230c"></script>-->
   
@@ -264,23 +265,23 @@
 
         <div class="share-dialog">
           <header>
-            <h3 class="dialog-title">Share File to  🎬
+            <h3 class="textWhite">Share File via E-mail 🎬 {Check your Inbox or SPAM }
             <svg>
               <use href="#share-icon"></use>
             </svg></h3>
             <button class="close-button"><svg><use href="#close"></use></svg></button>
           </header>
-          <div class="targets">
-         
+          <div class="">
+          <!--<div class="targets">-->
 
             <!--ONE DRIVE-->
 
-           <!-- <input id="fileUploadControl" name="fileUploadControl" type="file" />-->
+           <!-- <input id="fileUploadControl" name="fileUploadControl" type="file" />
             <button class="button" onclick="launchSaveToOneDrive();">Save to OneDrive 🎬</button>
 
-            <button class="button" onclick="launchSaveToGoogleDrive();">Save to GoogleDrive 🎬</button>
+            <button class="button" onclick="launchSaveToGoogleDrive();">Save to GoogleDrive 🎬</button> -->
 
-            <!--NEW ONE DRIVE-->
+            <!--NEW ONE DRIVE
 
            
               <button id="buttonHidden"style="background-color:#159ceb; color:#fff;" class="btn btn-lg btn-block" onclick="launchOneDrivePicker();">Open 🎬</button></div>
@@ -290,16 +291,17 @@
 
               <div id="save">
               <div class="custom-file-upload">
-                  <!--<label for="file">File: </label>--> 
+                  <label for="file">File: </label>
               </div>
               &nbsp;
               <button style="background-color:#159ceb; color:#fff;" class="btn btn-lg btn-block" onclick="launchOneDriveSaver();">Upload to OneDrive 🎬</button>&nbsp;
              
+             -->
 
 
     
-              <form method="post" id="SendEmailForm"> 
-                <input type="text" id="senderEmail" class="" placeholder="Email" />
+              <form method="post" id="SendEmailForm" class="m-5"> 
+                <input type="text" id="senderEmail" class="" placeholder="Your E-mail address" />
 
                 
                 <input  type="submit" class="button" value="✉ Share Via Mail"/> 

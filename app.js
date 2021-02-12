@@ -1789,7 +1789,7 @@ const DownloadZip = () => {
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
     // see FileSaver.js
-    saveAs(content, "Comserve Geocam.zip");
+    saveAs(content, "Comserve_Geocam.zip");
 
     zippedMail = content;
 
@@ -1835,6 +1835,8 @@ closeButton.addEventListener("click", (event) => {
 
 var FoodForm = document.getElementById("SendEmailForm");
 
+//SMTP VERSION 3
+
 SendEmailForm.addEventListener("submit", function (e) {
   e.preventDefault();
   var senderEmail = document.getElementById("senderEmail").value;
@@ -1844,35 +1846,23 @@ SendEmailForm.addEventListener("submit", function (e) {
     SecureToken: "56e05383-b7ec-4596-bf55-a0ba77bad984",
     To: senderEmail,
     From: "foyemc@gmail.com",
-    Subject: "Comserve_Geocam Files",
-    Body: "Well that was easy!!",
-    Attachments: [
-      {
-        name: "Comserve_Geocam",
-        path: zippedMail,
-      },
-    ],
+    Subject: "Comserve_Geocam Site Files",
+    Body:
+      "Comserve_Geocam Files!, Thanks For Using our Product @ Comserves Technology, INC.",
+    // Attachments: [
+    //   {
+    //     name: "Comserve_Geocam.zip",
+    //     path:
+    //       "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png",
+    //   },
+    // ],
   }).then(function (message) {
-    alert("Mail has been sent successfully");
+    alert(message);
   });
 });
 //CHANGE BLOB TO DIFFERENT REFRENCE
 
-function myCopyFunction() {
-  /* Get the text field */
-  var copyText = document.getElementById("myInput");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-}
-//MY APPROACH SET COUNTER
+//path or data  is required
 
 //getLocation();
 
@@ -1897,230 +1887,3 @@ function myCopyFunction() {
 // });
 
 //////////////////////////////////////
-
-/*
-
-const DownloadZip = () => {
-  var zip = new JSZip();
-
-  var img = zip.folder("Outdoor Photos");
-
-  //var blob2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
-
-  //SO CONVERT THE DATA URL TO base64
-  //SOLUTION
-  //The image data is either a base64 string (as above) or a base64 array.
-  //These can both be obtained from the canvas element with toDataURL or getImageData respectively.
-  //file(name, data [,options])
-
-  //Jszip it takes data it doesnot allow dataurl
-
-  console.log(blob);
-  console.log(blob);
-  img.file("Yard_sign.png", blob, { base64: false });
-  img.file("Yard_overview/south.png", blob, { base64: false });
-  img.file("Yard_overview/west.png", blob, { base64: false });
-  img.file("Yard_overview/North.png", blob, { base64: false });
-  img.file("Yard_overview/East.png", blob, { base64: false });
-
-  img.file("Fencing.png", blob, { base64: false });
-  img.file("Building_enclosure.png", blob, { base64: false });
-  img.file("Target_wall_for_mast.png", blob, { base64: false });
-  img.file("Target_wall_for_mast_Roof.png", blob, { base64: false });
-  img.file("Bruce_box.png", blob, { base64: false });
-  img.file("Building_and_tower_grounds.png", blob, { base64: false });
-  img.file("All_outdoor_communications.png", blob, { base64: false });
-  img.file("Existing_masts_towers_VSAT.png", blob, { base64: false });
-  img.file("towers_VSAT_cableRouting.png", blob, { base64: false });
-  img.file("tower_conduit.png", blob, { base64: false });
-  img.file("trenching_(Tremwa).png", blob, { base64: false });
-  img.file("Existing_cable_trays.png", blob, { base64: false });
-  img.file("outdoor_facilities.png", blob, { base64: false });
-  img.file("Proposed_slurry_pit.png", blob, { base64: false });
-  img.file("overhead_wiring.png", blob, { base64: false });
-  //base64 : false
-
-  var img2 = zip.folder("Indoor Photos");
-  img2.file("From_the_doorway.png", blob, { base64: false });
-  img2.file("indoor_communications_rooms.png", blob, { base64: false });
-  img2.file("Cable_entry_point.png", blob, { base64: false });
-  img2.file("Existing_cable_runs.png", blob, { base64: false });
-  img2.file("Telco_WAN_termination.png", blob, { base64: false });
-  img2.file("cable_termination_equipment.png", blob, { base64: false });
-  img2.file("Wall_boards.png", blob, { base64: false });
-  img2.file("Patch_panels.png", blob, { base64: false });
-  img2.file("equipment_install_location.png", blob, { base64: false });
-  img2.file("rack_install_location.png", blob, { base64: false });
-  img2.file("antenna_mounting_location.png", blob, { base64: false });
-  img2.file("Equipment_interconnections.png", blob, { base64: false });
-  img2.file("data_networking_gear.png", blob, { base64: false });
-  img2.file("Switches_routers_modems.png", blob, { base64: false });
-  img2.file("Identify_active_and_spare_ports.png", blob, {
-    base64: false,
-  });
-  img2.file("Telephones_and_telephone_numbers.png", blob, {
-    base64: false,
-  });
-  img2.file("Cable_jacks_and_proposed.png", blob, { base64: false });
-  img2.file("radio_equipment.png", blob, { base64: false });
-  img2.file("Barton.png", blob, { base64: false });
-  img2.file("Bristol.png", blob, { base64: false });
-  img2.file("PBX.png", blob, { base64: false });
-  img2.file("unusual.png", blob, { base64: false });
-  img2.file("safety_issues_dangers_concerns.png", blob, {
-    base64: false,
-  });
-
-
-
-
-
-
-*/
-
-/*
-
-
-  const DownloadZip = () => {
-    console.log(blob1);
-    console.log(blob2);
-    var zip = new JSZip();
-  
-    var img = zip.folder("Outdoor Photos");
-  
-    //var blob2 = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
-  
-    //SO CONVERT THE DATA URL TO base64
-    //SOLUTION
-    //The image data is either a base64 string (as above) or a base64 array.
-    //These can both be obtained from the canvas element with toDataURL or getImageData respectively.
-    //file(name, data [,options])
-  
-    //Jszip it takes data it doesnot allow dataurl
-  
-    console.log(blob);
-    console.log(blob);
-    img.file("Yard_sign.png", blob1, { base64: false });
-    img.file(Description, blob2, { base64: false });
-    img.file(Description, blob3, { base64: false });
-    img.file(Description, blob4, { base64: false });
-    img.file(Description, blob5, { base64: false });
-  
-    img.file(Description, blob6, { base64: false });
-    img.file(Description, blob7, { base64: false });
-    img.file(Description, blob8, { base64: false });
-    img.file(Description, blob9, { base64: false });
-    img.file(Description, blob10, { base64: false });
-    img.file(Description, blob11, { base64: false });
-    img.file(Description, blob12, { base64: false });
-    img.file(Description, blob13, { base64: false });
-    img.file(Description, blob14, { base64: false });
-    img.file(Description, blob15, { base64: false });
-    img.file(Description, blob16, { base64: false });
-    img.file(Description, blob17, { base64: false });
-    img.file(Description, blob18, { base64: false });
-    img.file(Description, blob19, { base64: false });
-    img.file(Description, blob20, { base64: false });
-    //base64 : false
-  
-    var img2 = zip.folder("Indoor Photos");
-    img2.file(Description, blob21, { base64: false });
-    img2.file(Description, blob22, { base64: false });
-    img2.file(Description, blob23, { base64: false });
-    img2.file(Description, blob24, { base64: false });
-    img2.file(Description, blob25, { base64: false });
-    img2.file(Description, blob26, { base64: false });
-    img2.file(Description, blob27, { base64: false });
-    img2.file(Description, blob28, { base64: false });
-    img2.file(Description, blob29, { base64: false });
-    img2.file(Description, blob30, { base64: false });
-    img2.file(Description, blob31, { base64: false });
-    img2.file(Description, blob32, { base64: false });
-    img2.file(Description, blob33, { base64: false });
-    img2.file(Description, blob34, { base64: false });
-    img2.file(Description, blob35, {
-      base64: false,
-    });
-    img2.file(Description, blob, {
-      base64: false,
-    });
-    img2.file(Description, blob36, { base64: false });
-    img2.file(Description, blob37, { base64: false });
-    img2.file(Description, blob38, { base64: false });
-    img2.file(Description, blob39, { base64: false });
-    img2.file(Description, blob40, { base64: false });
-    img2.file(Description, blob41, { base64: false });
-    img2.file(Description, blob42, {
-      base64: false,
-    });
-  
-    var img4 = zip.folder("Screen Shots");
-    img4.file(Description, blob43, { base64: false });
-    img4.file(Description, blob44, { base64: false });
-    img4.file(Description, blob45, { base64: false });
-
-
-    */
-
-//    <!DOCTYPE html>
-//    <html>
-//    <head>
-//        <meta charset="utf-8" />
-//        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//        <title>Git Login App</title>
-//        <meta name="viewport" content="width=device-width, initial-scale=1">
-//        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-//        <script src="main.js"></script>
-//    </head>
-//    <body>
-//       <div>
-//           <button id="login">
-//               Upload Files to Drive
-//           </button>
-//       </div>
-//    </body>
-//    </html>
-
-//    $(document).ready(function(){
-
-//      // client id of the project
-
-//      var clientId = "";
-
-//      // redirect_uri of the project
-
-//      var redirect_uri = "";
-
-//      // scope of the project
-
-//      var scope = "https://www.googleapis.com/auth/drive";
-
-//      // the url to which the user is redirected to
-
-//      var url = "";
-
-//      // this is event click listener for the button
-
-//      $("#login").click(function(){
-
-//         // this is the method which will be invoked it takes four parameters
-
-//         signIn(clientId,redirect_uri,scope,url);
-
-//      });
-
-//      function signIn(clientId,redirect_uri,scope,url){
-
-//         // the actual url to which the user is redirected to
-
-//         url = "https://accounts.google.com/o/oauth2/v2/auth?redirect_uri="+redirect_uri
-//         +"&prompt=consent&response_type=code&client_id="+clientId+"&scope="+scope
-//         +"&access_type=offline";
-
-//         // this line makes the user redirected to the url
-
-//         window.location = url;
-
-//      }
-
-// });
