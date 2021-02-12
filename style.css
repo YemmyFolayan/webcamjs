@@ -245,6 +245,9 @@ button .back:hover .next:hover {
     border-color: #0a64ff !important;
   }
 
+  .zoom {
+    margin-left: 20px;
+  }
   #results {
     margin-left: 0px !important;
   }
