@@ -1785,7 +1785,7 @@ const DownloadZip = () => {
   var img4 = zip.folder("Screen Shots");
   img4.file(FileNameSpeed_tests, blob43, { base64: false });
   img4.file(FileNameCellular_signal_tests, blob44, { base64: false });
-  img4.file("Satellite_signal_tests.png", blob45, { base64: false });
+  img4.file(FileNameSatellite_signal_tests, blob45, { base64: false });
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
     // see FileSaver.js

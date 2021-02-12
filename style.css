@@ -17,6 +17,7 @@
   width: 70px !important;
   height: 70px !important;
   margin: 0 auto;
+  margin-left: 30px;
 }
 
 .zoom:hover {
@@ -157,7 +158,9 @@ video {
   height: 500px;
   background-color: lightgrey;
 }
-
+.projects {
+  padding: 0rem !important;
+}
 /*NEXT PREV */
 .content,
 .contentSecond {
@@ -189,6 +192,10 @@ button .back:hover .next:hover {
   width: 320px;
   height: 280px;
   margin: 20px;
+}
+.project {
+  height: 800px;
+  padding: 4.5rem !important;
 }
 
 @media (max-width: 576px) {
@@ -532,6 +539,16 @@ u {
   margin: -1.25rem !important;
 
   gap: 1rem;
+  /* width: 50% !important; */
+}
+.contentSecond-holder,
+.content-holder {
+  justify-content: center;
+  margin-left: 30px !important;
+}
+
+.contentSecond-holder {
+  margin-bottom: 10px;
 }
 
 .content,
@@ -543,6 +560,10 @@ u {
   color: #85abcf;
   width: 100%;
   justify-content: center;
+}
+
+.about__avatar {
+  justify-content: center !important;
 }
 
 canvas {
