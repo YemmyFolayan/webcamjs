@@ -89,6 +89,19 @@ video {
     grid-template-columns: 1fr 1fr 1fr !important;
   }
 
+  #my_camera {
+    background-color: #7ec481;
+    background: url(./images/cameraGif.gif);
+
+    background-size: cover;
+    width: 380px !important;
+    height: 480px !important;
+
+    border-radius: 20px;
+    border-width: 5px;
+
+    border-color: #0a64ff !important;
+  }
   .container {
     width: 80% !important;
     padding-right: 15px;
@@ -127,7 +140,19 @@ video {
   .prevGrid {
     grid-template-columns: 1fr 1fr 1fr !important;
   }
+  #my_camera {
+    background-color: #7ec481;
+    background: url(./images/cameraGif.gif);
 
+    background-size: cover;
+    width: 380px !important;
+    height: 480px !important;
+
+    border-radius: 20px;
+    border-width: 5px;
+
+    border-color: #0a64ff !important;
+  }
   .container {
     width: 90%;
     padding-right: 15px;
@@ -204,6 +229,29 @@ button .back:hover .next:hover {
   }
   .project {
     padding: 0rem !important;
+    width: 380px;
+  }
+  #my_camera {
+    background-color: #7ec481;
+    background: url(./images/cameraGif.gif);
+
+    background-size: cover;
+    width: 320px !important;
+    height: 480px !important;
+
+    border-radius: 20px;
+    border-width: 5px;
+
+    border-color: #0a64ff !important;
+  }
+
+  #results {
+    margin-left: 0px !important;
+  }
+  .contentSecond-holder,
+  .content-holder {
+    justify-content: center;
+    margin-left: 0px !important;
   }
 
   #slide-1,
@@ -257,6 +305,19 @@ button .back:hover .next:hover {
     width: 380px;
     height: 680px !important;
     text-align: center;
+  }
+  #my_camera {
+    background-color: #7ec481;
+    background: url(./images/cameraGif.gif);
+
+    background-size: cover;
+    width: 380px !important;
+    height: 480px !important;
+
+    border-radius: 20px;
+    border-width: 5px;
+
+    border-color: #0a64ff !important;
   }
 
   #demo {
@@ -423,7 +484,7 @@ h5 {
   background: url(./images/cameraGif.gif);
 
   background-size: cover;
-  width: 380px !important;
+  width: 380px;
   height: 480px !important;
 
   border-radius: 20px;
@@ -542,7 +603,7 @@ u {
 .contentSecond-holder,
 .content-holder {
   justify-content: center;
-  margin-left: 30px !important;
+  margin-left: 30px;
 }
 
 .contentSecond-holder {

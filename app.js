@@ -1790,7 +1790,7 @@ const DownloadZip = () => {
 
   zip.generateAsync({ type: "blob" }).then(function (content) {
     // see FileSaver.js
-    saveAs(content, "Comserve_Geocam.zip");
+    saveAs(content, "Comserves_GeocamFiles.zip");
 
     zippedMail = content;
 
@@ -1826,8 +1826,8 @@ shareButton.addEventListener("click", (event) => {
   if (navigator.share) {
     navigator
       .share({
-        title: "Comserves Camshopify Files",
-        url: zippedMail,
+        title: "Comserves_GeocamFiles",
+        url: base64String,
       })
       .then(() => {
         console.log("Thanks for sharing!");
@@ -1858,10 +1858,10 @@ SendEmailForm.addEventListener("submit", function (e) {
     From: "foyemc@gmail.com",
     Subject: "Comserve_Geocam Site Files",
     Body:
-      "Comserve_Geocam Files!, Thanks For Using our Product @ Comserves Technology, INC.",
+      "Comserves_Geocam Files!, Thanks For Using our Product @ Comserves Technology, INC.",
     Attachments: [
       {
-        name: "Comserve_Geocam.zip",
+        name: "Comserves_GeocamFiles.zip",
         data: base64String,
       },
     ],
