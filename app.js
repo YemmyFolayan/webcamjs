@@ -57,6 +57,7 @@ let imgData;
 let DataURL1;
 let blob;
 let zippedMail;
+let base64String;
 
 //error=unsupported_response_type&error_description=The+provided+value+for+the+input+parameter+'response_type'+is+not+allowed+for+this+client.+Expected+value+is+'code'.+'token'+is+disabled+for+this+app.&state=redirect_type%3dauth%26display%3dpage%26request_ts%3d1612299172777%26response_method%3durl%26secure_cookie%3dfalse
 // document.getElementById("buttonHidden").style.visibility = "hidden";
@@ -1797,14 +1798,22 @@ const DownloadZip = () => {
 
     console.log("zip");
 
-    var txt;
-    if (confirm("File Downloading... [ PRESS Ok to Retake pictures ]")) {
-      window.location.assign("/Homepage.html");
-      //txt = "You pressed OK!";
-    } else {
-      //txt = "You pressed Cancel!";
-      window.location.assign("/Homepage.html");
-    }
+    //BLOB TO BASE64
+    var reader = new FileReader();
+    reader.readAsDataURL(content);
+    reader.onloadend = function () {
+      base64String = reader.result;
+      console.log("Base64 String - ", base64String);
+    };
+
+    // var txt;
+    // if (confirm("File Downloading... [ PRESS Ok to Retake pictures ]")) {
+    //   window.location.assign("/Homepage.html");
+    //   //txt = "You pressed OK!";
+    // } else {
+    //   //txt = "You pressed Cancel!";
+    //   window.location.assign("/Homepage.html");
+    // }
   });
 };
 
@@ -1839,6 +1848,7 @@ var FoodForm = document.getElementById("SendEmailForm");
 
 SendEmailForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
   var senderEmail = document.getElementById("senderEmail").value;
 
   console.log(senderEmail);
@@ -1849,13 +1859,12 @@ SendEmailForm.addEventListener("submit", function (e) {
     Subject: "Comserve_Geocam Site Files",
     Body:
       "Comserve_Geocam Files!, Thanks For Using our Product @ Comserves Technology, INC.",
-    // Attachments: [
-    //   {
-    //     name: "Comserve_Geocam.zip",
-    //     path:
-    //       "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png",
-    //   },
-    // ],
+    Attachments: [
+      {
+        name: "Comserve_Geocam.zip",
+        data: base64String,
+      },
+    ],
   }).then(function (message) {
     alert(message);
   });
