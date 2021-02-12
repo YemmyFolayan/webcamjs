@@ -256,7 +256,6 @@ button .back:hover .next:hover {
     font-weight: 800;
     width: 380px;
     height: 680px !important;
-    margin-left: 200px !important;
     text-align: center;
   }
 
@@ -290,7 +289,6 @@ button .back:hover .next:hover {
   .centerSolid {
     padding-right: 15px !important;
     padding-left: 15px !important;
-    margin-left: 150px !important;
     justify-content: center !important;
   }
 
