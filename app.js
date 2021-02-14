@@ -5,35 +5,35 @@ alert("Welcome, Kindly Supply Site Details below before Taking Site Pictures");
 //2) REPLACE AND CANCEL (DIALOG)
 //3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
 
-const popupTemplateDOM = document.getElementById("dialog-confirm");
-const PopUP = () => {
-  $(function () {
-    $("#dialog-confirm").dialog({
-      resizable: false,
-      height: "auto",
-      width: 360,
-      modal: true,
-      buttons: {
-        Continue: function () {
-          window.location.assign("/Homepage.html");
-        },
-        "Re-Take": function () {
-          //window.location.assign("/Homepage.html");
-        },
-      },
-    });
-  });
+// const popupTemplateDOM = document.getElementById("dialog-confirm");
+// const PopUP = () => {
+//   $(function () {
+//     $("#dialog-confirm").dialog({
+//       resizable: false,
+//       height: "auto",
+//       width: 360,
+//       modal: true,
+//       buttons: {
+//         Continue: function () {
+//           window.location.assign("/Homepage.html");
+//         },
+//         "Re-Take": function () {
+//           //window.location.assign("/Homepage.html");
+//         },
+//       },
+//     });
+//   });
 
-  let htmlString = popupTemplate();
-  let htmlFragment = document.createElement("div");
-  htmlFragment.innerHTML = htmlString;
-  popupTemplateDOM.appendChild(htmlFragment);
-};
+//   let htmlString = popupTemplate();
+//   let htmlFragment = document.createElement("div");
+//   htmlFragment.innerHTML = htmlString;
+//   popupTemplateDOM.appendChild(htmlFragment);
+// };
 
-const popupTemplate = () => {
-  return `<p>
-  `;
-};
+// const popupTemplate = () => {
+//   return `<p>
+//   `;
+// };
 
 var FoodForm = document.getElementById("foodForm");
 
@@ -130,7 +130,7 @@ $("body").on("click", ".next", function () {
       //Shift contentSecond-46 TO contentSecond-52
     } else {
       console.log("not working");
-
+      document.getElementById("hideSections").style.visibility = "hidden";
       document.getElementById("hideSection").style.visibility = "hidden";
       document.getElementById("downloadZip").style.visibility = "visible";
 
@@ -1874,6 +1874,7 @@ SendEmailForm.addEventListener("submit", function (e) {
     ],
   }).then(function (message) {
     alert(message);
+    console.log("sending Email....");
   });
 });
 
