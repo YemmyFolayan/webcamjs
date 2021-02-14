@@ -940,7 +940,14 @@ function take_snapshot() {
       ctx.drawImage(img, 0, 0);
 
       var dateLocation =
-        today + "  " + "Lat: " + latitude + "/" + "Long: " + longitude;
+        "Date: " +
+        today +
+        "  " +
+        "Lat: " +
+        latitude +
+        "/" +
+        "Long: " +
+        longitude;
       let dataURL;
 
       console.log("data url2");
@@ -1124,7 +1131,7 @@ function take_snapshot() {
 
       imgData = tempCtx.getImageData(0, 0, cw, ch);
       console.log(imgData);
-      tempCtx.font = "18px verdana";
+      tempCtx.font = "11px Ubuntu";
       var textWidth = tempCtx.measureText(text).width;
       tempCtx.globalAlpha = 0.5;
       tempCtx.fillStyle = "white";
@@ -1858,7 +1865,7 @@ SendEmailForm.addEventListener("submit", function (e) {
     From: "foyemc@gmail.com",
     Subject: "Comserve_Geocam Site Files",
     Body:
-      "Comserves_Geocam Files!, Thanks For Using our Product @ Comserves Technology, INC.",
+      "Download your Comserves_Geocam Files!, Thanks For Using our Product @ Comserves Technology, INC.",
     Attachments: [
       {
         name: "Comserves_GeocamFiles.zip",
@@ -1869,6 +1876,55 @@ SendEmailForm.addEventListener("submit", function (e) {
     alert(message);
   });
 });
+
+// shareButton.addEventListener("click", (event) => {
+//   if (navigator.share) {
+//     navigator
+//       .share({
+//         title: "Comserves_GeocamFiles",
+//         url: base64String,
+//       })
+//       .then(() => {
+//         console.log("Thanks for sharing!");
+//       })
+//       .catch(console.error);
+//   } else {
+//     shareDialog.classList.add("is-open");
+//   }
+// });
+
+// closeButton.addEventListener("click", (event) => {
+//   shareDialog.classList.remove("is-open");
+// });
+
+// var FoodForm = document.getElementById("SendEmailForm");
+
+// //SMTP VERSION 3
+
+// SendEmailForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
+
+//   var senderEmail = document.getElementById("senderEmail").value;
+
+//   console.log(senderEmail);
+//   Email.send({
+//     SecureToken: "56e05383-b7ec-4596-bf55-a0ba77bad984",
+//     To: senderEmail,
+//     From: "foyemc@gmail.com",
+//     Subject: "Comserve_Geocam Site Files",
+//     Body:
+//       "Comserves_Geocam Files!, Thanks For Using our Product @ Comserves Technology, INC.",
+//     Attachments: [
+//       {
+//         name: "Comserves_GeocamFiles.zip",
+//         data: base64String,
+//       },
+//     ],
+//   }).then(function (message) {
+//     alert(message);
+//   });
+// });
+
 //CHANGE BLOB TO DIFFERENT REFRENCE
 
 //path or data  is required

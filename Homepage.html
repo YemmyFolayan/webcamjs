@@ -791,92 +791,8 @@
 
 
       <div class="project">
-   
-        <div class="solid" id="results"><h5> Your captured image will appear here... </h5>
-          
 
-          
-
-          <p><center>Choose the Activities details below (FacilityType, Building..)<br> Click Save to Generate FIleName </center></p>
-
-
-          
-              <!-- Configure a few settings and attach camera -->
-              <script language="JavaScript">
-                Webcam.set({
-                  width: 320,
-                  height: 280,
-                  image_format: "jpeg",
-                  jpeg_quality: 90,
-                  constraints: {
-                    width: { exact: 320 },
-                    height: { exact: 280 },
-                  },
-                });
-                Webcam.set("constraints", {
-                  facingMode: "environment",
-                });
-                Webcam.attach("#my_camera");
-
-                //front camera.. switch to back camera
-                //facingMode : user rep => front camera    environment rep Back camera
-              </script>
-
-		
-        </div>
-
-  
-
-
-
-
-     
-       
-        <!-- Social List  -->
-
-
-
-
-
-
-     
-        
-       
-
-
-  </section>
-
-   <div id="dialog-confirm" title="Geo-Cam says">
-    
-  </div>
-
-  
-
-  <!-- Contact Section  -->
-
-  <section class="contact">
-    <div class="contact__inner wrap padded">
-
-
-
-      
-
-      <p id="demo"></p>
-
-   
-
-      <h4 class="section__heading">
-        <span>Let's Work on Your Idea!</span>
-      </h4>
-
-  
-
-
-     
-
-      <div class="contact__wrap">
-  
-        <div class="contact__form" id="contact__form">
+         <div class="contact__form" id="contact__form">
           <h3><u> Activity 📽</u></h3>
           <form id="foodForm">
     
@@ -980,6 +896,95 @@
 
 
      
+   
+      
+
+
+     
+       
+        <!-- Social List  -->
+
+
+
+
+
+
+     
+        
+       
+
+
+  </section>
+
+   <div id="dialog-confirm" title="Geo-Cam says">
+    
+  </div>
+
+  
+
+  <!-- Contact Section  -->
+
+  <section class="contact">
+    <div class="contact__inner wrap padded">
+
+
+
+      
+
+      <p id="demo"></p>
+
+   
+
+      <h4 class="section__heading">
+        <span>Let's Work on Your Idea!</span>
+      </h4>
+
+
+  
+
+
+     
+
+      <div class="contact__wrap">
+
+        <div class="solid" id="results"><h5> Your captured image will appear here... </h5>
+          
+
+          
+
+          <p><center>Choose the Activities details below (FacilityType, Building..)<br> Click Save to Generate FIleName </center></p>
+
+
+          
+              <!-- Configure a few settings and attach camera -->
+              <script language="JavaScript">
+                Webcam.set({
+                  width: 600,
+                  height: 500,
+                  image_format: "png",
+                  jpeg_quality: 100,
+                  constraints: {
+                    width: { exact: 600 },
+                    height: { exact: 500 },
+                  },
+                });
+                Webcam.set("constraints", {
+                  facingMode: "environment",
+                });
+                Webcam.attach("#my_camera");
+
+                //front camera.. switch to back camera
+                //facingMode : user rep => front camera    environment rep Back camera
+              </script>
+
+		
+        </div>
+
+  
+
+
+  
+       
    
 
 

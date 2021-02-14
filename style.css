@@ -84,6 +84,30 @@ video {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+  #results {
+    background: url(./images/location3.jpeg);
+    font-weight: 800;
+    width: 100% !important;
+    height: 680px !important;
+    text-align: center;
+    margin-left: 200px !important;
+  }
+
+  #demo {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #000;
+    width: 100% !important;
+    align-self: center;
+    align-content: center;
+    margin-left: 50px !important;
+  }
+
+  canvas {
+    border: 1px solid rgb(10, 100, 255);
+    width: 670px !important;
+  }
 
   .prevGrid {
     grid-template-columns: 1fr 1fr 1fr !important;
@@ -305,7 +329,7 @@ button .back:hover .next:hover {
   #results {
     background: url(./images/location3.jpeg);
     font-weight: 800;
-    width: 380px;
+    width: 980px !important;
     height: 680px !important;
     text-align: center;
   }
@@ -630,7 +654,7 @@ u {
 
 canvas {
   border: 1px solid #0a64ff;
-  width: 370px !important;
+  width: 370px;
 }
 
 .hidden-mobile {
