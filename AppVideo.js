@@ -3,6 +3,7 @@
 //1) FIX PREVIOUS BUTTON
 //2) REPLACE AND CANCEL (DIALOG)
 //3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
+//fix video layout
 
 console.log("videkkkkoo");
 

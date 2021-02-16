@@ -67,6 +67,7 @@ a {
 
 .prevGrid {
   grid-template-columns: 1fr 1fr 1fr !important;
+  margin-left: 20px !important;
 }
 
 .controlText {
@@ -74,6 +75,19 @@ a {
   font-weight: 800;
 }
 
+#SHOWHIDED {
+  margin-left: 60px !important;
+  margin-top: 20px !important;
+  margin-bottom: 60px !important;
+}
+
+.shortProject {
+  height: 560px !important;
+}
+.record {
+  margin-bottom: 50px !important;
+  margin-left: 70px !important;
+}
 .cameraVideo,
 video {
   /* width: 480px !important; */
