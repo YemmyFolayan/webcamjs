@@ -1,6 +1,6 @@
 //TO DO clear cache when site loads, use logo structure it very well
 
-alert("Welcome, Kindly Supply Site Details below before Taking Site Pictures");
+alert("Welcome📸, Provide Site details below");
 
 //display error when variables are Null
 

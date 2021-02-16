@@ -8,6 +8,7 @@
 //display error when variables are Null
 
 console.log("videkkkkoo");
+alert("Welcome📸, Provide Site details below");
 
 let blobVideo;
 
