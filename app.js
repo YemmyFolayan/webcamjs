@@ -2,38 +2,7 @@
 
 alert("Welcome, Kindly Supply Site Details below before Taking Site Pictures");
 
-//2) REPLACE AND CANCEL (DIALOG)
-//3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
-
-// const popupTemplateDOM = document.getElementById("dialog-confirm");
-// const PopUP = () => {
-//   $(function () {
-//     $("#dialog-confirm").dialog({
-//       resizable: false,
-//       height: "auto",
-//       width: 360,
-//       modal: true,
-//       buttons: {
-//         Continue: function () {
-//           window.location.assign("/Homepage.html");
-//         },
-//         "Re-Take": function () {
-//           //window.location.assign("/Homepage.html");
-//         },
-//       },
-//     });
-//   });
-
-//   let htmlString = popupTemplate();
-//   let htmlFragment = document.createElement("div");
-//   htmlFragment.innerHTML = htmlString;
-//   popupTemplateDOM.appendChild(htmlFragment);
-// };
-
-// const popupTemplate = () => {
-//   return `<p>
-//   `;
-// };
+//display error when variables are Null
 
 var FoodForm = document.getElementById("foodForm");
 

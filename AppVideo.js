@@ -5,6 +5,8 @@
 //3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
 //fix video layout
 
+//display error when variables are Null
+
 console.log("videkkkkoo");
 
 let blobVideo;
@@ -84,7 +86,7 @@ const VideoRecord = () => {
         mediaRecorder.start();
         console.log(mediaRecorder.state);
 
-        alert("Started Recording, Tap Stop Recording to Save video");
+        alert("Recording ========80%, Tap Stop Recording to Save video");
         counterBlobVideo = counterBlobVideo + 1;
       });
       stop.addEventListener("click", (ev) => {
