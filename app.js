@@ -1,6 +1,7 @@
 //TO DO clear cache when site loads, use logo structure it very well
+//When you click next to take picture, it will ask them to complete site information.
 
-alert("Welcome📸, Provide Site details below");
+alert("Welcome📸, Provide site details below.");
 
 //display error when variables are Null
 
@@ -1100,7 +1101,7 @@ function take_snapshot() {
 
       imgData = tempCtx.getImageData(0, 0, cw, ch);
       console.log(imgData);
-      tempCtx.font = "11px Ubuntu";
+      tempCtx.font = "20px Ubuntu";
       var textWidth = tempCtx.measureText(text).width;
       tempCtx.globalAlpha = 0.5;
       tempCtx.fillStyle = "white";

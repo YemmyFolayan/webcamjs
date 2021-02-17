@@ -959,7 +959,7 @@
       if (!this.loaded)
         return this.dispatch(
           "error",
-          new WebcamError("Webcam is not loaded yett")
+          new WebcamError("Webcam is not loaded yet")
         );
       // if (!this.live) return this.dispatch('error', new WebcamError("Webcam is not live yet"));
       if (!user_callback)
