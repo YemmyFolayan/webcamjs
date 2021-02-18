@@ -1,6 +1,22 @@
 //TO DO clear cache when site loads, use logo structure it very well
 //When you click next to take picture, it will ask them to complete site information.
 
+//Handle network
+
+console.log(navigator.onLine);
+let Network = navigator.onLine;
+
+const CheckNetwork = () => {
+  if (Network === true) {
+    console.log("you're online.");
+  } else {
+    console.log("you're offline, Re-connect.");
+
+    alert("you're offline, Re-connect.");
+  }
+};
+CheckNetwork();
+
 alert("Welcome📸, Provide site details below.");
 
 //display error when variables are Null
@@ -161,6 +177,7 @@ $("body").on("click", ".nextSecond", function () {
       locationTypeSecond = "Yard sign";
 
       console.log(locationType);
+      alert("Complete site details.");
     } else if (
       "contentSecond-" + idSecond ===
       document.getElementById("contentSecond-2").id
@@ -175,6 +192,7 @@ $("body").on("click", ".nextSecond", function () {
       console.log(Description);
 
       console.log(locationTypeSecond);
+      alert("Complete site details.");
       console.log("catch");
     } else if (
       "contentSecond-" + idSecond ===
@@ -715,10 +733,10 @@ $("body").on("click", ".nextSecond", function () {
       document.getElementById("hideSection").style.visibility = "hidden";
       document.getElementById("downloadZip").style.visibility = "visible";
 
-      alert("Done !, Proceed to Download Files");
+      alert("Done !, Proceed to Download Files.");
 
       var txt;
-      if (confirm("Press [Ok to Proceed] [Cancel to Retake pictures]")) {
+      if (confirm("Press [Ok to Proceed] [Cancel to Retake pictures].")) {
         //txt = "You pressed OK!";
       } else {
         //txt = "You pressed Cancel!";
@@ -909,15 +927,19 @@ function take_snapshot() {
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
 
-      var dateLocation =
-        "Date: " +
-        today +
-        "  " +
-        "Lat: " +
-        latitude +
-        "/" +
-        "Long: " +
-        longitude;
+      if (today == null) {
+        alert("Complete site details.");
+      } else {
+        var dateLocation =
+          "Date: " +
+          today +
+          "  " +
+          "Lat: " +
+          latitude +
+          "/" +
+          "Long: " +
+          longitude;
+      }
       let dataURL;
 
       console.log("data url2");
@@ -1101,7 +1123,7 @@ function take_snapshot() {
 
       imgData = tempCtx.getImageData(0, 0, cw, ch);
       console.log(imgData);
-      tempCtx.font = "20px Ubuntu";
+      tempCtx.font = "18px Ubuntu";
       var textWidth = tempCtx.measureText(text).width;
       tempCtx.globalAlpha = 0.5;
       tempCtx.fillStyle = "white";
@@ -1844,6 +1866,10 @@ SendEmailForm.addEventListener("submit", function (e) {
     ],
   }).then(function (message) {
     alert(message);
+
+    //  if (message === "Ok") {
+    alert("sending Email ====> 70%.");
+
     console.log("sending Email....");
   });
 });

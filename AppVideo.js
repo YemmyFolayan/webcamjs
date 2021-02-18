@@ -1,11 +1,19 @@
 //TO DO
 
-//1) FIX PREVIOUS BUTTON
-//2) REPLACE AND CANCEL (DIALOG)
-//3) DOWNLOAD OR SHARE ON CLOUD, EMAIL , GOOGLE DRIVE
-//fix video layout
-
 //display error when variables are Null
+console.log(navigator.onLine);
+let Network = navigator.onLine;
+
+const CheckNetwork = () => {
+  if (Network === true) {
+    console.log("you're online.");
+  } else {
+    console.log("you're offline, Re-connect.");
+
+    alert("you're offline, Re-connect.");
+  }
+};
+CheckNetwork();
 
 console.log("videkkkkoo");
 alert("Welcome📸, Provide Site details below");

@@ -1,3 +1,17 @@
+console.log(navigator.onLine);
+let Network = navigator.onLine;
+
+const CheckNetwork = () => {
+  if (Network === true) {
+    console.log("you're online.");
+  } else {
+    console.log("you're offline, Re-connect.");
+
+    alert("you're offline, Re-connect.");
+  }
+};
+CheckNetwork();
+
 var Form = document.getElementById("form");
 
 Form.addEventListener("submit", function (e) {
