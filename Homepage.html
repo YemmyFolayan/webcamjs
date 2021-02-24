@@ -931,9 +931,456 @@
 
 
   <!-- Projects Section  -->
-<!--
+
   <section class="projects">
-    <div class="projects__inner wrap padded">
+
+  <div class="container">
+
+   <div class="contact__form" id="contact__form">
+    <h3><u> Location Information 📽</u></h3>
+    <form id="foodForm">
+    
+    <div class="m-3">
+      TransCanada site name 📽
+      <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="TransCanada site name"
+      required
+      />
+    </div>
+     <div class="m-3">
+      Facility # (FIA) / Site ID: 📽
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="(FIA) / Site ID"
+      required
+      />
+    </div>
+     <div class="m-3">
+      SAP ID: 📽
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="SAP ID"
+      required
+      />
+    </div>
+     <div class="m-3">
+      Site latitude (decimal):  📽
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Site latitude (decimal)"
+      required
+      />
+    </div>
+     <div class="m-3">
+      Site longitude (decimal): 📽
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Site longitude (decimal)"
+      required
+      />
+    </div>
+     <div class="m-3">
+      Site address: 📽
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Site address"
+      required
+      />
+    </div>
+
+     <div class="m-3"> Site Access Restricions : 📽
+      <select
+      class="round-input"
+      id="FacilityType"
+      type="text"
+      name="product_type">
+      <option value="Yes" id="Yes" name="Yes">Yes</option>
+      <option value="No" id="No" name="No">No</option>
+     </select>
+    </div>
+
+    <p class="text-white">GENERAL SITE INFORMATION : 📽 </p>
+     <div class="m-3"> Is this a manned site? 📽
+      <select
+      class="round-input"
+      id="FacilityType"
+      type="text"
+      name="product_type">
+      <option value="Yes" id="Yes" name="Yes">Yes</option>
+      <option value="No" id="No" name="No">No</option>
+     </select>
+    </div>
+
+
+    <div class="m-3">
+      Outdoor Cellular 📽
+      <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Location "
+      required
+      />
+
+       <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Carrier"
+      required
+      />
+
+       <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="RSRP / RSRQ / LTE Band"
+      required
+      />      
+    </div>
+
+    <div class="m-3">
+      Indoor Cellular 📽
+       <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>Select Location</option>
+        <option value="Yes" id="Yes" name="Yes">Control Room</option>
+        <option value="No" id="No" name="No">Area Office</option>
+       </select>
+
+       <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Carrier"
+      required
+      />
+
+       <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="RSRP / RSRQ / LTE Band"
+      required
+      />      
+    </div>
+
+
+    <div class="m-3">
+      Telephony (CS Only) 📽
+       <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>Is there an existing key systems or PBX?</option>
+        <option value="Yes" id="Yes" name="Yes">Yes</option>
+        <option value="No" id="No" name="No">No</option>
+       </select>
+
+       <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="No of phone sets on site?"
+      required
+      />
+
+       <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="RSRP / RSRQ / LTE Band"
+      required
+      />      
+    </div>
+
+
+    <div class="m-3">
+      Network and Internal Cabling (CS Only) 📽
+       <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>Is cabling at site Cat 5 or better?</option>
+        <option value="Yes" id="Yes" name="Yes">Cat 5</option>
+        <option value="No" id="No" name="No">better</option>
+       </select>
+
+       <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>Is there available space on existing patch panels to land additional network cables?</option>
+        <option value="Yes" id="Yes" name="Yes">Yes</option>
+        <option value="No" id="No" name="No">No</option>
+       </select>
+
+       <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>Is wiring neatly organized?</option>
+        <option value="Yes" id="Yes" name="Yes">Yes</option>
+        <option value="No" id="No" name="No">No</option>
+       </select>
+
+      <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>Is the corporate SSID "InFoucsMain" available?</option>
+        <option value="Yes" id="Yes" name="Yes">Yes</option>
+        <option value="No" id="No" name="No">No</option>
+       </select>
+
+      <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>Inter-building cabling available (type) or conduit (type):</option>
+        <option value="Yes" id="Yes" name="Yes">Yes</option>
+        <option value="No" id="No" name="No">No</option>
+       </select>
+
+      <select
+        class="round-input"
+        id="FacilityType"
+        type="text"
+        name="product_type">
+        <option>What type of cabling is used between buildings ?</option>
+        <option value="Yes" id="Yes" name="Yes">single mode fiber</option>
+        <option value="No" id="No" name="No">50 um multi mode fiber</option>
+        <option value="Yes" id="Yes" name="Yes">62.5 um multi mode fiber</option>
+        <option value="No" id="No" name="No">Cat3/5/6 UTP cabling</option>
+       </select>
+
+      
+  
+    </div>
+
+    <div class="m-3">
+    Telecom Room (CS Only) 📽
+     <select
+      class="round-input"
+      id="FacilityType"
+      type="text"
+      name="product_type">
+      <option>Is there an existing wall board?</option>
+      <option value="Yes" id="Yes" name="Yes">Yes (5/8 fire rated plywood)</option>
+      <option value="No" id="No" name="No">No</option>
+     </select>
+
+     <select
+      class="round-input"
+      id="FacilityType"
+      type="text"
+      name="product_type">
+      <option>Is there a ground bar?</option>
+      <option value="Yes" id="Yes" name="Yes">Yes</option>
+      <option value="No" id="No" name="No">No</option>
+     </select>
+
+
+     </div>
+
+
+    <div class="m-3">
+    Telecom Room (CS Only) 📽
+     <select
+      class="round-input"
+      id="FacilityType"
+      type="text"
+      name="product_type">
+      <option>Is there Utility (110 VAC) power available?</option>
+      <option value="Yes" id="Yes" name="Yes">Yes (5/8 fire rated plywood)</option>
+      <option value="No" id="No" name="No">No</option>
+     </select>
+
+
+     <input
+    type="text"
+    id="SiteName"
+    name="Building2222"
+    class="no-round-input"
+    placeholder="Power system make, model and type?"
+    required
+    />
+
+     <select
+      class="round-input"
+      id="FacilityType"
+      type="text"
+      name="product_type">
+      <option>Is there a station AC UPS ? </option>
+      <option value="Yes" id="Yes" name="Yes">Yes</option>
+      <option value="No" id="No" name="No">No</option>
+     </select>
+
+
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Are there station UPS receptacles available within 6 ft. (2 meters) of the rack equipment position?"
+      required
+      />
+
+
+       <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="24 VDC power available (size, current power draw in watts, is it connected to UPS?):"
+      required
+      />
+     
+
+
+     </div>
+
+
+     <div class="m-3">
+      Equipment (Pictures as Available): 📽
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Automation devices type and quanitity (RTUs, PLCs, etc)?"
+      required
+      />
+       <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Automation device connection details: Serail or Ethernet?"
+      required
+      />
+       <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Gas chromatograph inside building or tied into other buildings"
+      required
+      />
+       <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Ultrasonic inside building or tied into other buildings"
+      required
+      />
+       <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Terminal server in use (if yes, include make/model, number ports, IP address):"
+      required
+      />
+    </div>
+
+
+    <div class="m-3">
+      Site Dimension Survey 📽
+      <input
+      type="text"
+      id="SiteName"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Site Dimension Survey (required for sites without an existing site plan, plot plan or area classification plan)"
+      required
+      />
+    </div>
+
+
+
+
+    <div class="m-3">
+      How many people report to this site on a daily basis?
+      <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="Site Statics"
+      required
+      />
+    </div>
+
+    <div class="m-3">
+      VSAT Information 📽
+      <input
+      type="text"
+      id="FacilityNo"
+      name="Building2222"
+      class="no-round-input"
+      placeholder="VSAT line of site? "
+      required
+      />
+    </div>
+
+	
+
+    <div class="m-5" id="FIAA"
+      name="FIAA"
+      class="no-round-input"
+      placeholder="Fauto">
+      <input
+      type="submit"
+      id="js_send"
+      class="button"
+      value="Save Site Details 💾"
+      />
+    </div>
+    </form>
+
+  </div>
+  </div>
+
+</section>
+
+  <!--    <div class="projects__inner wrap padded">
       <h4 class="section__heading">
         <span>Some Wonderfull Works</span>
       </h4>
