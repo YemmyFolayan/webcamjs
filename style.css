@@ -98,6 +98,25 @@ video {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+
+  .Location_form input,
+  .Location_form select {
+    display: block;
+    width: 50% !important;
+    font-family: inherit;
+    font-size: 90%;
+    padding: 10px;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, 0.13);
+    border-radius: 2px;
+    color: #718096;
+    transition: border 180ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .Location_form {
+    margin-left: 200px !important;
+  }
+
   #results {
     background: url(./images/location3.jpeg);
     font-weight: 800;
@@ -175,6 +194,21 @@ video {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+
+  .Location_form input,
+  .Location_form select {
+    display: block;
+    width: 50% !important;
+    font-family: inherit;
+    font-size: 90%;
+    padding: 10px;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, 0.13);
+    border-radius: 2px;
+    color: #718096;
+    transition: border 180ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
   .prevGrid {
     grid-template-columns: 1fr 1fr 1fr !important;
   }
@@ -265,6 +299,20 @@ button .back:hover .next:hover {
   .sitedetails {
     margin-bottom: 260px !important;
   }
+
+  .Location_form input,
+  .Location_form select {
+    display: block;
+    width: 100% !important;
+    font-family: inherit;
+    font-size: 90%;
+    padding: 10px;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, 0.13);
+    border-radius: 2px;
+    color: #718096;
+    transition: border 180ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
   .project {
     padding: 0rem !important;
     width: 380px;
@@ -339,6 +387,20 @@ button .back:hover .next:hover {
 @media (min-width: 767px) and (max-width: 1000px) {
   .sitedetails {
     margin-bottom: 260px !important;
+  }
+
+  .Location_form input,
+  .Location_form select {
+    display: block;
+    width: 50% !important;
+    font-family: inherit;
+    font-size: 90%;
+    padding: 10px;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, 0.13);
+    border-radius: 2px;
+    color: #718096;
+    transition: border 180ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   #results {
     background: url(./images/location3.jpeg);
