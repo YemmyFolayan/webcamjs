@@ -63,6 +63,8 @@ document.getElementById("downloadZip").style.visibility = "hidden";
 
 document.getElementById("SHOWHIDE").style.visibility = "hidden";
 
+document.getElementById("printHide").style.visibility = "hidden";
+
 ///Disable next and previous for outdoor, attach next to each content limit
 
 var counter = 1;
